@@ -1,0 +1,56 @@
+
+@import "variables";
+@import "mixin";
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "icons";
+@import url(http://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@include body();
+@include container();
+@include heading();
+@include section();
+@include wrapper();
+@include article();
+@include breadcrumbs();
+@include btn();
+@include label();
+@include input();
+@include img();
+@include icon();
+@include tab();
+/* GENERAL */
+body{
+	background-color: $mc;
+	background-image: image-url('framework/background/background.jpg');
+	background-size: cover;
+	/* background-color: #fff; 
+	background-image: 
+	linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+	linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.2em; 
+	/* background-color: $mc;
+	background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+	linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+	background-size: 13px, 29px, 37px, 53px; */
+
+}
+/*INDEX PAS CO*/
+	
+.logo{
+	height:30%;
+	h1{
+		border-bottom: 0;
+	}
+}
+.intro{
+	font-size: 1.618em;
+	color:white;
+}
+
+/*INDEX PAS CO*/
+/* MEDIA QUERIES */
+@import "responsive";
+/* END MEDIA*/
