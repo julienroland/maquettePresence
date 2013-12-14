@@ -426,7 +426,8 @@ body {
 .logo {
   height: 15%;
   margin-bottom: 0.5em;
-  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
+  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
+  font-weight: bold; }
   .logo h1 {
     border-bottom: 0;
     font-size: 1.7em; }
@@ -671,7 +672,7 @@ body {
   display: block;
   float: none;
   box-sizing: border-box;
-  background-color: #5097bd;
+  background-color: white;
   margin-top: 1em;
   position: relative;
   max-width: 200px;
@@ -684,6 +685,27 @@ body {
     height: 0;
     clear: both;
     visibility: hidden; }
+  .mesCours .cours:hover .titre, .mesCours .cours:focus .titre {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.3s ease, 1s;
+    -webkit-transition-delay: 0.3s, 0s;
+    -moz-transition: opacity 0.3s ease 0.3s, 1s;
+    -o-transition: opacity 0.3s ease 0.3s, 1s;
+    transition: opacity 0.3s ease 0.3s, 1s; }
+  .mesCours .cours:hover .horaire, .mesCours .cours:focus .horaire {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.3s ease, 1s;
+    -webkit-transition-delay: 0.3s, 0s;
+    -moz-transition: opacity 0.3s ease 0.3s, 1s;
+    -o-transition: opacity 0.3s ease 0.3s, 1s;
+    transition: opacity 0.3s ease 0.3s, 1s; }
+  .mesCours .cours:hover .overImage, .mesCours .cours:focus .overImage {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease, 1s;
+    -webkit-transition-delay: 0.3s, 0s;
+    -moz-transition: opacity 0.3s ease 0.3s, 1s;
+    -o-transition: opacity 0.3s ease 0.3s, 1s;
+    transition: opacity 0.3s ease 0.3s, 1s; }
   .mesCours .cours .titre {
     width: 75%;
     margin: auto;
@@ -713,6 +735,7 @@ body {
     display: block;
     box-sizing: border-box;
     height: 100%;
+    background-color: #5097bd;
     padding: 0 0.5em;
     font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
     color: white;
@@ -732,6 +755,19 @@ body {
       margin: auto; }
     .mesCours .cours .horaire .debut {
       border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
+  .mesCours .cours .overImage {
+    opacity: 0;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
+    .mesCours .cours .overImage a {
+      margin-top: 30px;
+      margin-left: 20px; }
 
 /* END INDEX CO*/
 /* BREADCRUMB */

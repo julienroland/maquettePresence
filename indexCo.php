@@ -89,6 +89,10 @@
                         <span class="debut">8H00</span>
                         <span class="fin">18H00</span>
                     </div>
+                    <div class="overImage">
+                        <a href="" class="btn">Voir</a>
+                        <a href="" class="btn">Présences</a>
+                    </div>
                 </div>
                 <div class="cours">
                     <div class="titre">
@@ -100,6 +104,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="wrapper">
+
         </div>
 
     </section>

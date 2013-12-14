@@ -45,6 +45,7 @@ body {
   height: 15%;
   margin-bottom: 0.5em;
   font-family: $ff2;
+  font-weight: bold;
   h1 {
     border-bottom: 0;
     font-size: 1.7em;
@@ -245,14 +246,28 @@ body {
   }
   .cours {
     @include c(12);
-    background-color: $mc;
+    background-color: white;
     margin-top: 1em;
     position: relative;
     max-width: 200px;
     height: 100px;
     box-sizing: border-box;
     border: 1px solid $mc;
+    &:hover,&:focus{
+      .titre{
+        opacity: 0.5;
+        @include single-transition(opacity 0.3s ease 0.3s);
+      }
+      .horaire{
+        opacity: 0.5;
+        @include single-transition(opacity 0.3s ease 0.3s);
+      }
 
+      .overImage{
+        opacity: 1;
+        @include single-transition(opacity 0.3s ease 0.3s);
+      }
+    }
     .titre {
       @include c(9);
       float: left;
@@ -272,6 +287,7 @@ body {
     .horaire {
       @include cl-nm(3);
       height: 100%;
+      background-color: $mc;
       padding: 0 0.5em;
       font-family: $ff2;
       color: white;
@@ -284,11 +300,22 @@ body {
         font-weight: bold;
         margin: auto;
       }
+
       .debut {
         border-bottom: 1px solid rgba(255, 255, 255, 0.7);
       }
       .fin {
 
+      }
+    }
+    .overImage{
+      opacity: 0;
+      height: 100px;
+      @include abs();
+      font-family: $ff2;
+      a{
+        margin-top: 30px;
+        margin-left: 20px;
       }
     }
   }
