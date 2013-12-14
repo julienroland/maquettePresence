@@ -160,7 +160,7 @@ body {
 .sceanceEnCours {
   margin-top: 1em;
   padding: 0 1em;
-
+  margin-bottom: 2em;
   h2 {
     text-align: center;
     margin-bottom: 1em;
@@ -170,35 +170,47 @@ body {
     margin-top: 1em;
     position: relative;
     max-width: 200px;
+    height: 200px;
     border: 1px solid $mc;
     padding-bottom: 1em;
-    &:hover,&:focus{
+    &:hover, &:focus {
 
-      .titre{
+      .titre {
         opacity: 0.5;
-        @include single-transition(opacity,0.3s, ease,0.3s);
+        @include single-transition(opacity, 0.3s, ease, 0.3s);
       }
-      .number{
+      .number {
         opacity: 0.5;
-        @include single-transition(opacity,0.3s, ease,0.3s);
+        @include single-transition(opacity, 0.3s, ease, 0.3s);
       }
-      .text{
+      .text {
         opacity: 0.5;
-        @include single-transition(opacity,0.3s, ease,0.3s);
+        @include single-transition(opacity, 0.3s, ease, 0.3s);
       }
-      .overImage{
+      .overImage {
         opacity: 1;
-        @include single-transition(opacity,0.3s, ease,0.3s);
+        @include single-transition(opacity, 0.3s, ease, 0.3s);
       }
     }
-    .overImage{
-      display: inline-block;
+    .overImage {
+      display: block;
       opacity: 0;
-      a{
-        display:inline-block;
-        height:32px;
-        width:64px;
-        @include abs();
+      @include abs();
+      text-align: center;
+      box-sizing: border-box;
+      a {
+        margin-top: 40%;
+        @include cl(5);
+        @include offsetL(0.5);
+        height: 32px;
+        font-family: $ff2;
+        & + a {
+          margin-top: 40%;
+          @include cl(5);
+          @include offsetL(1.5);
+          @include offsetR(0.5);
+        }
+
       }
     }
     .titre {
@@ -218,10 +230,66 @@ body {
       text-align: center;
       font-weight: bold;
     }
-    .text{
+    .text {
       text-align: center;
       display: block;
       margin: auto;
+    }
+  }
+}
+
+.mesCours {
+  h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .cours {
+    @include c(12);
+    background-color: $mc;
+    margin-top: 1em;
+    position: relative;
+    max-width: 200px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid $mc;
+
+    .titre {
+      @include c(9);
+      float: left;
+      padding-top: 33px;
+      height: 100%;
+      background-color: white;
+      h3 {
+        border-bottom: 0;
+        margin: 0 auto;
+        color: $tc;
+        padding-top: 10px;
+        max-width: 100%;
+        word-break: break-all;
+
+      }
+    }
+    .horaire {
+      @include cl-nm(3);
+      height: 100%;
+      padding: 0 0.5em;
+      font-family: $ff2;
+      color: white;
+      background-color: $mc;
+      .debut, .fin {
+        height: 50%;
+        display: block;
+        box-sizing: border-box;
+        padding-top: 25%;
+        font-weight: bold;
+        margin: auto;
+      }
+      .debut {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      }
+      .fin {
+
+      }
     }
   }
 }
@@ -231,7 +299,7 @@ body {
 /* BREADCRUMB */
 .main {
   background-color: white;
-
+  padding-bottom: 3em;
 }
 
 .breadcrumbs {

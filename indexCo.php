@@ -44,7 +44,8 @@
             </div>
         </nav>
         <div class="logo">
-            <h1><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a></h1>
+            <h1 role="heading" aria-level="1"><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a>
+            </h1>
         </div>
     </section>
     <section role="main" class="main" id="main">
@@ -57,21 +58,47 @@
         </div>
         <div class="wrapper">
             <div class="sceanceEnCours">
-                <h2>Scéance en cours</h2>
+                <h2 role="heading" aria-level="2">Scéance en cours</h2>
 
                 <div class="sceance">
                     <div class="titre">
-                        <h3>Web</h3>
+                        <h3 role="heading" aria-level="3">Web</h3>
                     </div>
                     <div class="number">
                         <span>0</span>
                     </div>
                     <span class="text">présent(s)</span>
+
                     <div class="overImage">
                         <a href="" class="btn">Voir</a>
+                        <a href="" class="btn">Présences</a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="mesCours">
+                <h2 role="heading" aria-level="2">Mes cours</h2>
+
+                <div class="cours">
+                    <div class="titre">
+                        <h3 role="heading" aria-level="3">Web</h3>
+                    </div>
+                    <div class="horaire">
+                        <span class="debut">8H00</span>
+                        <span class="fin">18H00</span>
+                    </div>
+                </div>
+                <div class="cours">
+                    <div class="titre">
+                        <h3 role="heading" aria-level="3">Typographie</h3>
+                    </div>
+                    <div class="horaire">
+                        <span class="debut">10H30</span>
+                        <span class="fin">12H30</span>
+                    </div>
+                </div>
             </div>
         </div>
 
