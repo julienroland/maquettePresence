@@ -277,6 +277,63 @@ h1, h2, h3, h4 {
     .btn a:visited, input[type=submit] a:visited, button a:visited {
       color: rgba(255, 255, 255, 0.8); }
 
+.creer {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/add.png?1387050495');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .creer:hover, .creer:focus {
+    -webkit-transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    -ms-transform: scale(1.3, 1.3);
+    -o-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+    background-color: white; }
+
+.modifier {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/edit.png?1387050565');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .modifier:hover, .modifier:focus {
+    -webkit-transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    -ms-transform: scale(1.3, 1.3);
+    -o-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+    background-color: white; }
+
+.supprimer {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/delete.png?1387050668');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .supprimer:hover, .supprimer:focus {
+    -webkit-transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    -ms-transform: scale(1.3, 1.3);
+    -o-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+    background-color: white; }
+
 input[type=search] ~ input[type=submit] {
   text-indent: -99999px;
   background-image: url("../img/framework/icon/search.png");
@@ -663,111 +720,184 @@ body {
       display: block;
       margin: auto; }
 
-.mesCours h2 {
-  text-align: center;
-  margin-bottom: 1em; }
-.mesCours .cours {
-  width: 100%;
-  margin: auto;
-  display: block;
-  float: none;
-  box-sizing: border-box;
-  background-color: white;
+.mesCours {
   margin-top: 1em;
-  position: relative;
-  max-width: 200px;
-  height: 100px;
-  box-sizing: border-box;
-  border: 1px solid #5097bd; }
-  .mesCours .cours:after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  .mesCours .cours:hover .titre, .mesCours .cours:focus .titre {
-    opacity: 0.5;
-    -webkit-transition: opacity 0.3s ease, 1s;
-    -webkit-transition-delay: 0.3s, 0s;
-    -moz-transition: opacity 0.3s ease 0.3s, 1s;
-    -o-transition: opacity 0.3s ease 0.3s, 1s;
-    transition: opacity 0.3s ease 0.3s, 1s; }
-  .mesCours .cours:hover .horaire, .mesCours .cours:focus .horaire {
-    opacity: 0.5;
-    -webkit-transition: opacity 0.3s ease, 1s;
-    -webkit-transition-delay: 0.3s, 0s;
-    -moz-transition: opacity 0.3s ease 0.3s, 1s;
-    -o-transition: opacity 0.3s ease 0.3s, 1s;
-    transition: opacity 0.3s ease 0.3s, 1s; }
-  .mesCours .cours:hover .overImage, .mesCours .cours:focus .overImage {
-    opacity: 1;
-    -webkit-transition: opacity 0.3s ease, 1s;
-    -webkit-transition-delay: 0.3s, 0s;
-    -moz-transition: opacity 0.3s ease 0.3s, 1s;
-    -o-transition: opacity 0.3s ease 0.3s, 1s;
-    transition: opacity 0.3s ease 0.3s, 1s; }
-  .mesCours .cours .titre {
-    width: 75%;
+  padding: 0 1em;
+  margin-bottom: 2em; }
+  .mesCours h2 {
+    text-align: center;
+    margin-bottom: 1em; }
+  .mesCours .cours {
+    width: 100%;
     margin: auto;
     display: block;
     float: none;
     box-sizing: border-box;
-    float: left;
-    padding-top: 33px;
-    height: 100%;
-    background-color: white; }
-    .mesCours .cours .titre:after {
-      content: "";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-    .mesCours .cours .titre h3 {
-      border-bottom: 0;
-      margin: 0 auto;
-      color: #111111;
-      padding-top: 10px;
-      max-width: 100%;
-      word-break: break-all; }
-  .mesCours .cours .horaire {
-    width: 25%;
-    float: left;
-    display: block;
+    background-color: white;
+    margin-top: 1em;
+    position: relative;
+    max-width: 200px;
+    height: 100px;
     box-sizing: border-box;
-    height: 100%;
-    background-color: #5097bd;
-    padding: 0 0.5em;
-    font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
-    color: white;
-    background-color: #5097bd; }
-    .mesCours .cours .horaire:after {
+    border: 1px solid #5097bd; }
+    .mesCours .cours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .mesCours .cours .horaire .debut, .mesCours .cours .horaire .fin {
-      height: 50%;
+    .mesCours .cours:hover .titre, .mesCours .cours:focus .titre {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.3s ease, 1s;
+      -webkit-transition-delay: 0.3s, 0s;
+      -moz-transition: opacity 0.3s ease 0.3s, 1s;
+      -o-transition: opacity 0.3s ease 0.3s, 1s;
+      transition: opacity 0.3s ease 0.3s, 1s; }
+    .mesCours .cours:hover .horaire, .mesCours .cours:focus .horaire {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.3s ease, 1s;
+      -webkit-transition-delay: 0.3s, 0s;
+      -moz-transition: opacity 0.3s ease 0.3s, 1s;
+      -o-transition: opacity 0.3s ease 0.3s, 1s;
+      transition: opacity 0.3s ease 0.3s, 1s; }
+    .mesCours .cours:hover .overImage, .mesCours .cours:focus .overImage {
+      opacity: 1;
+      -webkit-transition: opacity 0.3s ease, 1s;
+      -webkit-transition-delay: 0.3s, 0s;
+      -moz-transition: opacity 0.3s ease 0.3s, 1s;
+      -o-transition: opacity 0.3s ease 0.3s, 1s;
+      transition: opacity 0.3s ease 0.3s, 1s; }
+    .mesCours .cours .titre {
+      width: 75%;
+      margin: auto;
+      display: block;
+      float: none;
+      box-sizing: border-box;
+      float: left;
+      padding-top: 33px;
+      height: 100%;
+      background-color: white; }
+      .mesCours .cours .titre:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .mesCours .cours .titre h3 {
+        border-bottom: 0;
+        margin: 0 auto;
+        color: #111111;
+        padding-top: 10px;
+        max-width: 100%;
+        word-break: break-all; }
+    .mesCours .cours .horaire {
+      width: 25%;
+      float: left;
       display: block;
       box-sizing: border-box;
-      padding-top: 25%;
-      font-weight: bold;
-      margin: auto; }
-    .mesCours .cours .horaire .debut {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
-  .mesCours .cours .overImage {
-    opacity: 0;
-    height: 100px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+      height: 100%;
+      background-color: #5097bd;
+      padding: 0 0.5em;
+      font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
+      color: white;
+      background-color: #5097bd; }
+      .mesCours .cours .horaire:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .mesCours .cours .horaire .debut, .mesCours .cours .horaire .fin {
+        height: 50%;
+        display: block;
+        box-sizing: border-box;
+        padding-top: 25%;
+        font-weight: bold;
+        margin: auto; }
+      .mesCours .cours .horaire .debut {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
+    .mesCours .cours .overImage {
+      opacity: 0;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
+      .mesCours .cours .overImage a {
+        margin-top: 30px;
+        margin-left: 20px; }
+
+.planning {
+  margin-top: 1em;
+  padding: 0 1em;
+  margin-bottom: 2em; }
+  .planning .jour {
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 1.272em;
+    text-align: center; }
+  .planning .day {
+    width: 100%;
     margin: auto;
-    font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
-    .mesCours .cours .overImage a {
-      margin-top: 30px;
-      margin-left: 20px; }
+    display: block;
+    float: none;
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    border: 1px solid #111111;
+    position: relative; }
+    .planning .day:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .planning .day:hover .overDay, .planning .day:focus .overDay {
+      opacity: 1;
+      -webkit-transition: opacity 0.3s ease, 1s;
+      -webkit-transition-delay: 0.3s, 0s;
+      -moz-transition: opacity 0.3s ease 0.3s, 1s;
+      -o-transition: opacity 0.3s ease 0.3s, 1s;
+      transition: opacity 0.3s ease 0.3s, 1s; }
+    .planning .day .overDay {
+      opacity: 0;
+      text-align: center; }
+      .planning .day .overDay a {
+        display: inline-block; }
+    .planning .day .number {
+      font-size: 4.236em;
+      font-weight: bold;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      margin-top: 10%; }
+    .planning .day .sceances {
+      color: white;
+      height: 100%;
+      opacity: 0.7;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+      .planning .day .sceances:hover, .planning .day .sceances:focus {
+        opacity: 1; }
+      .planning .day .sceances li {
+        padding: 0 0.5em;
+        background-color: #5097bd;
+        border-bottom: 1px solid white;
+        text-align: center;
+        font-weight: bold; }
+        .planning .day .sceances li .overSeance {
+          color: white; }
+      .planning .day .sceances .quatreH {
+        height: 50%; }
+      .planning .day .sceances .deuxH {
+        height: 25%; }
 
 /* END INDEX CO*/
 /* BREADCRUMB */

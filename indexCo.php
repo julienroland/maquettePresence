@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="wrapper">
-            <div class="sceanceEnCours">
+            <section class="sceanceEnCours">
                 <h2 role="heading" aria-level="2">Scéance en cours</h2>
 
                 <div class="sceance">
@@ -75,10 +75,10 @@
                     </div>
                 </div>
 
-            </div>
+            </section>
         </div>
         <div class="wrapper">
-            <div class="mesCours">
+            <section class="mesCours">
                 <h2 role="heading" aria-level="2">Mes cours</h2>
 
                 <div class="cours">
@@ -103,10 +103,39 @@
                         <span class="fin">12H30</span>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
         <div class="wrapper">
+            <section class="planning">
+                <h2 role="heading" aria-level="2">Planning</h2>
+                <span class="jour">Lundi</span>
+                <div class="day">
+                    <span class="number">1</span>
+                    <div class="overDay">
+                        <a href="" class="btn creer">
+                            Créer
+                        </a>
+                    </div>
+                </div>
+                <span class="jour">Mardi</span>
+                <div class="day">
+                    <span class="number">1</span>
+                    <ol class="sceances">
+                        <li class="quatreH">
+                            <span>Web</span>
+                             <div class="overSceance">
+                                 <a href="" class="btn">Modifier</a>
+                                 <a href="" class="btn">Supprimer</a>
+                             </div>
+                        </li>
+                        <li class="deuxH">Typographie</li>
+                    </ol>
+                </div>
+                <span class="jour">Mercredi</span>
+                <span class="jour">Jeudi</span>
+                <span class="jour">Vendredi</span>
 
+            </section>
         </div>
 
     </section>

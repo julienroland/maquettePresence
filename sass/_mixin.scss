@@ -1,325 +1,391 @@
 @import "functions";
 @import "variables";
 @import "compass";
-@mixin body(){
-  body{
+
+@mixin body() {
+  body {
     font-family: $ff;
     font-size: $fs;
     line-height: $lh;
-    color:$tc;
+    color: $tc;
     height: 100%;
-    text-rendering:optimizeLegibility;
-    -webkit-font-smoothing:antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  html{
-   height:100%;
+  html {
+    height: 100%;
   }
-  .main{
-    min-height:100%;
+  .main {
+    min-height: 100%;
   }
-  a{
-    color:$mc;
+  a {
+    color: $mc;
 
-    &:hover,&:focus,&:active{
+    &:hover, &:focus, &:active {
       text-decoration: none;
-      outline:0;
+      outline: 0;
 
     }
 
-    
   }
-  p{
-    margin:0.5em 0;
+  p {
+    margin: 0.5em 0;
     line-height: 1.5;
     font-family: $ff;
   }
 }
-@mixin table(){
-  table{
 
-    thead{
+@mixin table() {
+  table {
 
-    }
-    tbody{
+    thead {
 
     }
-    th{
+    tbody {
 
     }
-    tr{
+    th {
 
     }
-    td{
+    tr {
+
+    }
+    td {
 
     }
   }
 }
-@mixin img(){
-  img{
-    max-width:100%;
-    margin:0.5em 0;
+
+@mixin img() {
+  img {
+    max-width: 100%;
+    margin: 0.5em 0;
   }
 }
-@mixin tab(){
 
-  .tab{
+@mixin tab() {
 
-    a{
+  .tab {
+
+    a {
 
       font-family: $ff2;
     }
   }
 }
-@mixin container{
-  .container{
-    @include c( 12 );
+
+@mixin container {
+  .container {
+    @include c(12);
     height: 100%;
     margin-bottom: 0;
   }
 }
-@mixin wrapper(){
-  .wrapper{
+
+@mixin wrapper() {
+  .wrapper {
     max-width: $mw;
     //overflow:hidden;
     margin: auto;
-    height:100%;
-    box-sizing:border-box;
+    height: 100%;
+    box-sizing: border-box;
     @include c(12);
     //margin-bottom: 1em;
-    &:after{
+    &:after {
       @include clear();
     }
   }
 }
-@mixin article(){
-  article,.article{
+
+@mixin article() {
+  article, .article {
     padding-bottom: 2em;
     margin-bottom: 1em;
     border-bottom: 1px solid $greyL2;
-    position:relative;
+    position: relative;
   }
-  h1,h2,h3,h4{
+  h1, h2, h3, h4 {
     text-align: center;
   }
 }
-@mixin heading(){
-  h1,h2,h3,h4,h5,h6{
-    line-height:$lh / 2;
+
+@mixin heading() {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: $lh / 2;
     font-weight: bold;
     padding-bottom: 0.2em;
     margin-bottom: 0;
     margin-top: 0;
   }
-  h1{
-    font-size:$h1;
+  h1 {
+    font-size: $h1;
     border-bottom: $bh;
   }
-  h2{
+  h2 {
     font-size: $h2;
     border-bottom: $bh;
   }
-  h3{
+  h3 {
     font-size: $h3;
     border-bottom: $bh;
   }
-  h4{
-   font-size: $h4;
- }
- h5{
-  font-size: 1.2em;
-}
-h6{
-  font-size: 1.1em;
-}
-.logo{
-  margin:1em 0;
-  border-bottom: 0;
-  font-size: 2.618em;
-  color:white;
+  h4 {
+    font-size: $h4;
+  }
+  h5 {
+    font-size: 1.2em;
+  }
+  h6 {
+    font-size: 1.1em;
+  }
+  .logo {
+    margin: 1em 0;
+    border-bottom: 0;
+    font-size: 2.618em;
+    color: white;
+  }
+
+  @media (max-width: $m1) {
+    h1 {
+      font-size: ($h1/2)*1.2;
+      border-bottom: $bh;
+    }
+    h2 {
+      font-size: ($h2/2)*1.2;
+      border-bottom: $bh;
+    }
+    h3 {
+      font-size: ($h3/2)*1.2;
+      border-bottom: $bh;
+    }
+    h4 {
+      font-size: ($h4/2)*1.2;
+    }
+    h5 {
+      font-size: 1.2em;
+    }
+    h6 {
+      font-size: 1.1em;
+    }
+
+  }
 }
 
-@media (max-width: $m1){
- h1{
-  font-size:($h1/2)*1.2;
-  border-bottom: $bh;
-}
-h2{
-  font-size: ($h2/2)*1.2;
-  border-bottom: $bh;
-}
-h3{
-  font-size: ($h3/2)*1.2;
-  border-bottom: $bh;
-}
-h4{
- font-size: ($h4/2)*1.2;
-}
-h5{
-  font-size: 1.2em;
-}
-h6{
-  font-size: 1.1em;
-}
-
-}
-}
-@mixin section(){
-  .section{
-    display:inline-block;
-    position:absolute;
-    height:0;
+@mixin section() {
+  .section {
+    display: inline-block;
+    position: absolute;
+    height: 0;
     text-indent: -99999999px;
-    border:none;
-    padding:0;
-    margin:0;
+    border: none;
+    padding: 0;
+    margin: 0;
   }
-  .reader{
-    display:inline-block;
-    position:absolute;
-    height:0;
+  .reader {
+    display: inline-block;
+    position: absolute;
+    height: 0;
     text-indent: -99999999px;
-    border:none;
+    border: none;
   }
-  .hide{
-    display:none!important; 
+  .hide {
+    display: none !important;
   }
 }
-@mixin breadcrumbs(){
-  .breadcrumbs{
-   background-color: $greyL;
-   padding:0.2em 0;
-   //border:1px dotted $grey;
 
-   @include c(12);
-   margin:0.5em auto;
- }
-}
-@mixin label(){
-  label{
-    padding:10px 2px;
-    display:inline-block;
+@mixin breadcrumbs() {
+  .breadcrumbs {
+    background-color: $greyL;
+    padding: 0.2em 0;
+    //border:1px dotted $grey;
+
+    @include c(12);
+    margin: 0.5em auto;
   }
 }
-@mixin abs(){
-  position:absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
+
+@mixin label() {
+  label {
+    padding: 10px 2px;
+    display: inline-block;
+  }
+}
+
+@mixin abs() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   margin: auto;
 }
-@mixin abs-left(){
-  position:absolute;
-  left:0;
+
+@mixin abs-left() {
+  position: absolute;
+  left: 0;
   //right:0;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   margin: auto;
 }
-@mixin abs-right(){
-  position:absolute;
+
+@mixin abs-right() {
+  position: absolute;
   //left:0;
-  right:0;
-  top:0;
-  bottom:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   margin: auto;
 }
-@mixin abs-top-left(){
-  position:absolute;
-  left:0;
+
+@mixin abs-top-left() {
+  position: absolute;
+  left: 0;
   //right:0;
-  top:0;
+  top: 0;
   //bottom:0;
   margin: auto;
 }
-@mixin abs-bot(){
-  position:absolute;
-  left:0;
-  right:0;
+
+@mixin abs-bot() {
+  position: absolute;
+  left: 0;
+  right: 0;
   //top:0;
-  bottom:0;
+  bottom: 0;
   margin: auto;
 }
-@mixin input(){
-  form{
-    width:100%;
+
+@mixin input() {
+  form {
+    width: 100%;
   }
-  input,textarea{
-    display:inline-block;
-  //@include border-radius(3px);
-  border:1px solid $greyL2;
-  background-color: $greyL;
-  padding:2px 1em;
-  margin:10px 10px 10px 0;
-  height:40px;
-  float:left;
-  box-sizing: border-box;
-  &:hover{
-    border:1px solid lighten($mc,10%);
-    outline:none;
-    background-color: #FFF;
-    @include box-shadow(lighten($mc,10%) 0 0 2px 1px);
+  input, textarea {
+    display: inline-block;
+    //@include border-radius(3px);
+    border: 1px solid $greyL2;
+    background-color: $greyL;
+    padding: 2px 1em;
+    margin: 10px 10px 10px 0;
+    height: 40px;
+    float: left;
+    box-sizing: border-box;
+    &:hover {
+      border: 1px solid lighten($mc, 10%);
+      outline: none;
+      background-color: #FFF;
+      @include box-shadow(lighten($mc, 10%) 0 0 2px 1px);
+    }
+    &:focus {
+      border: 1px solid $mc;
+      outline: none;
+      background-color: #FFF;
+      @include box-shadow($mc 0 0 2px 1px);
+    }
+    &:hover label {
+      background-color: red;
+    }
   }
-  &:focus{
-    border:1px solid $mc;
-    outline:none;
-    background-color: #FFF;
-    @include box-shadow($mc 0 0 2px 1px);
-  }
-  &:hover  label{
-    background-color: red;
+  @media(max-width: $m1) {
+    input {
+      width: auto;
+      display: block;
+    }
   }
 }
-@media(max-width: $m1){
- input{
-  width:auto;
-  display:block;
-}
-}
-}
-@mixin btn(){
-  .btn,input[type=submit],button{
-    color:white;
+
+@mixin btn() {
+  .btn, input[type=submit], button {
+    color: white;
     text-align: center;
-    background-color:$mc;
-    padding:6px 12px;
-    border:none;
-    margin:5px 0;
-    display:inline-block;
+    background-color: $mc;
+    padding: 6px 12px;
+    border: none;
+    margin: 5px 0;
+    display: inline-block;
     text-decoration: none;
     //@include border-radius(3px);
-    box-sizing:border-box;
-  //  vertical-align: middle;
-   // height:auto;
-   &:hover{
-    @include box-shadow(lighten($mc,10%) 0 0 2px 1px);
-    background-color:darken($mc,5%);
-    border:none;
-  } 
-  &:focus{
-    @include box-shadow($mc 0 0 2px 1px);
-    background-color:darken($mc,10%);
-    border:none;
-  }
-  &:visited{
-    color:rgba(255,255,255,0.9);
-  }
-  a{
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
-    border:none;
-    &:hover{
-      border:none;
-      background-color: transparent;
+    box-sizing: border-box;
+    //  vertical-align: middle;
+    // height:auto;
+    &:hover {
+      @include box-shadow(lighten($mc, 10%) 0 0 2px 1px);
+      background-color: darken($mc, 5%);
+      border: none;
     }
-    &:visited{
-      color:rgba(255,255,255,0.8);
+    &:focus {
+      @include box-shadow($mc 0 0 2px 1px);
+      background-color: darken($mc, 10%);
+      border: none;
+    }
+    &:visited {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      &:hover {
+        border: none;
+        background-color: transparent;
+      }
+      &:visited {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+  }
+  .creer {
+    text-indent: -99999px;
+    width:20px;
+    height:20px;
+    box-sizing: border-box;
+    background-image: image-url('framework/icon/add.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:2px;
+    background-color: white;
+    border:1px solid $tc ;
+    &:hover,&:focus{
+      @include scale(1.3);
+      background-color: white;
     }
   }
-}
-input[type=search] ~ input[type=submit]{
-  text-indent: -99999px;
+  .modifier {
+    text-indent: -99999px;
+    width:20px;
+    height:20px;
+    box-sizing: border-box;
+    background-image: image-url('framework/icon/edit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:2px;
+    background-color: white;
+    border:1px solid $tc ;
+    &:hover,&:focus{
+      @include scale(1.3);
+      background-color: white;
+    }
+  }
+  .supprimer {
+    text-indent: -99999px;
+    width:20px;
+    height:20px;
+    box-sizing: border-box;
+    background-image: image-url('framework/icon/delete.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:2px;
+    background-color: white;
+    border:1px solid $tc ;
+    &:hover,&:focus{
+      @include scale(1.3);
+      background-color: white;
+    }
+  }
+  input[type=search] ~ input[type=submit] {
+    text-indent: -99999px;
     //width:40px;
     background-image: url('../img/framework/icon/search.png');
     background-size: 16px;
@@ -328,179 +394,190 @@ input[type=search] ~ input[type=submit]{
 
   }
 }
-@mixin mhb-p($height,$item){
+
+@mixin mhb-p($height, $item) {
   background-color: $grey;
-  background:linear-gradient(to bottom,#efefef 0,#cdcdcd 100%);
-  color:white;
-  position:fixed;
-  width:100%;
+  background: linear-gradient(to bottom, #efefef 0, #cdcdcd 100%);
+  color: white;
+  position: fixed;
+  width: 100%;
   box-sizing: border-box;
-  bottom:0;
-  left:0;
-  right:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
-  height:$height+px;
-  outline:1px solid $grey;
-  ul{
-    width:100%;
-    height:$height+px;
+  height: $height+px;
+  outline: 1px solid $grey;
+  ul {
+    width: 100%;
+    height: $height+px;
     text-align: center;
-    padding:0;
-    margin:auto;
-    li,ol{
-      width:(100% / $item) - 2%;
-      display:inline-block;
-      height:100%;
+    padding: 0;
+    margin: auto;
+    li, ol {
+      width: (100% / $item) - 2%;
+      display: inline-block;
+      height: 100%;
       vertical-align: baseline;
-      border-left:1px solid $grey;
+      border-left: 1px solid $grey;
 
       //position:relative;
-      a{
-        display:block;
+      a {
+        display: block;
         //height:100%;
         //padding-top:8px;
-        height:auto;
+        height: auto;
         text-decoration: none;
-        color:white;
+        color: white;
         font-weight: bold;
         box-sizing: border-box;
         border-top: 5px solid #efefef;
-        &:hover , &:focus{
-         // background-color: darken($greyDH,2%);
-         box-sizing: border-box;
-         border-top: 5px solid darken($greyDH,20%);
-         outline:none;
-       }
-     }
-   }
-   li:first-child,ol:first-child{
-     border-left:0;
-   }
-   li+li,ol+ol{
+        &:hover, &:focus {
+          // background-color: darken($greyDH,2%);
+          box-sizing: border-box;
+          border-top: 5px solid darken($greyDH, 20%);
+          outline: none;
+        }
+      }
+    }
+    li:first-child, ol:first-child {
+      border-left: 0;
+    }
+    li + li, ol + ol {
       //margin-left: 1%;
     }
   }
 }
-@mixin clear(){
- content: "";
- display: block;
- height: 0;
- clear: both;
- visibility: hidden;
-}
-@mixin c( $nNumber ) {
 
-  width: colAlone( $nNumber );
+@mixin clear() {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+@mixin c($nNumber) {
+
+  width: colAlone($nNumber);
   margin: auto;
   //margin-left: 0;
-  display:block;
-  float:none; 
-  box-sizing:border-box;
+  display: block;
+  float: none;
+  box-sizing: border-box;
 
-  &:after{
-    @include clear();
-  }
-}
-@mixin cf( $nNumber ) {
-
-  width: colf( $nNumber );
-  display:block;
-  float:none;
-  box-sizing:border-box;
-  margin:0;
-  &:after{
+  &:after {
     @include clear();
   }
 }
 
-@mixin cl( $nNumber ) {
+@mixin cf($nNumber) {
 
-  width: col( $nNumber );
+  width: colf($nNumber);
+  display: block;
+  float: none;
+  box-sizing: border-box;
+  margin: 0;
+  &:after {
+    @include clear();
+  }
+}
+
+@mixin cl($nNumber) {
+
+  width: col($nNumber);
   margin-left: gutter();
   margin-right: gutter();
-  float:left;
-  display:block;
-  box-sizing:border-box;
-  &:after{
-    @include clear();
-  }
-}
-@mixin cl-nm( $nNumber ) {
-
-  width: colAlone( $nNumber );
-  float:left;
-  display:block;
-  box-sizing:border-box;
-  &:after{
-    @include clear();
-  }
-}
-@mixin offsetL( $nNumber ) {
-
-  margin-left: col( $nNumber );
-}
-@mixin offsetR( $nNumber ) {
-
-  margin-right: col( $nNumber );
-}
-@mixin cfl( $nNumber ) {
-
-  width: colf( $nNumber );
-  float:left;
-  margin-left:  gutter();
-  margin-right:  gutter();
-  display:block;
-  box-sizing:border-box;
-  //margin-top:0; 
-  margin-bottom:gutter() * 2; 
-  &:after{
-    @include clear();
-  }
-}
-@mixin cfl-nm( $nNumber ) {
-
-  width: colAlone( $nNumber );
-  float:left;
-  display:block;
-  box-sizing:border-box;
-  margin-top:0; 
-  margin-bottom:0;
-  &:after{
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  &:after {
     @include clear();
   }
 }
 
-@mixin cr( $nNumber ) {
+@mixin cl-nm($nNumber) {
 
-  width: col( $nNumber );
+  width: colAlone($nNumber);
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  &:after {
+    @include clear();
+  }
+}
+
+@mixin offsetL($nNumber) {
+
+  margin-left: col($nNumber);
+}
+
+@mixin offsetR($nNumber) {
+
+  margin-right: col($nNumber);
+}
+
+@mixin cfl($nNumber) {
+
+  width: colf($nNumber);
+  float: left;
   margin-left: gutter();
-  float:right;
-  display:block;
-  box-sizing:border-box;
-  &:after{
-    @include clear();
-  }
-}
-@mixin cfr( $nNumber ) {
-
-  width: col( $nNumber );
-  float:right;
-  display:block;
-  box-sizing:border-box;
-  &:after{
+  margin-right: gutter();
+  display: block;
+  box-sizing: border-box;
+  //margin-top:0; 
+  margin-bottom: gutter() * 2;
+  &:after {
     @include clear();
   }
 }
 
-@mixin cc( $nNumber ) {
-  display:block;
-  width: col( $nNumber );
+@mixin cfl-nm($nNumber) {
+
+  width: colAlone($nNumber);
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  &:after {
+    @include clear();
+  }
+}
+
+@mixin cr($nNumber) {
+
+  width: col($nNumber);
+  margin-left: gutter();
+  float: right;
+  display: block;
+  box-sizing: border-box;
+  &:after {
+    @include clear();
+  }
+}
+
+@mixin cfr($nNumber) {
+
+  width: col($nNumber);
+  float: right;
+  display: block;
+  box-sizing: border-box;
+  &:after {
+    @include clear();
+  }
+}
+
+@mixin cc($nNumber) {
+  display: block;
+  width: col($nNumber);
   margin: auto;
   text-align: center;
-  float:none;
-  box-sizing:border-box;
-  &:after{
+  float: none;
+  box-sizing: border-box;
+  &:after {
     @include clear();
   }
 }
+
 /*l * 100 / 1024*/
