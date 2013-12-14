@@ -1,6 +1,27 @@
 @import "compass";
 @import "variables";
-
+@media(min-width: 500px){
+  /* INDEX PAS CO */
+  .connexion{
+    @include box-shadow(rgba(0,0,0,0.5) 0 0 10px 0px);
+    input[type='submit']{
+      @include cr(6);
+    }
+    .problemeCompte{
+      @include cfl(6);
+      margin-top: 0.5em;
+      text-align: left;
+      a{
+        display:inline-block;
+        width:100%;
+      }
+      span{
+        display: none;
+      }
+    }
+  }
+  /* END INDEX PAS CO */
+}
 
 @media (min-width: $mw){
 

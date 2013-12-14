@@ -33,19 +33,22 @@
                            Plateforme de gestion de présence pour les professeurs de la Haute Ecole de La Province de Liège.
                        </p>
                    </div>
-                   <form action="">
-                       <label for="">Votre e-mail</label>
-                       <input type="email" name="" id="" placeholder="prenom.nom@hepl.be">
+                   <div class="connexion">
+                       <form action="">
+                           <label for="">Votre e-mail</label>
+                           <input type="email" name="" id="" placeholder="prenom.nom@hepl.be">
 
-                       <label for="">Votre mot de passe</label>
-                       <input type="password" name="" id="">
-                       <div class="problemeCompte">
-                        <a href="">Mot de passe oublié ?</a>
-                        <span>/</span>
-                        <a href="">Pas encore inscrit ?</a>
-                    </div>
-                    <input type="submit" value="Connexion">
-                </form>
+                           <label for="">Votre mot de passe</label>
+                           <input type="password" name="" id="">
+
+                           <input type="submit" value="Connexion">
+                           <div class="problemeCompte">
+                            <a href="">Mot de passe oublié ?</a>
+                            <span>/</span>
+                            <a href="">Pas encore inscrit ?</a>
+                            </div>
+                        </form>
+                </div>
             </section>
 
         </section>

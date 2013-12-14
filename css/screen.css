@@ -80,7 +80,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /*END MEDIA*/
 /*COLOR*/
 body {
-  font-family: georgia, helvetica, "Helvetica neue", arial, freesans, clean, sans-serif;
+  font-family: palatino, "palatino lt std", "palatino linotype", "book antiqua", garamond, serif;
   font-size: 15px;
   line-height: 1.5;
   color: #333333;
@@ -103,7 +103,7 @@ a {
 p {
   margin: 0.5em 0;
   line-height: 1.5;
-  font-family: georgia, helvetica, "Helvetica neue", arial, freesans, clean, sans-serif; }
+  font-family: palatino, "palatino lt std", "palatino linotype", "book antiqua", garamond, serif; }
 
 .container {
   width: 100%;
@@ -410,11 +410,11 @@ body {
   background-color: #5097bd;
   background-image: url('../img/framework/background/background.jpg?1384347602');
   background-size: cover;
-  /* background-color: #fff; 
-  background-image: 
+  /* background-color: #fff;
+  background-image:
   linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
   linear-gradient(#eee .1em, transparent .1em);
-  background-size: 100% 1.2em; 
+  background-size: 100% 1.2em;
   /* background-color: $mc;
   background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
   linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
@@ -424,13 +424,57 @@ body {
 
 /*INDEX PAS CO*/
 .logo {
-  height: 30%; }
+  height: 15%;
+  margin-bottom: 0.5em;
+  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
   .logo h1 {
-    border-bottom: 0; }
+    border-bottom: 0;
+    font-size: 1.7em; }
 
 .intro {
   font-size: 1.618em;
-  color: white; }
+  color: white;
+  display: none;
+  width: 80%;
+  margin: auto;
+  text-align: center; }
+
+.connexion {
+  border: 1px solid #737373;
+  max-width: 400px;
+  margin: auto;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  padding: 1em 0.5em;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); }
+  .connexion:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .connexion input, .connexion label {
+    display: inline-block;
+    width: 100%; }
+  .connexion input {
+    margin-top: 0.5em;
+    height: 50px;
+    font-size: 1em; }
+  .connexion label {
+    padding-bottom: 0;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1.1em; }
+  .connexion .problemeCompte {
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    height: 20px; }
 
 /*INDEX PAS CO*/
 /* MEDIA QUERIES */
@@ -440,4 +484,45 @@ body {
 /*media*/
 /*END MEDIA*/
 /*COLOR*/
+@media (min-width: 500px) {
+  /* INDEX PAS CO */
+  .connexion {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 0px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px 0px; }
+    .connexion input[type='submit'] {
+      width: 49%;
+      margin-left: 0.5%;
+      float: right;
+      display: block;
+      box-sizing: border-box; }
+      .connexion input[type='submit']:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+    .connexion .problemeCompte {
+      width: 49%;
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 1%;
+      margin-top: 0.5em;
+      text-align: left; }
+      .connexion .problemeCompte:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .connexion .problemeCompte a {
+        display: inline-block;
+        width: 100%; }
+      .connexion .problemeCompte span {
+        display: none; }
+
+  /* END INDEX PAS CO */ }
 /* END MEDIA*/
