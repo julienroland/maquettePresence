@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,40 +20,55 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
-            <h1 class="section" role="heading" aria-level="1">Page d'accueil du site e-commerce etude et vie</h1>
-            <section class="container ">
-                <h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
-                <section class="banner" role="banner">
-                    <nav role="navigation">
-                    <h1 class="section">Navigation principal du site</h1>
-                        <a href="#main" class="reader">Passer au contenu directement</a>
-                        <a href="">HEPL</a>
-                        <ul>x
-                            <li><a href="">Gerer mes cours</a></li>
-                            <li><a href="">Gerer mes scéances</a></li>
-                            <li><a href="">Gerer des élèves</a></li>
-                            <li><a href="">Gerer des groupes</a></li>
-                            <li><a href="">Configuration</a></li>
-                        </ul>
-                    </nav>
-                    <div class="logo">
-                        <h1><abbr title="Haute Ecole de La Province de Liège">HEPL</abbr></h1>
-                    </div>
-                </section>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<h1 class="section" role="heading" aria-level="1">Page d'accueil du site e-commerce etude et vie</h1>
+<section class="container ">
+    <h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
+    <section class="banner" role="banner">
+        <nav role="navigation" class="nav">
+            <div class="wrapper">
+                <h1 class="section">Navigation principal du site</h1>
+                <a href="#main" class="reader">Passer au contenu directement</a>
+                <a class="accueil" href="">HEPL</a>
+                <a class="menuLow" href="#menu">Menu</a>
+                <ul class="menu" id="menu">
+                    <li><a href="">Gerer mes cours</a></li>
+                    <li><a href="">Gerer mes scéances</a></li>
+                    <li><a href="">Gerer des élèves</a></li>
+                    <li><a href="">Gerer des groupes</a></li>
+                    <li><a href="">Configuration</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="logo">
+            <h1><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a></h1>
+        </div>
+    </section>
+    <section role="main" class="main" id="main">
+        <h1 class="section">Contenu principal du site</h1>
 
-                <section role="main" class="main" id="main">
-                    <h1 class="section">Contenu principal du site</h1>
-                    <?php include('indexPasCo.php'); ?>
-                </section>
+        <div class="breadcrumbs">
+            <div class="wrapper">
+                <span>Accueil</span>
+            </div>
+        </div>
+        <div class="wrapper">
 
-            </section>
+            <div class="sceanceEnCours">
+                <h2>Scéance en cours</h2>
+            </div>
+        </div>
 
-            <footer role="footer">
+    </section>
 
-            </footer>
+</section>
 
-        </body>
-        </html>
+<footer role="footer">
+
+</footer>
+
+</body>
+</html>

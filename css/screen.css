@@ -92,7 +92,7 @@ html {
   height: 100%; }
 
 .main {
-  height: 100%; }
+  min-height: 100%; }
 
 a {
   color: #5097bd; }
@@ -430,6 +430,9 @@ body {
   .logo h1 {
     border-bottom: 0;
     font-size: 1.7em; }
+    .logo h1 a {
+      text-decoration: none;
+      color: white; }
 
 .intro {
   font-size: 1.618em;
@@ -477,6 +480,88 @@ body {
     height: 20px; }
 
 /*INDEX PAS CO*/
+/* INDEX CO*/
+.logo h1 {
+  line-height: 1.2;
+  font-size: 1.3em; }
+  .logo h1 .nom {
+    display: none; }
+
+.nav {
+  height: 50px;
+  background-color: #5097bd;
+  color: white;
+  font-size: 1.5em;
+  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
+  padding: 0 0.5em;
+  vertical-align: middle; }
+  .nav .accueil {
+    width: 15.66667%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .nav .accueil:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .nav a, .nav ul {
+    display: block;
+    color: white;
+    text-decoration: none; }
+  .nav .menuLow {
+    float: right;
+    padding-right: 36px;
+    position: relative; }
+    .nav .menuLow:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: "";
+      display: block;
+      float: right;
+      width: 32px;
+      height: 32px;
+      background-image: url('../img/framework/icon/menu2White.png?1385138881'); }
+  .nav .menu {
+    width: 82.33333%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    display: none; }
+    .nav .menu:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .nav .menu li {
+      display: inline-block; }
+
+/* END INDEX CO*/
+/* BREADCRUMB */
+.main {
+  background-color: white; }
+
+.breadcrumbs {
+  padding: 0 1em;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: #f2f2f2; }
+  .breadcrumbs a, .breadcrumbs span {
+    display: inline-block;
+    color: #333333;
+    margin-top: 5px; }
+
+/* END BREADCRUMB */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */

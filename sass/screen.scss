@@ -48,6 +48,10 @@ body {
   h1 {
     border-bottom: 0;
     font-size: 1.7em;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 
@@ -97,6 +101,83 @@ body {
 }
 
 /*INDEX PAS CO*/
+
+/* INDEX CO*/
+.logo {
+  h1 {
+    line-height: 1.2;
+    font-size: 1.3em;
+    .nom {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  height: 50px;
+  background-color: $mc;
+  color:white;
+  font-size: 1.5em;
+  font-family: $ff2;
+  padding:0 $pd;
+  vertical-align: middle;
+  .accueil {
+    @include cfl(2);
+  }
+
+  a, ul {
+    display: block;
+    color:white;
+    text-decoration: none;
+  }
+  .menuLow{
+    float:right;
+    padding-right: 36px;
+    position: relative;
+    //padding-right: 16px;
+    &:after{
+      @include abs-right();
+      content:"";
+      display: block;
+      float:right;
+      width:32px;
+      height:32px;
+
+      background-image: image-url('framework/icon/menu2White.png');
+    }
+  }
+
+  .menu {
+    @include cl(10);
+    display: none;
+    li {
+      display: inline-block;
+    }
+  }
+
+}
+
+/* END INDEX CO*/
+
+/* BREADCRUMB */
+.main{
+  background-color: white;
+
+}
+.breadcrumbs{
+  padding:0 1em;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: $greyL;
+
+  a,span{
+    display: inline-block;
+    color:$tc;
+    margin-top: 5px;
+  }
+}
+
+/* END BREADCRUMB */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

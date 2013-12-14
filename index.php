@@ -26,7 +26,7 @@
                 <section role="main" class="main wrapper" id="main">
                     <h1 class="section">Contenu principal du site</h1>
                     <div class="logo">
-                       <h1><abbr title="Haute Ecole de La Province de Liège">HEPL</abbr></h1> 
+                       <h1><a href=""><abbr title="Haute Ecole de La Province de Liège">HEPL</abbr></a></h1>
                    </div>
                    <div class="intro">
                        <p>
