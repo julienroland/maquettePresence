@@ -23,12 +23,11 @@
             <section class="container ">
                 <h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
                 <section class="banner" role="banner">
-
-
                     <nav role="navigation">
                     <h1 class="section">Navigation principal du site</h1>
+                        <a href="#main" class="reader">Passer au contenu directement</a>
                         <a href="">HEPL</a>
-                        <ul>
+                        <ul>x
                             <li><a href="">Gerer mes cours</a></li>
                             <li><a href="">Gerer mes scéances</a></li>
                             <li><a href="">Gerer des élèves</a></li>
@@ -36,6 +35,9 @@
                             <li><a href="">Configuration</a></li>
                         </ul>
                     </nav>
+                    <div class="logo">
+                        <h1><abbr title="Haute Ecole de La Province de Liège">HEPL</abbr></h1>
+                    </div>
                 </section>
 
                 <section role="main" class="main" id="main">

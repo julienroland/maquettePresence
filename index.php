@@ -34,7 +34,7 @@
                        </p>
                    </div>
                    <div class="connexion">
-                       <form action="">
+                       <form action="indexCo.php">
                            <label for="">Votre e-mail</label>
                            <input type="email" name="" id="" placeholder="prenom.nom@hepl.be">
 

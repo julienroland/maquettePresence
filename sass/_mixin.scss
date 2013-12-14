@@ -80,7 +80,7 @@
 @mixin wrapper(){
   .wrapper{
     max-width: $mw;
-    overflow:hidden;
+    //overflow:hidden;
     margin: auto;
     height:100%;
     box-sizing:border-box;
