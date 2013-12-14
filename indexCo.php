@@ -56,9 +56,22 @@
             </div>
         </div>
         <div class="wrapper">
-
             <div class="sceanceEnCours">
                 <h2>Scéance en cours</h2>
+
+                <div class="sceance">
+                    <div class="titre">
+                        <h3>Web</h3>
+                    </div>
+                    <div class="number">
+                        <span>0</span>
+                    </div>
+                    <span class="text">présent(s)</span>
+                    <div class="overImage">
+                        <a href="" class="btn">Voir</a>
+                    </div>
+                </div>
+
             </div>
         </div>
 

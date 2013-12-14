@@ -83,7 +83,7 @@ body {
   font-family: palatino, "palatino lt std", "palatino linotype", "book antiqua", garamond, serif;
   font-size: 15px;
   line-height: 1.5;
-  color: #333333;
+  color: #111111;
   height: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
@@ -154,21 +154,21 @@ h6 {
   font-size: 2.618em;
   color: white; }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   h1 {
-    font-size: 2.805em;
+    font-size: 2.5416em;
     border-bottom: 1px solid #eeeeee; }
 
   h2 {
-    font-size: 2.618em;
+    font-size: 1.998em;
     border-bottom: 1px solid #eeeeee; }
 
   h3 {
-    font-size: 1.734em;
+    font-size: 1.5708em;
     border-bottom: 1px solid #eeeeee; }
 
   h4 {
-    font-size: 1.618em; }
+    font-size: 0.9708em; }
 
   h5 {
     font-size: 1.2em; }
@@ -317,7 +317,7 @@ input, textarea {
   input:hover label, textarea:hover label {
     background-color: red; }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   input {
     width: auto;
     display: block; } }
@@ -470,7 +470,7 @@ body {
     font-size: 1em; }
   .connexion label {
     padding-bottom: 0;
-    color: #333333;
+    color: #111111;
     font-weight: bold;
     font-size: 1.1em; }
   .connexion .problemeCompte {
@@ -479,7 +479,7 @@ body {
     display: inline-block;
     height: 20px; }
 
-/*INDEX PAS CO*/
+/*END INDEX PAS CO*/
 /* INDEX CO*/
 .logo h1 {
   line-height: 1.2;
@@ -546,6 +546,89 @@ body {
     .nav .menu li {
       display: inline-block; }
 
+.sceanceEnCours {
+  margin-top: 1em;
+  padding: 0 1em; }
+  .sceanceEnCours h2 {
+    text-align: center;
+    margin-bottom: 1em; }
+  .sceanceEnCours .sceance {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    box-sizing: border-box;
+    margin-top: 1em;
+    position: relative;
+    max-width: 200px;
+    border: 1px solid #5097bd;
+    padding-bottom: 1em; }
+    .sceanceEnCours .sceance:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .sceanceEnCours .sceance:hover .titre, .sceanceEnCours .sceance:focus .titre {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.3s ease;
+      -webkit-transition-delay: 0.3s;
+      -moz-transition: opacity 0.3s ease 0.3s;
+      -o-transition: opacity 0.3s ease 0.3s;
+      transition: opacity 0.3s ease 0.3s; }
+    .sceanceEnCours .sceance:hover .number, .sceanceEnCours .sceance:focus .number {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.3s ease;
+      -webkit-transition-delay: 0.3s;
+      -moz-transition: opacity 0.3s ease 0.3s;
+      -o-transition: opacity 0.3s ease 0.3s;
+      transition: opacity 0.3s ease 0.3s; }
+    .sceanceEnCours .sceance:hover .text, .sceanceEnCours .sceance:focus .text {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.3s ease;
+      -webkit-transition-delay: 0.3s;
+      -moz-transition: opacity 0.3s ease 0.3s;
+      -o-transition: opacity 0.3s ease 0.3s;
+      transition: opacity 0.3s ease 0.3s; }
+    .sceanceEnCours .sceance:hover .overImage, .sceanceEnCours .sceance:focus .overImage {
+      opacity: 1;
+      -webkit-transition: opacity 0.3s ease;
+      -webkit-transition-delay: 0.3s;
+      -moz-transition: opacity 0.3s ease 0.3s;
+      -o-transition: opacity 0.3s ease 0.3s;
+      transition: opacity 0.3s ease 0.3s; }
+    .sceanceEnCours .sceance .overImage {
+      display: inline-block;
+      opacity: 0; }
+      .sceanceEnCours .sceance .overImage a {
+        display: inline-block;
+        height: 32px;
+        width: 64px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto; }
+    .sceanceEnCours .sceance .titre {
+      background-color: #5097bd;
+      height: 40px; }
+      .sceanceEnCours .sceance .titre h3 {
+        border-bottom: 0;
+        margin: 0 auto;
+        color: white;
+        padding-top: 10px; }
+    .sceanceEnCours .sceance .number {
+      font-size: 4.778em;
+      display: block;
+      margin: auto;
+      text-align: center;
+      font-weight: bold; }
+    .sceanceEnCours .sceance .text {
+      text-align: center;
+      display: block;
+      margin: auto; }
+
 /* END INDEX CO*/
 /* BREADCRUMB */
 .main {
@@ -558,7 +641,7 @@ body {
   background-color: #f2f2f2; }
   .breadcrumbs a, .breadcrumbs span {
     display: inline-block;
-    color: #333333;
+    color: #111111;
     margin-top: 5px; }
 
 /* END BREADCRUMB */

@@ -140,19 +140,19 @@ h6{
 
 @media (max-width: $m1){
  h1{
-  font-size:2.805em;
+  font-size:($h1/2)*1.2;
   border-bottom: $bh;
 }
 h2{
-  font-size: 2.618em;
+  font-size: ($h2/2)*1.2;
   border-bottom: $bh;
 }
 h3{
-  font-size: 1.734em;
+  font-size: ($h3/2)*1.2;
   border-bottom: $bh;
 }
 h4{
- font-size: 1.618em; 
+ font-size: ($h4/2)*1.2;
 }
 h5{
   font-size: 1.2em;

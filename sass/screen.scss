@@ -100,7 +100,7 @@ body {
   }
 }
 
-/*INDEX PAS CO*/
+/*END INDEX PAS CO*/
 
 /* INDEX CO*/
 .logo {
@@ -116,10 +116,10 @@ body {
 .nav {
   height: 50px;
   background-color: $mc;
-  color:white;
+  color: white;
   font-size: 1.5em;
   font-family: $ff2;
-  padding:0 $pd;
+  padding: 0 $pd;
   vertical-align: middle;
   .accueil {
     @include cfl(2);
@@ -127,21 +127,21 @@ body {
 
   a, ul {
     display: block;
-    color:white;
+    color: white;
     text-decoration: none;
   }
-  .menuLow{
-    float:right;
+  .menuLow {
+    float: right;
     padding-right: 36px;
     position: relative;
     //padding-right: 16px;
-    &:after{
+    &:after {
       @include abs-right();
-      content:"";
+      content: "";
       display: block;
-      float:right;
-      width:32px;
-      height:32px;
+      float: right;
+      width: 32px;
+      height: 32px;
 
       background-image: image-url('framework/icon/menu2White.png');
     }
@@ -157,22 +157,92 @@ body {
 
 }
 
+.sceanceEnCours {
+  margin-top: 1em;
+  padding: 0 1em;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .sceance {
+    @include c(12);
+    margin-top: 1em;
+    position: relative;
+    max-width: 200px;
+    border: 1px solid $mc;
+    padding-bottom: 1em;
+    &:hover,&:focus{
+
+      .titre{
+        opacity: 0.5;
+        @include single-transition(opacity,0.3s, ease,0.3s);
+      }
+      .number{
+        opacity: 0.5;
+        @include single-transition(opacity,0.3s, ease,0.3s);
+      }
+      .text{
+        opacity: 0.5;
+        @include single-transition(opacity,0.3s, ease,0.3s);
+      }
+      .overImage{
+        opacity: 1;
+        @include single-transition(opacity,0.3s, ease,0.3s);
+      }
+    }
+    .overImage{
+      display: inline-block;
+      opacity: 0;
+      a{
+        display:inline-block;
+        height:32px;
+        width:64px;
+        @include abs();
+      }
+    }
+    .titre {
+      background-color: $mc;
+      height: 40px;
+      h3 {
+        border-bottom: 0;
+        margin: 0 auto;
+        color: white;
+        padding-top: 10px;
+      }
+    }
+    .number {
+      font-size: 4.778em;
+      display: block;
+      margin: auto;
+      text-align: center;
+      font-weight: bold;
+    }
+    .text{
+      text-align: center;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
 /* END INDEX CO*/
 
 /* BREADCRUMB */
-.main{
+.main {
   background-color: white;
 
 }
-.breadcrumbs{
-  padding:0 1em;
+
+.breadcrumbs {
+  padding: 0 1em;
   height: 40px;
   box-sizing: border-box;
   background-color: $greyL;
 
-  a,span{
+  a, span {
     display: inline-block;
-    color:$tc;
+    color: $tc;
     margin-top: 5px;
   }
 }
