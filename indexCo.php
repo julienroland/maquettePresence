@@ -47,6 +47,9 @@
             <h1 role="heading" aria-level="1"><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a>
             </h1>
         </div>
+        <div class="deco">
+            <a href="">Déconnecter</a>
+        </div>
     </section>
     <section role="main" class="main" id="main">
         <h1 class="section">Contenu principal du site</h1>

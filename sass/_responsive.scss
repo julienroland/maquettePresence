@@ -71,6 +71,9 @@
 }
 
 @media(min-width: 700px) {
+  .banner{
+    min-height: 250px;
+  }
   .container{
     margin-top: 0;
 
@@ -111,6 +114,7 @@
     }
   }
   .planning {
+    @include c(12);
     .groupe {
       @include cl-nm(3);
     }

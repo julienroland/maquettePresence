@@ -34,6 +34,24 @@ body {
 }
 .banner {
   height: 30%;
+  min-height: 100px;
+  .deco{
+    width:100px;
+    margin: auto;
+    a{
+      display: block;
+      border:1px solid white;
+      @include border-radius($pd);
+      padding:$pd;
+      color:white;
+      text-decoration: none;
+      &:hover,&:focus{
+        @include single-transition(all,0.3s,ease,0.1s);
+        background-color: white;
+        color:$tc;
+      }
+    }
+  }
 }
 /*INDEX PAS CO*/
 
