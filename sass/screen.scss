@@ -25,41 +25,44 @@ body {
   background-image: image-url('framework/background/background.jpg');
   background-size: cover;
   background-attachment: fixed;
-  height: auto!important;
+  height: auto !important;
 
 }
+
 .container {
   margin-top: 50px;
-  height: auto!important;
+  height: auto !important;
 }
+
 .banner {
   height: 30%;
   min-height: 100px;
-  .deco{
-    width:100px;
+  .deco {
+    width: 100px;
     margin: auto;
-    a{
+    a {
       display: block;
-      border:1px solid white;
+      border: 1px solid white;
       @include border-radius($pd);
-      padding:$pd;
-      color:white;
+      padding: $pd;
+      color: white;
       text-decoration: none;
-      &:hover,&:focus{
-        @include single-transition(all,0.3s,ease,0.1s);
+      &:hover, &:focus {
+        @include single-transition(all, 0.3s, ease, 0.1s);
         background-color: white;
-        color:$tc;
+        color: $tc;
       }
     }
   }
 }
+
 /*INDEX PAS CO*/
 
 .logo {
   height: 15%;
   margin-bottom: 0.5em;
   font-family: $ff2;
-
+  padding-top: $pd;
   h1 {
     border-bottom: 0;
     font-size: 1.7em;
@@ -156,10 +159,10 @@ body {
     max-width: 70px;
     padding-top: $pd/2;
     margin-bottom: 0;
-    text-align:center ;
+    text-align: center;
     height: 50px;
-    &:hover,&:focus{
-      background-color: darken($mc,10%);
+    &:hover, &:focus {
+      background-color: darken($mc, 10%);
     }
   }
 
@@ -384,21 +387,31 @@ body {
   }
 }
 
+.calendrier {
+  background-color: $greyL;
+  padding: 3em 0;
+  &:after {
+    @include clear();
+  }
+}
+
 .planning {
   margin-top: 1em;
   padding: 0 1em;
+  float: left;
+  @include c(12);
   margin-bottom: 2em;
   position: relative;
   &:after {
     @include clear();
   }
-.jour {
-display:block;
-  width: 100%;
-  margin-top: 1em;
-  font-size: 1.272em;
-  text-align: center;
-}
+  .jour {
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 1.272em;
+    text-align: center;
+  }
   .day {
     @include c(12);
     height: 150px;
@@ -446,7 +459,7 @@ display:block;
         border-bottom: 1px solid white;
         text-align: center;
         font-weight: bold;
-        color:$tc;
+        color: $tc;
         @include single-transition(all, 0.2s, ease);
         .overSeance {
           color: $tc;
@@ -477,35 +490,36 @@ display:block;
     }
   }
 }
-.addContent{
 
-  background-color: $mc;
-  color:white;
+.addContent {
+
+
+  color: white;
   @include c(12);
   display: none;
-  padding:1em;
+  padding: 1em;
   min-height: 100%;
-  a{
-    color:white;
+  a {
+    color: white;
   }
-  h3{
+  h3 {
     margin-top: $pd;
     border-bottom: 0;
   }
-  .wrapper{
+  .wrapper {
     padding-bottom: 1em;
     border-bottom: 1px solid $greyL;
-    &:last-child{
+    &:last-child {
       border-bottom: 0;
     }
   }
-  .sceance{
+  .sceance {
     border: 1px solid $greyL;
-    padding:$pd;
-    margin:$pd 0 ;
+    padding: $pd;
+    margin: $pd 0;
     box-sizing: border-box;
     @include border-radius($pd);
-    span{
+    span {
       display: block;
     }
   }
@@ -516,12 +530,14 @@ display:block;
 .main {
   background-color: white;
   padding-bottom: 3em;
-  &:after{
+  &:after {
     @include clear();
   }
 }
+.right{
+  background-color: $mc;
+}
 /* BREADCRUMB */
-
 
 .breadcrumbs {
   padding: 0 1em;

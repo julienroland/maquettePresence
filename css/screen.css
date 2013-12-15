@@ -487,7 +487,8 @@ body {
 .logo {
   height: 15%;
   margin-bottom: 0.5em;
-  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
+  font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
+  padding-top: 0.5em; }
   .logo h1 {
     border-bottom: 0;
     font-size: 1.7em; }
@@ -877,11 +878,33 @@ body {
         margin-top: 30px;
         margin-left: 33%; }
 
+.calendrier {
+  background-color: #f2f2f2;
+  padding: 3em 0; }
+  .calendrier:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
 .planning {
   margin-top: 1em;
   padding: 0 1em;
+  float: left;
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  box-sizing: border-box;
   margin-bottom: 2em;
   position: relative; }
+  .planning:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
   .planning:after {
     content: "";
     display: block;
@@ -970,7 +993,6 @@ body {
         height: 25%; }
 
 .addContent {
-  background-color: #5097bd;
   color: white;
   width: 100%;
   margin: auto;
@@ -1019,6 +1041,9 @@ body {
     height: 0;
     clear: both;
     visibility: hidden; }
+
+.right {
+  background-color: #5097bd; }
 
 /* BREADCRUMB */
 .breadcrumbs {
@@ -1108,6 +1133,28 @@ body {
 
   /* END INDEX PAS CO */
   /* INDEX CO */
+  .news {
+    max-width: 900px;
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%; }
+    .news:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .calendrier {
+    max-width: 900px;
+    margin-right: 0; }
+    .calendrier:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
   .sceanceEnCours {
     width: 49%;
     float: left;
@@ -1271,6 +1318,11 @@ body {
         clear: both;
         visibility: hidden; } }
 @media (min-width: 900px) {
+  .logo h1 .nom {
+    display: inline-block; }
+  .logo h1 .prenom {
+    color: white; }
+
   .main .left {
     width: 75%;
     float: left;
@@ -1356,7 +1408,9 @@ body {
     display: block;
     float: none;
     box-sizing: border-box;
+    max-width: 300px;
     min-height: 100%;
+    margin-left: 0;
     height: auto !important; }
     .addContent:after {
       content: "";

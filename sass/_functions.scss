@@ -25,4 +25,7 @@ $gout: $gutter;
   @return ($nNumber / $col * 100%) - (( $gout / $mw * 100% ) / 2);
 
 }
+@function colParent($nNumber , $nParent){ //8 - 9 ==75%
+  @return (($mw / 100) * (($nParent / $col ) * 100))/ ($mw / 100)*$nNumber+px;
+}
 /*l * 100 / 1024*/

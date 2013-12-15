@@ -59,135 +59,138 @@
                 <span>Accueil</span>
             </div>
         </div>
-        <div class="wrapper left">
-            <section class="sceanceEnCours">
-                <h2 role="heading" aria-level="2">Scéance en cours</h2>
+        <div class=" left">
+            <div class=" news">
+                <section class="sceanceEnCours">
+                    <h2 role="heading" aria-level="2">Scéance en cours</h2>
 
-                <div class="sceance">
-                    <div class="titre">
-                        <h3 role="heading" aria-level="3">Web</h3>
-                    </div>
-                    <div class="number">
-                        <span>0</span>
-                    </div>
-                    <span class="text">présent(s)</span>
+                    <div class="sceance">
+                        <div class="titre">
+                            <h3 role="heading" aria-level="3">Web</h3>
+                        </div>
+                        <div class="number">
+                            <span>0</span>
+                        </div>
+                        <span class="text">présent(s)</span>
 
-                    <div class="overImage">
-                        <a href="" class="btn">Voir</a>
-                        <a href="" class="btn">Présences</a>
-                    </div>
-                </div>
-
-            </section>
-
-            <section class="mesCours">
-                <h2 role="heading" aria-level="2">Mes cours</h2>
-
-                <div class="cours">
-                    <div class="titre">
-                        <h3 role="heading" aria-level="3">Web</h3>
-                    </div>
-                    <div class="horaire">
-                        <span class="debut">8H00</span>
-                        <span class="fin">18H00</span>
-                    </div>
-                    <div class="overImage">
-                        <a href="" class="btn">Voir</a>
-                    </div>
-                </div>
-                <div class="cours">
-                    <div class="titre">
-                        <h3 role="heading" aria-level="3">Typographie</h3>
-                    </div>
-                    <div class="horaire">
-                        <span class="debut">10H30</span>
-                        <span class="fin">12H30</span>
-                    </div>
-                    <div class="overImage">
-                        <a href="" class="btn">Voir</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="planning">
-                <h2 role="heading" aria-level="2">Planning</h2>
-
-                <div class="groupe">
-                    <span class="jour">Lundi</span>
-
-                    <div class="day">
-                        <span class="number">1</span>
-
-                        <div class="overDay">
-                            <a href="" class="btn creer">
-                                Créer
-                            </a>
+                        <div class="overImage">
+                            <a href="" class="btn">Voir</a>
+                            <a href="" class="btn">Présences</a>
                         </div>
                     </div>
-                </div>
-                <div class="groupe">
-                    <span class="jour">Mardi</span>
 
-                    <div class="day">
-                        <span class="number">2</span>
+                </section>
 
-                        <div class="overDay">
-                            <a href="" class="btn creer">
-                                Créer
-                            </a>
+                <section class="mesCours">
+                    <h2 role="heading" aria-level="2">Mes cours</h2>
+
+                    <div class="cours">
+                        <div class="titre">
+                            <h3 role="heading" aria-level="3">Web</h3>
                         </div>
-                        <ol class="sceances">
-                            <li class="quatreH">
-                                <span>Web</span>
-
-                            </li>
-                            <li class="deuxH">Typographie</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="groupe">
-                    <span class="jour">Mercredi</span>
-
-                    <div class="day">
-                        <span class="number">3</span>
-
-                        <div class="overDay">
-                            <a href="" class="btn creer">
-                                Créer
-                            </a>
+                        <div class="horaire">
+                            <span class="debut">8H00</span>
+                            <span class="fin">18H00</span>
+                        </div>
+                        <div class="overImage">
+                            <a href="" class="btn">Voir</a>
                         </div>
                     </div>
-                </div>
-                <div class="groupe">
-                    <span class="jour">Jeudi</span>
-
-                    <div class="day">
-                        <span class="number">4</span>
-
-                        <div class="overDay">
-                            <a href="" class="btn creer">
-                                Créer
-                            </a>
+                    <div class="cours">
+                        <div class="titre">
+                            <h3 role="heading" aria-level="3">Typographie</h3>
+                        </div>
+                        <div class="horaire">
+                            <span class="debut">10H30</span>
+                            <span class="fin">12H30</span>
+                        </div>
+                        <div class="overImage">
+                            <a href="" class="btn">Voir</a>
                         </div>
                     </div>
-                </div>
-                <div class="groupe">
-                    <span class="jour">Vendredi</span>
+                </section>
+            </div>
+            <div class=" calendrier">
+                <section class="planning">
+                    <h2 role="heading" aria-level="2">Planning</h2>
 
-                    <div class="day">
-                        <span class="number">5</span>
+                    <div class="groupe">
+                        <span class="jour">Lundi</span>
 
-                        <div class="overDay">
-                            <a href="" class="btn creer">
-                                Créer
-                            </a>
+                        <div class="day">
+                            <span class="number">1</span>
+
+                            <div class="overDay">
+                                <a href="" class="btn creer">
+                                    Créer
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="groupe">
+                        <span class="jour">Mardi</span>
 
-            </section>
+                        <div class="day">
+                            <span class="number">2</span>
+
+                            <div class="overDay">
+                                <a href="" class="btn creer">
+                                    Créer
+                                </a>
+                            </div>
+                            <ol class="sceances">
+                                <li class="quatreH">
+                                    <span>Web</span>
+
+                                </li>
+                                <li class="deuxH">Typographie</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="groupe">
+                        <span class="jour">Mercredi</span>
+
+                        <div class="day">
+                            <span class="number">3</span>
+
+                            <div class="overDay">
+                                <a href="" class="btn creer">
+                                    Créer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="groupe">
+                        <span class="jour">Jeudi</span>
+
+                        <div class="day">
+                            <span class="number">4</span>
+
+                            <div class="overDay">
+                                <a href="" class="btn creer">
+                                    Créer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="groupe">
+                        <span class="jour">Vendredi</span>
+
+                        <div class="day">
+                            <span class="number">5</span>
+
+                            <div class="overDay">
+                                <a href="" class="btn creer">
+                                    Créer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
         </div>
-        <div class="wrapper right">
+        <div class=" right">
             <aside class="addContent">
                 <div class="wrapper">
                     <ol class="creation">
@@ -200,6 +203,7 @@
                 <div class="wrapper">
                     <div class="sceanceNext">
                         <h3 role="heading">Scéances à venir</h3>
+
                         <div class="sceance">
                             <span class="cours">Cours: Web</span>
                             <span class="date">Date: 20/12/2013</span>

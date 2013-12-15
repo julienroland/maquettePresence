@@ -33,6 +33,22 @@
   }
   /* END INDEX PAS CO */
   /* INDEX CO */
+  .news{
+    max-width: colParent(12 , 9);
+    margin-right: 0;
+    margin-left: auto;
+    width:100%;
+    &:after{
+      @include clear();
+    }
+  }
+  .calendrier{
+    max-width: colParent(12 , 9);
+    margin-right: 0;
+    &:after{
+      @include clear();
+    }
+  }
   .sceanceEnCours {
     @include cfl(6);
     &:after {
@@ -42,7 +58,7 @@
       text-align: left;
       height: 50px;
     }
-    .sceance{
+    .sceance {
       margin-left: 0;
     }
   }
@@ -51,7 +67,7 @@
     &:after {
       @include clear();
     }
-    .cours{
+    .cours {
       margin-left: 0;
     }
     h2 {
@@ -77,34 +93,33 @@
 }
 
 @media(min-width: 700px) {
-  .banner{
+  .banner {
     min-height: 250px;
   }
-  .container{
+  .container {
     margin-top: 0;
 
   }
   .nav {
     position: relative;
     @include box-shadow(transparent 0 0 0 0);
-    background-color: rgba($mc,0.4);
+    background-color: rgba($mc, 0.4);
     .menuLow {
       display: none;
     }
-    .wrapper{
-      background-color: rgba(white,0.05);
-      height: 50%!important;
-
+    .wrapper {
+      background-color: rgba(white, 0.05);
+      height: 50% !important;
 
     }
-    .menu{
+    .menu {
       @include cr(10);
       position: relative;
-      top:0;
+      top: 0;
       height: 50px;
       padding: 0;
       max-width: 600px;
-      li{
+      li {
         display: inline-block;
         @include cl-nm(2.4);
         font-size: 0.8em;
@@ -112,16 +127,16 @@
         height: 100%;
         margin-bottom: 0;
         text-align: center;
-        a{
+        a {
           height: 100%;
           box-sizing: border-box;
-          padding:0 $pd;
-          color:rgba(white,0.6);
+          padding: 0 $pd;
+          color: rgba(white, 0.6);
           padding-top: $pd/2;
         }
-        & + li{
+        & + li {
           @include cl-nm(2.4);
-          border-left: 1px solid rgba(white,0.5);
+          border-left: 1px solid rgba(white, 0.5);
         }
       }
     }
@@ -135,11 +150,21 @@
 }
 
 @media(min-width: 900px) {
-  .main{
-    .left{
+  .logo {
+    h1 {
+      .nom {
+        display: inline-block;
+      }
+      .prenom{
+       color:white;
+      }
+    }
+  }
+  .main {
+    .left {
       @include cl-nm(9);
     }
-    .right{
+    .right {
       @include cl-nm(3);
     }
   }
@@ -148,18 +173,21 @@
   }
   .mesCours {
     @include cl(8);
-    .cours{
+    .cours {
       @include cfl(6);
 
-      & + .cours{
+      & + .cours {
         @include cl(6);
       }
     }
   }
 
   .addContent {
+
     @include c(12);
+    max-width:colParent(12,3);
     min-height: 100%;
+    margin-left: 0;
     height: auto !important;
   }
   .planning {
@@ -169,8 +197,6 @@
     }
   }
 }
-
-
 
 @media (min-width: $mw) {
   .planning {
