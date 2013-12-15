@@ -481,7 +481,7 @@ display:block;
 
   background-color: $mc;
   color:white;
-  @include cl(3);
+  @include c(12);
   display: none;
   padding:1em;
   min-height: 100%;
@@ -513,12 +513,15 @@ display:block;
 }
 
 /* END INDEX CO*/
-
-/* BREADCRUMB */
 .main {
   background-color: white;
   padding-bottom: 3em;
+  &:after{
+    @include clear();
+  }
 }
+/* BREADCRUMB */
+
 
 .breadcrumbs {
   padding: 0 1em;

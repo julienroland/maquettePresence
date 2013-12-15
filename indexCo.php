@@ -59,7 +59,7 @@
                 <span>Accueil</span>
             </div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper left">
             <section class="sceanceEnCours">
                 <h2 role="heading" aria-level="2">Scéance en cours</h2>
 
@@ -108,31 +108,6 @@
                     </div>
                 </div>
             </section>
-            <aside class="addContent">
-                <div class="wrapper">
-                    <ol class="creation">
-                        <li><a href="">Créer un cours</a></li>
-                        <li><a href="">Créer une scéance</a></li>
-                        <li><a href="">Créer un élève</a></li>
-                        <li><a href="">Créer un groupe</a></li>
-                    </ol>
-                </div>
-                <div class="wrapper">
-                    <div class="sceanceNext">
-                        <h3 role="heading">Scéances à venir</h3>
-                        <div class="sceance">
-                            <span class="cours">Cours: Web</span>
-                            <span class="date">Date: 20/12/2013</span>
-                            <span class="heure">Heure: 8:00 - 18:00</span>
-                        </div>
-                        <div class="sceance">
-                            <span class="cours">Cours: Web</span>
-                            <span class="date">Date: 20/12/2013</span>
-                            <span class="heure">Heure: 8:00 - 18:00</span>
-                        </div>
-                    </div>
-                </div>
-            </aside>
 
             <section class="planning">
                 <h2 role="heading" aria-level="2">Planning</h2>
@@ -212,7 +187,33 @@
 
             </section>
         </div>
-
+        <div class="wrapper right">
+            <aside class="addContent">
+                <div class="wrapper">
+                    <ol class="creation">
+                        <li><a href="">Créer un cours</a></li>
+                        <li><a href="">Créer une scéance</a></li>
+                        <li><a href="">Créer un élève</a></li>
+                        <li><a href="">Créer un groupe</a></li>
+                    </ol>
+                </div>
+                <div class="wrapper">
+                    <div class="sceanceNext">
+                        <h3 role="heading">Scéances à venir</h3>
+                        <div class="sceance">
+                            <span class="cours">Cours: Web</span>
+                            <span class="date">Date: 20/12/2013</span>
+                            <span class="heure">Heure: 8:00 - 18:00</span>
+                        </div>
+                        <div class="sceance">
+                            <span class="cours">Cours: Web</span>
+                            <span class="date">Date: 20/12/2013</span>
+                            <span class="heure">Heure: 8:00 - 18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </section>
 
 </section>

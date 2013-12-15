@@ -972,11 +972,10 @@ body {
 .addContent {
   background-color: #5097bd;
   color: white;
-  width: 24%;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  float: left;
+  width: 100%;
+  margin: auto;
   display: block;
+  float: none;
   box-sizing: border-box;
   display: none;
   padding: 1em;
@@ -1011,11 +1010,17 @@ body {
       display: block; }
 
 /* END INDEX CO*/
-/* BREADCRUMB */
 .main {
   background-color: white;
   padding-bottom: 3em; }
+  .main:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
 
+/* BREADCRUMB */
 .breadcrumbs {
   padding: 0 1em;
   height: 40px;
@@ -1266,8 +1271,31 @@ body {
         clear: both;
         visibility: hidden; } }
 @media (min-width: 900px) {
+  .main .left {
+    width: 75%;
+    float: left;
+    display: block;
+    box-sizing: border-box; }
+    .main .left:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .main .right {
+    width: 25%;
+    float: left;
+    display: block;
+    box-sizing: border-box; }
+    .main .right:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
   .sceanceEnCours {
-    width: 29%;
+    width: 32.33333%;
     float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1282,7 +1310,7 @@ body {
       visibility: hidden; }
 
   .mesCours {
-    width: 44%;
+    width: 65.66667%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     float: left;
@@ -1294,13 +1322,39 @@ body {
       height: 0;
       clear: both;
       visibility: hidden; }
+    .mesCours .cours {
+      width: 49%;
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 1%; }
+      .mesCours .cours:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .mesCours .cours + .cours {
+        width: 49%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        box-sizing: border-box; }
+        .mesCours .cours + .cours:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
 
   .addContent {
-    width: 24%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    float: left;
+    width: 100%;
+    margin: auto;
     display: block;
+    float: none;
     box-sizing: border-box;
     min-height: 100%;
     height: auto !important; }
@@ -1336,46 +1390,4 @@ body {
         height: 0;
         clear: both;
         visibility: hidden; } }
-@media (min-width: 950px) {
-  .mesCours {
-    width: 44%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    float: left;
-    display: block;
-    box-sizing: border-box; }
-    .mesCours:after {
-      content: "";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-    .mesCours .cours {
-      width: 49%;
-      float: left;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      display: block;
-      box-sizing: border-box;
-      margin-bottom: 1%;
-      margin-top: 0; }
-      .mesCours .cours:after {
-        content: "";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden; }
-      .mesCours .cours + .cours {
-        width: 49%;
-        margin-left: 0.5%;
-        margin-right: 0.5%;
-        float: left;
-        display: block;
-        box-sizing: border-box; }
-        .mesCours .cours + .cours:after {
-          content: "";
-          display: block;
-          height: 0;
-          clear: both;
-          visibility: hidden; } }
 /* END MEDIA*/
