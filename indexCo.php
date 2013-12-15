@@ -113,13 +113,24 @@
                         <li><a href="">Créer un élève</a></li>
                         <li><a href="">Créer un groupe</a></li>
                     </ol>
+                </div>
+                <div class="wrapper">
                     <div class="sceanceNext">
                         <h3 role="heading">Scéances à venir</h3>
+                        <div class="sceance">
+                            <span class="cours">Cours: Web</span>
+                            <span class="date">Date: 20/12/2013</span>
+                            <span class="heure">Heure: 8:00 - 18:00</span>
+                        </div>
+                        <div class="sceance">
+                            <span class="cours">Cours: Web</span>
+                            <span class="date">Date: 20/12/2013</span>
+                            <span class="heure">Heure: 8:00 - 18:00</span>
+                        </div>
                     </div>
                 </div>
             </aside>
-        </div>
-        <div class="wrapper">
+
             <section class="planning">
                 <h2 role="heading" aria-level="2">Planning</h2>
 

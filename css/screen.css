@@ -555,13 +555,19 @@ body {
     box-sizing: border-box;
     margin-bottom: 1%;
     font-weight: bold;
-    max-width: 70px; }
+    max-width: 70px;
+    padding-top: 0.25em;
+    margin-bottom: 0;
+    text-align: center;
+    height: 50px; }
     .nav .accueil:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
+    .nav .accueil:hover, .nav .accueil:focus {
+      background-color: #3c7c9e; }
   .nav a, .nav ul {
     display: block;
     color: white;
@@ -936,7 +942,6 @@ body {
         height: 25%; }
 
 .addContent {
-  display: none;
   background-color: #5097bd;
   color: white;
   width: 24%;
@@ -945,6 +950,7 @@ body {
   float: left;
   display: block;
   box-sizing: border-box;
+  display: none;
   padding: 1em;
   min-height: 100%; }
   .addContent:after {
@@ -955,6 +961,26 @@ body {
     visibility: hidden; }
   .addContent a {
     color: white; }
+  .addContent h3 {
+    margin-top: 0.5em;
+    border-bottom: 0; }
+  .addContent .wrapper {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #f2f2f2; }
+    .addContent .wrapper:last-child {
+      border-bottom: 0; }
+  .addContent .sceance {
+    border: 1px solid #f2f2f2;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    box-sizing: border-box;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    border-radius: 0.5em; }
+    .addContent .sceance span {
+      display: block; }
 
 /* END INDEX CO*/
 /* BREADCRUMB */
@@ -1099,7 +1125,7 @@ body {
   .planning h2 {
     text-align: left; }
   .planning .groupe {
-    width: 50%;
+    width: 33.33333%;
     float: left;
     display: block;
     box-sizing: border-box; }
@@ -1111,6 +1137,76 @@ body {
       visibility: hidden; }
 
   /* END INDEX CO */ }
+@media (min-width: 700px) {
+  .nav .menuLow {
+    display: none; }
+  .nav .menu {
+    width: 82.33333%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    height: 50px;
+    padding: 0; }
+    .nav .menu:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .nav .menu li {
+      display: inline-block;
+      width: 19%;
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 1%;
+      font-size: 0.8em;
+      line-height: 1.1em;
+      height: 100%;
+      margin-bottom: 0;
+      text-align: center; }
+      .nav .menu li:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .nav .menu li a {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        padding-top: 0.25em; }
+      .nav .menu li + li {
+        width: 19%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        box-sizing: border-box; }
+        .nav .menu li + li:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+
+  .planning .groupe {
+    width: 25%;
+    float: left;
+    display: block;
+    box-sizing: border-box; }
+    .planning .groupe:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; } }
 @media (min-width: 900px) {
   .sceanceEnCours {
     width: 29%;
@@ -1155,5 +1251,73 @@ body {
       display: block;
       height: 0;
       clear: both;
-      visibility: hidden; } }
+      visibility: hidden; }
+
+  .planning {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .planning:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .planning .groupe {
+      width: 25%;
+      float: left;
+      display: block;
+      box-sizing: border-box; }
+      .planning .groupe:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; } }
+@media (min-width: 950px) {
+  .mesCours {
+    width: 44%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    box-sizing: border-box; }
+    .mesCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .mesCours .cours {
+      width: 49%;
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 1%;
+      margin-top: 0; }
+      .mesCours .cours:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .mesCours .cours + .cours {
+        width: 49%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        box-sizing: border-box; }
+        .mesCours .cours + .cours:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; } }
 /* END MEDIA*/

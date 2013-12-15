@@ -1,90 +1,151 @@
 @import "compass";
 @import "variables";
-@media(min-width: 500px){
+
+@media(min-width: 500px) {
   /* INDEX PAS CO */
-  .logo{
-    h1{
+  .logo {
+    h1 {
       font-size: 2.618em;
     }
   }
-  .intro{
+  .intro {
     display: block;
     margin: 1em auto;
   }
-  .connexion{
-    @include box-shadow(rgba(0,0,0,0.3) 0 0 10px 0px);
-    padding:1em;
-    input[type='submit']{
+  .connexion {
+    @include box-shadow(rgba(0, 0, 0, 0.3) 0 0 10px 0px);
+    padding: 1em;
+    input[type='submit'] {
       @include cr(6);
     }
-    .problemeCompte{
+    .problemeCompte {
       @include cfl(6);
       margin-top: 0.5em;
       text-align: left;
-      a{
-        display:inline-block;
-        width:100%;
+      a {
+        display: inline-block;
+        width: 100%;
       }
-      span{
+      span {
         display: none;
       }
     }
   }
   /* END INDEX PAS CO */
   /* INDEX CO */
-  .sceanceEnCours{
+  .sceanceEnCours {
     @include cfl(6);
-    &:after{
+    &:after {
       @include clear();
     }
-    h2{
+    h2 {
       text-align: left;
       height: 50px;
     }
   }
-  .mesCours{
+  .mesCours {
     @include cl(6);
-    &:after{
+    &:after {
       @include clear();
     }
-    h2{
+    h2 {
       height: 50px;
       text-align: left;
     }
   }
-  .planning{
-    h2{
+  .planning {
+    h2 {
       text-align: left;
     }
-    .groupe{
-      @include cl-nm(6);
+    .groupe {
+      @include cl-nm(4);
     }
-    .jour{
+    .jour {
       //@include cl-nm(6);
     }
-    .day{
+    .day {
       //@include cl-nm(6);
     }
   }
   /* END INDEX CO */
 }
-@media(min-width: 900px){
-  .sceanceEnCours{
+
+@media(min-width: 700px) {
+  .nav {
+    .menuLow {
+      display: none;
+    }
+    .menu{
+      @include cl(10);
+      position: relative;
+      top:0;
+      height: 50px;
+      padding: 0;
+      li{
+        display: inline-block;
+        @include cfl(2.4);
+        font-size: 0.8em;
+        line-height: 1.1em;
+        height: 100%;
+        margin-bottom: 0;
+        text-align: center;
+        a{
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0;
+          padding-top: $pd/2;
+        }
+        & + li{
+          @include cl(2.4);
+        }
+      }
+    }
+  }
+  .planning {
+    .groupe {
+      @include cl-nm(3);
+    }
+  }
+}
+
+@media(min-width: 900px) {
+  .sceanceEnCours {
     @include cfl(3.6);
   }
-  .mesCours{
+  .mesCours {
     @include cl(5.4);
   }
-  .addContent{
+
+  .addContent {
     @include cl(3);
     min-height: 100%;
-    height: auto!important;
+    height: auto !important;
   }
+  .planning {
+    @include cfl(9);
+    .groupe {
+      @include cl-nm(3);
+    }
+  }
+}
+
+@media(min-width: 950px) {
+  .mesCours {
+    @include cl(5.4);
+    .cours {
+      @include cfl(6);
+      margin-top: 0;
+      & + .cours {
+        @include cl(6);
+      }
+    }
+  }
+}
+
+@media (min-width: $mw) {
 
 }
-@media (min-width: $mw){
 
-}
-@media (max-width: $mw){
+@media (max-width: $mw) {
 
 }

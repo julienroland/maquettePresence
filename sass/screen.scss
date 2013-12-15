@@ -136,7 +136,14 @@ body {
   .accueil {
     @include cfl(2);
     font-weight: bold;
-    max-width: 70px
+    max-width: 70px;
+    padding-top: $pd/2;
+    margin-bottom: 0;
+    text-align:center ;
+    height: 50px;
+    &:hover,&:focus{
+      background-color: darken($mc,10%);
+    }
   }
 
   a, ul {
@@ -449,14 +456,36 @@ display:block;
   }
 }
 .addContent{
-  display: none;
+
   background-color: $mc;
   color:white;
   @include cl(3);
+  display: none;
   padding:1em;
   min-height: 100%;
   a{
     color:white;
+  }
+  h3{
+    margin-top: $pd;
+    border-bottom: 0;
+  }
+  .wrapper{
+    padding-bottom: 1em;
+    border-bottom: 1px solid $greyL;
+    &:last-child{
+      border-bottom: 0;
+    }
+  }
+  .sceance{
+    border: 1px solid $greyL;
+    padding:$pd;
+    margin:$pd 0 ;
+    box-sizing: border-box;
+    @include border-radius($pd);
+    span{
+      display: block;
+    }
   }
 
 }
