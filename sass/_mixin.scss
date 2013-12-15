@@ -8,15 +8,24 @@
     font-size: $fs;
     line-height: $lh;
     color: $tc;
-    height: 100%;
+    min-height: 100%;
+    height: auto!important;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+
   }
   html {
-    height: 100%;
+    min-height: 100%;
+    height: auto!important;
   }
+  .container{
+    position: relative;
+  }
+
   .main {
     min-height: 100%;
+    height: auto!important;
+
   }
   a {
     color: $mc;
@@ -77,7 +86,8 @@
 @mixin container {
   .container {
     @include c(12);
-    height: 100%;
+   // height: 100%;
+    min-height: 100%;
     margin-bottom: 0;
   }
 }
@@ -87,7 +97,7 @@
     max-width: $mw;
     //overflow:hidden;
     margin: auto;
-    height: 100%;
+    height: auto!important;
     box-sizing: border-box;
     @include c(12);
     //margin-bottom: 1em;
@@ -118,19 +128,19 @@
     margin-top: 0;
   }
   h1 {
-    font-size: $h1;
+    font-size: ($h1/2)*1.2;
     border-bottom: $bh;
   }
   h2 {
-    font-size: $h2;
+    font-size: ($h2/2)*1.2;
     border-bottom: $bh;
   }
   h3 {
-    font-size: $h3;
+    font-size: ($h3/2)*1.2;
     border-bottom: $bh;
   }
   h4 {
-    font-size: $h4;
+    font-size: ($h4/2)*1.2;
   }
   h5 {
     font-size: 1.2em;
@@ -141,34 +151,11 @@
   .logo {
     margin: 1em 0;
     border-bottom: 0;
-    font-size: 2.618em;
+    font-size: 1.8em;
     color: white;
   }
 
-  @media (max-width: $m1) {
-    h1 {
-      font-size: ($h1/2)*1.2;
-      border-bottom: $bh;
-    }
-    h2 {
-      font-size: ($h2/2)*1.2;
-      border-bottom: $bh;
-    }
-    h3 {
-      font-size: ($h3/2)*1.2;
-      border-bottom: $bh;
-    }
-    h4 {
-      font-size: ($h4/2)*1.2;
-    }
-    h5 {
-      font-size: 1.2em;
-    }
-    h6 {
-      font-size: 1.1em;
-    }
 
-  }
 }
 
 @mixin section() {
@@ -226,6 +213,15 @@
   //right:0;
   top: 0;
   bottom: 0;
+  margin: auto;
+}
+
+@mixin abs-top() {
+  position: absolute;
+  left: 0;
+  right:0;
+  top: 0;
+  //bottom: 0;
   margin: auto;
 }
 
@@ -346,7 +342,6 @@
     background-position: center;
     padding:2px;
     background-color: white;
-    border:1px solid $tc ;
     &:hover,&:focus{
       @include scale(1.3);
       background-color: white;

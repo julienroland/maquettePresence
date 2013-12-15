@@ -32,8 +32,8 @@
             <div class="wrapper">
                 <h1 class="section">Navigation principal du site</h1>
                 <a href="#main" class="reader">Passer au contenu directement</a>
-                <a class="accueil" href="">HEPL</a>
-                <a class="menuLow" href="#menu">Menu</a>
+                <a class="accueil" href="index.php">HEPL</a>
+                <a class="menuLow" href="#menu"><span>Menu</span></a>
                 <ul class="menu" id="menu">
                     <li><a href="">Gerer mes cours</a></li>
                     <li><a href="">Gerer mes scéances</a></li>
@@ -76,8 +76,7 @@
                 </div>
 
             </section>
-        </div>
-        <div class="wrapper">
+
             <section class="mesCours">
                 <h2 role="heading" aria-level="2">Mes cours</h2>
 
@@ -91,7 +90,6 @@
                     </div>
                     <div class="overImage">
                         <a href="" class="btn">Voir</a>
-                        <a href="" class="btn">Présences</a>
                     </div>
                 </div>
                 <div class="cours">
@@ -102,38 +100,101 @@
                         <span class="debut">10H30</span>
                         <span class="fin">12H30</span>
                     </div>
+                    <div class="overImage">
+                        <a href="" class="btn">Voir</a>
+                    </div>
                 </div>
             </section>
+            <aside class="addContent">
+                <div class="wrapper">
+                    <ol class="creation">
+                        <li><a href="">Créer un cours</a></li>
+                        <li><a href="">Créer une scéance</a></li>
+                        <li><a href="">Créer un élève</a></li>
+                        <li><a href="">Créer un groupe</a></li>
+                    </ol>
+                    <div class="sceanceNext">
+                        <h3 role="heading">Scéances à venir</h3>
+                    </div>
+                </div>
+            </aside>
         </div>
         <div class="wrapper">
             <section class="planning">
                 <h2 role="heading" aria-level="2">Planning</h2>
-                <span class="jour">Lundi</span>
-                <div class="day">
-                    <span class="number">1</span>
-                    <div class="overDay">
-                        <a href="" class="btn creer">
-                            Créer
-                        </a>
+
+                <div class="groupe">
+                    <span class="jour">Lundi</span>
+
+                    <div class="day">
+                        <span class="number">1</span>
+
+                        <div class="overDay">
+                            <a href="" class="btn creer">
+                                Créer
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <span class="jour">Mardi</span>
-                <div class="day">
-                    <span class="number">1</span>
-                    <ol class="sceances">
-                        <li class="quatreH">
-                            <span>Web</span>
-                             <div class="overSceance">
-                                 <a href="" class="btn">Modifier</a>
-                                 <a href="" class="btn">Supprimer</a>
-                             </div>
-                        </li>
-                        <li class="deuxH">Typographie</li>
-                    </ol>
+                <div class="groupe">
+                    <span class="jour">Mardi</span>
+
+                    <div class="day">
+                        <span class="number">2</span>
+
+                        <div class="overDay">
+                            <a href="" class="btn creer">
+                                Créer
+                            </a>
+                        </div>
+                        <ol class="sceances">
+                            <li class="quatreH">
+                                <span>Web</span>
+
+                            </li>
+                            <li class="deuxH">Typographie</li>
+                        </ol>
+                    </div>
                 </div>
-                <span class="jour">Mercredi</span>
-                <span class="jour">Jeudi</span>
-                <span class="jour">Vendredi</span>
+                <div class="groupe">
+                    <span class="jour">Mercredi</span>
+
+                    <div class="day">
+                        <span class="number">3</span>
+
+                        <div class="overDay">
+                            <a href="" class="btn creer">
+                                Créer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="groupe">
+                    <span class="jour">Jeudi</span>
+
+                    <div class="day">
+                        <span class="number">4</span>
+
+                        <div class="overDay">
+                            <a href="" class="btn creer">
+                                Créer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="groupe">
+                    <span class="jour">Vendredi</span>
+
+                    <div class="day">
+                        <span class="number">5</span>
+
+                        <div class="overDay">
+                            <a href="" class="btn creer">
+                                Créer
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </section>
         </div>
@@ -142,8 +203,11 @@
 
 </section>
 
-<footer role="footer">
-
+<footer role="footer" class="foot">
+    <div class="wrapper">
+        <span class="copyright">Site crée pour La Haute Ecole de La Province de Liège par <a
+                href="http://julien-roland.be">Julien&nbsp;Roland</a> en 2013 - 2014</span>
+    </div>
 </footer>
 
 </body>

@@ -31,8 +31,57 @@
     }
   }
   /* END INDEX PAS CO */
+  /* INDEX CO */
+  .sceanceEnCours{
+    @include cfl(6);
+    &:after{
+      @include clear();
+    }
+    h2{
+      text-align: left;
+      height: 50px;
+    }
+  }
+  .mesCours{
+    @include cl(6);
+    &:after{
+      @include clear();
+    }
+    h2{
+      height: 50px;
+      text-align: left;
+    }
+  }
+  .planning{
+    h2{
+      text-align: left;
+    }
+    .groupe{
+      @include cl-nm(6);
+    }
+    .jour{
+      //@include cl-nm(6);
+    }
+    .day{
+      //@include cl-nm(6);
+    }
+  }
+  /* END INDEX CO */
 }
+@media(min-width: 900px){
+  .sceanceEnCours{
+    @include cfl(3.6);
+  }
+  .mesCours{
+    @include cl(5.4);
+  }
+  .addContent{
+    @include cl(3);
+    min-height: 100%;
+    height: auto!important;
+  }
 
+}
 @media (min-width: $mw){
 
 }

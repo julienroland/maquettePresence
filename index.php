@@ -23,7 +23,7 @@
             <section class="container ">
                 <h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
 
-                <section role="main" class="main wrapper" id="main">
+                <section role="main" class="main wrapper one" id="main">
                     <h1 class="section">Contenu principal du site</h1>
                     <div class="logo">
                        <h1><a href=""><abbr title="Haute Ecole de La Province de Liège">HEPL</abbr></a></h1>

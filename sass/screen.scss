@@ -25,7 +25,14 @@ body {
   background-image: image-url('framework/background/background.jpg');
   background-size: cover;
   background-attachment: fixed;
-
+  height: auto!important;
+  .container {
+    margin-top: 50px;
+    height: auto!important;
+  }
+  .banner {
+    height: 30%;
+  }
 }
 
 /*INDEX PAS CO*/
@@ -46,11 +53,15 @@ body {
   }
 }
 
+.main.one {
+  background-color: transparent;
+}
 
 .intro {
   font-size: 1.618em;
   color: white;
   display: none;
+  font-weight: bold;
   width: 80%;
   margin: auto;
   text-align: center;
@@ -107,15 +118,25 @@ body {
 
 .nav {
   height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  right: 0;
   background-color: $mc;
   color: white;
   font-size: 1.5em;
   font-family: $ff2;
   padding: 0 $pd;
   vertical-align: middle;
+  @include box-shadow(black 0 0 4px 0);
+  .wrapper {
+    position: relative;
+  }
   .accueil {
     @include cfl(2);
     font-weight: bold;
+    max-width: 70px
   }
 
   a, ul {
@@ -125,8 +146,13 @@ body {
   }
   .menuLow {
     float: right;
+    @include abs-top();
+    left: 100px;
     padding-right: 36px;
-    position: relative;
+    display: block;
+    span {
+      float: right;
+    }
     //padding-right: 16px;
     &:after {
       @include abs-right();
@@ -143,8 +169,23 @@ body {
   .menu {
     @include cl(10);
     display: none;
+    width: 100%;
+    padding: 1em;
+    z-index: 90;
+    @include abs-top();
+    top: 50px;
+    background-color: $mc;
     li {
       display: inline-block;
+      width: 100%;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+      a {
+        padding: $pd;
+        &:hover, &:focus {
+          background-color: darken($mc, 10%);
+        }
+      }
     }
   }
 
@@ -170,19 +211,19 @@ body {
 
       .titre {
         opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease, 0.3s);
+        @include single-transition(opacity, 0.3s, ease);
       }
       .number {
         opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease, 0.3s);
+        @include single-transition(opacity, 0.3s, ease);
       }
       .text {
         opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease, 0.3s);
+        @include single-transition(opacity, 0.3s, ease);
       }
       .overImage {
         opacity: 1;
-        @include single-transition(opacity, 0.3s, ease, 0.3s);
+        @include single-transition(opacity, 0.3s, ease);
       }
     }
     .overImage {
@@ -191,6 +232,7 @@ body {
       @include abs();
       text-align: center;
       box-sizing: border-box;
+      z-index: 10;
       a {
         margin-top: 40%;
         @include cl(5);
@@ -244,7 +286,7 @@ body {
     background-color: white;
     margin-top: 1em;
     position: relative;
-    max-width: 200px;
+    width: 200px;
     height: 100px;
     box-sizing: border-box;
     border: 1px solid $mc;
@@ -308,9 +350,11 @@ body {
       height: 100px;
       @include abs();
       font-family: $ff2;
+      z-index: 10;
       a {
         margin-top: 30px;
-        margin-left: 20px;
+        margin-left: 70px;
+
       }
     }
   }
@@ -320,29 +364,33 @@ body {
   margin-top: 1em;
   padding: 0 1em;
   margin-bottom: 2em;
-  .jour {
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-    font-size: 1.272em;
-    text-align: center;
+  position: relative;
+  &:after {
+    @include clear();
   }
+.jour {
+display:block;
+  width: 100%;
+  margin-top: 1em;
+  font-size: 1.272em;
+  text-align: center;
+}
   .day {
     @include c(12);
     height: 150px;
     width: 150px;
     border: 1px solid $tc;
     position: relative;
-    &:hover,&:focus{
-      .overDay{
+    &:hover, &:focus {
+      .overDay {
         opacity: 1;
         @include single-transition(opacity 0.3s ease 0.3s);
       }
     }
-    .overDay{
+    .overDay {
       opacity: 0;
       text-align: center;
-      a{
+      a {
         display: inline-block;
       }
     }
@@ -358,40 +406,59 @@ body {
       color: white;
       height: 100%;
       opacity: 0.7;
+      pointer-events: none;
       @include abs-bot();
-      &:hover,&:focus{
-      opacity: 1;
+      &:hover, &:focus {
+        opacity: 1;
       }
       li {
         padding: 0 $pd;
+        pointer-events: auto;
         background-color: $mc;
         border-bottom: 1px solid white;
         text-align: center;
         font-weight: bold;
-          .overSeance{
-            color:white;
-          }
+        @include single-transition(all, 0.2s, ease);
+        .overSeance {
+          color: white;
+        }
+        &:hover, &:focus {
+          //  @include scale(1.1);
+          @include single-transition(all, 0.2s, ease);
+        }
       }
-      .quatreH{
+      .quatreH {
         height: 50%;
       }
-      .deuxH{
+      .deuxH {
         height: 25%;
       }
-      .troisH{
+      .troisH {
 
       }
-      .sixH{
+      .sixH {
 
       }
-      .septH{
+      .septH {
 
       }
-      .huitH{
+      .huitH {
 
       }
     }
   }
+}
+.addContent{
+  display: none;
+  background-color: $mc;
+  color:white;
+  @include cl(3);
+  padding:1em;
+  min-height: 100%;
+  a{
+    color:white;
+  }
+
 }
 
 /* END INDEX CO*/
@@ -416,6 +483,26 @@ body {
 }
 
 /* END BREADCRUMB */
+
+/* FOOTER */
+.foot {
+
+  background-color: $mc;
+  min-height: 30%;
+  position: relative;
+  .copyright {
+    padding: 0 1em;
+    @include abs-bot();
+    text-align: center;
+    color: white;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* END FOOTER */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/
