@@ -150,6 +150,7 @@
     @include cl(8);
     .cours{
       @include cfl(6);
+
       & + .cours{
         @include cl(6);
       }
@@ -162,7 +163,7 @@
     height: auto !important;
   }
   .planning {
-    @include cfl(9);
+    @include cfl(12);
     .groupe {
       @include cl-nm(3);
     }
@@ -172,7 +173,12 @@
 
 
 @media (min-width: $mw) {
-
+  .planning {
+    @include cfl(12);
+    .groupe {
+      @include cl-nm(2.4);
+    }
+  }
 }
 
 @media (max-width: $mw) {

@@ -310,7 +310,7 @@ body {
     background-color: white;
     margin-top: 1em;
     position: relative;
-    width: 200px;
+    max-width: 250px;
     height: 100px;
     box-sizing: border-box;
     border: 1px solid $mc;
@@ -349,7 +349,7 @@ body {
       @include cl-nm(3);
       height: 100%;
       background-color: $mc;
-      padding: 0 0.5em;
+      padding: 0 5px;
       font-family: $ff2;
       color: white;
       background-color: $mc;
@@ -377,7 +377,7 @@ body {
       z-index: 10;
       a {
         margin-top: 30px;
-        margin-left: 70px;
+        margin-left: 33%;
 
       }
     }

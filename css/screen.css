@@ -782,7 +782,7 @@ body {
     background-color: white;
     margin-top: 1em;
     position: relative;
-    width: 200px;
+    max-width: 250px;
     height: 100px;
     box-sizing: border-box;
     border: 1px solid #5097bd; }
@@ -843,7 +843,7 @@ body {
       box-sizing: border-box;
       height: 100%;
       background-color: #5097bd;
-      padding: 0 0.5em;
+      padding: 0 5px;
       font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
       color: white;
       background-color: #5097bd; }
@@ -875,7 +875,7 @@ body {
       z-index: 10; }
       .mesCours .cours .overImage a {
         margin-top: 30px;
-        margin-left: 70px; }
+        margin-left: 33%; }
 
 .planning {
   margin-top: 1em;
@@ -1366,7 +1366,7 @@ body {
       visibility: hidden; }
 
   .planning {
-    width: 74%;
+    width: 99%;
     float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1381,6 +1381,32 @@ body {
       visibility: hidden; }
     .planning .groupe {
       width: 25%;
+      float: left;
+      display: block;
+      box-sizing: border-box; }
+      .planning .groupe:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; } }
+@media (min-width: 1200px) {
+  .planning {
+    width: 99%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .planning:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .planning .groupe {
+      width: 20%;
       float: left;
       display: block;
       box-sizing: border-box; }
