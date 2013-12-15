@@ -558,14 +558,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   right: 0;
   background-color: #5097bd;
   color: white;
   font-size: 1.5em;
   font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
   padding: 0 0.5em;
-  vertical-align: middle;
   -webkit-box-shadow: black 0 0 4px 0;
   -moz-box-shadow: black 0 0 4px 0;
   box-shadow: black 0 0 4px 0; }
@@ -929,10 +928,14 @@ body {
       display: inline-block;
       text-align: center;
       width: 100%;
-      margin-top: 10%; }
+      margin-top: 10%;
+      position: relative;
+      z-index: 2; }
     .planning .day .sceances {
       color: white;
+      position: relative;
       height: 100%;
+      z-index: 1;
       opacity: 0.7;
       pointer-events: none;
       position: absolute;
@@ -945,16 +948,17 @@ body {
       .planning .day .sceances li {
         padding: 0 0.5em;
         pointer-events: auto;
-        background-color: #5097bd;
+        background-color: #bfbfbf;
         border-bottom: 1px solid white;
         text-align: center;
         font-weight: bold;
+        color: #111111;
         -webkit-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
         -o-transition: all 0.2s ease;
         transition: all 0.2s ease; }
         .planning .day .sceances li .overSeance {
-          color: white; }
+          color: #111111; }
         .planning .day .sceances li:hover, .planning .day .sceances li:focus {
           -webkit-transition: all 0.2s ease;
           -moz-transition: all 0.2s ease;
@@ -1122,6 +1126,8 @@ body {
     .sceanceEnCours h2 {
       text-align: left;
       height: 50px; }
+    .sceanceEnCours .sceance {
+      margin-left: 0; }
 
   .mesCours {
     width: 49%;
@@ -1142,6 +1148,8 @@ body {
       height: 0;
       clear: both;
       visibility: hidden; }
+    .mesCours .cours {
+      margin-left: 0; }
     .mesCours h2 {
       height: 50px;
       text-align: left; }
@@ -1176,6 +1184,9 @@ body {
     background-color: rgba(80, 151, 189, 0.4); }
     .nav .menuLow {
       display: none; }
+    .nav .wrapper {
+      background-color: rgba(255, 255, 255, 0.05);
+      height: 50% !important; }
     .nav .menu {
       width: 82.33333%;
       margin-left: 0.5%;
@@ -1195,13 +1206,10 @@ body {
         visibility: hidden; }
       .nav .menu li {
         display: inline-block;
-        width: 19%;
+        width: 20%;
         float: left;
-        margin-left: 0.5%;
-        margin-right: 0.5%;
         display: block;
         box-sizing: border-box;
-        margin-bottom: 1%;
         font-size: 0.8em;
         line-height: 1.1em;
         height: 100%;
@@ -1216,16 +1224,15 @@ body {
         .nav .menu li a {
           height: 100%;
           box-sizing: border-box;
-          padding: 0;
-          color: rgba(255, 255, 255, 0.8);
+          padding: 0 0.5em;
+          color: rgba(255, 255, 255, 0.6);
           padding-top: 0.25em; }
         .nav .menu li + li {
-          width: 19%;
-          margin-left: 0.5%;
-          margin-right: 0.5%;
+          width: 20%;
           float: left;
           display: block;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          border-left: 1px solid rgba(255, 255, 255, 0.5); }
           .nav .menu li + li:after {
             content: "";
             display: block;
@@ -1234,11 +1241,13 @@ body {
             visibility: hidden; }
 
   .planning {
-    width: 100%;
-    margin: auto;
+    width: 99%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
     display: block;
-    float: none;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    margin-bottom: 1%; }
     .planning:after {
       content: "";
       display: block;

@@ -139,14 +139,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   right: 0;
   background-color: $mc;
   color: white;
   font-size: 1.5em;
   font-family: $ff2;
   padding: 0 $pd;
-  vertical-align: middle;
   @include box-shadow(black 0 0 4px 0);
   .wrapper {
     position: relative;
@@ -288,6 +287,7 @@ body {
       margin: auto;
       text-align: center;
       font-weight: bold;
+
     }
     .text {
       text-align: center;
@@ -425,10 +425,14 @@ display:block;
       text-align: center;
       width: 100%;
       margin-top: 10%;
+      position: relative;
+      z-index: 2;
     }
     .sceances {
       color: white;
+      position: relative;
       height: 100%;
+      z-index: 1;
       opacity: 0.7;
       pointer-events: none;
       @include abs-bot();
@@ -438,13 +442,14 @@ display:block;
       li {
         padding: 0 $pd;
         pointer-events: auto;
-        background-color: $mc;
+        background-color: $greyL2;
         border-bottom: 1px solid white;
         text-align: center;
         font-weight: bold;
+        color:$tc;
         @include single-transition(all, 0.2s, ease);
         .overSeance {
-          color: white;
+          color: $tc;
         }
         &:hover, &:focus {
           //  @include scale(1.1);

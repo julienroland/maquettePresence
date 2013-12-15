@@ -42,11 +42,17 @@
       text-align: left;
       height: 50px;
     }
+    .sceance{
+      margin-left: 0;
+    }
   }
   .mesCours {
     @include cl(6);
     &:after {
       @include clear();
+    }
+    .cours{
+      margin-left: 0;
     }
     h2 {
       height: 50px;
@@ -85,6 +91,12 @@
     .menuLow {
       display: none;
     }
+    .wrapper{
+      background-color: rgba(white,0.05);
+      height: 50%!important;
+
+
+    }
     .menu{
       @include cr(10);
       position: relative;
@@ -94,7 +106,7 @@
       max-width: 600px;
       li{
         display: inline-block;
-        @include cfl(2.4);
+        @include cl-nm(2.4);
         font-size: 0.8em;
         line-height: 1.1em;
         height: 100%;
@@ -103,18 +115,19 @@
         a{
           height: 100%;
           box-sizing: border-box;
-          padding: 0;
-          color:rgba(white,0.8);
+          padding:0 $pd;
+          color:rgba(white,0.6);
           padding-top: $pd/2;
         }
         & + li{
-          @include cl(2.4);
+          @include cl-nm(2.4);
+          border-left: 1px solid rgba(white,0.5);
         }
       }
     }
   }
   .planning {
-    @include c(12);
+    @include cfl(12);
     .groupe {
       @include cl-nm(3);
     }
