@@ -71,16 +71,24 @@
 }
 
 @media(min-width: 700px) {
+  .container{
+    margin-top: 0;
+
+  }
   .nav {
+    position: relative;
+    @include box-shadow(transparent 0 0 0 0);
+    background-color: rgba($mc,0.4);
     .menuLow {
       display: none;
     }
     .menu{
-      @include cl(10);
+      @include cr(10);
       position: relative;
       top:0;
       height: 50px;
       padding: 0;
+      max-width: 600px;
       li{
         display: inline-block;
         @include cfl(2.4);
@@ -93,6 +101,7 @@
           height: 100%;
           box-sizing: border-box;
           padding: 0;
+          color:rgba(white,0.8);
           padding-top: $pd/2;
         }
         & + li{

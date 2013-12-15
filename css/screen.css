@@ -452,11 +452,13 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: auto !important; }
-  body .container {
-    margin-top: 50px;
-    height: auto !important; }
-  body .banner {
-    height: 30%; }
+
+.container {
+  margin-top: 50px;
+  height: auto !important; }
+
+.banner {
+  height: 30%; }
 
 /*INDEX PAS CO*/
 .logo {
@@ -612,8 +614,7 @@ body {
     right: 0;
     top: 0;
     margin: auto;
-    top: 50px;
-    background-color: #5097bd; }
+    top: 50px; }
     .nav .menu:after {
       content: "";
       display: block;
@@ -1138,63 +1139,73 @@ body {
 
   /* END INDEX CO */ }
 @media (min-width: 700px) {
-  .nav .menuLow {
-    display: none; }
-  .nav .menu {
-    width: 82.33333%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    float: left;
-    display: block;
-    box-sizing: border-box;
+  .container {
+    margin-top: 0; }
+
+  .nav {
     position: relative;
-    top: 0;
-    height: 50px;
-    padding: 0; }
-    .nav .menu:after {
-      content: "";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-    .nav .menu li {
-      display: inline-block;
-      width: 19%;
-      float: left;
+    -webkit-box-shadow: transparent 0 0 0 0;
+    -moz-box-shadow: transparent 0 0 0 0;
+    box-shadow: transparent 0 0 0 0;
+    background-color: rgba(80, 151, 189, 0.4); }
+    .nav .menuLow {
+      display: none; }
+    .nav .menu {
+      width: 82.33333%;
       margin-left: 0.5%;
-      margin-right: 0.5%;
+      float: right;
       display: block;
       box-sizing: border-box;
-      margin-bottom: 1%;
-      font-size: 0.8em;
-      line-height: 1.1em;
-      height: 100%;
-      margin-bottom: 0;
-      text-align: center; }
-      .nav .menu li:after {
+      position: relative;
+      top: 0;
+      height: 50px;
+      padding: 0;
+      max-width: 600px; }
+      .nav .menu:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-      .nav .menu li a {
-        height: 100%;
-        box-sizing: border-box;
-        padding: 0;
-        padding-top: 0.25em; }
-      .nav .menu li + li {
+      .nav .menu li {
+        display: inline-block;
         width: 19%;
+        float: left;
         margin-left: 0.5%;
         margin-right: 0.5%;
-        float: left;
         display: block;
-        box-sizing: border-box; }
-        .nav .menu li + li:after {
+        box-sizing: border-box;
+        margin-bottom: 1%;
+        font-size: 0.8em;
+        line-height: 1.1em;
+        height: 100%;
+        margin-bottom: 0;
+        text-align: center; }
+        .nav .menu li:after {
           content: "";
           display: block;
           height: 0;
           clear: both;
           visibility: hidden; }
+        .nav .menu li a {
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0;
+          color: rgba(255, 255, 255, 0.8);
+          padding-top: 0.25em; }
+        .nav .menu li + li {
+          width: 19%;
+          margin-left: 0.5%;
+          margin-right: 0.5%;
+          float: left;
+          display: block;
+          box-sizing: border-box; }
+          .nav .menu li + li:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden; }
 
   .planning .groupe {
     width: 25%;
