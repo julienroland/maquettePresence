@@ -34,17 +34,23 @@
   /* END INDEX PAS CO */
   /* INDEX CO */
   .news{
-    max-width: colParent(12 , 9);
-    margin-right: 0;
-    margin-left: auto;
+
+    background-color: white;
     width:100%;
+    padding-bottom: 3em;
+    .wrapper{
+      max-width: colParent(12 , 9);
+      margin: auto;
+    }
     &:after{
       @include clear();
     }
   }
   .calendrier{
+  .wrapper{
     max-width: colParent(12 , 9);
-    margin-right: 0;
+    margin: auto;
+  }
     &:after{
       @include clear();
     }
@@ -76,6 +82,7 @@
     }
   }
   .planning {
+
     h2 {
       text-align: left;
     }
@@ -107,11 +114,7 @@
     .menuLow {
       display: none;
     }
-    .wrapper {
-      background-color: rgba(white, 0.05);
-      height: 50% !important;
 
-    }
     .menu {
       @include cr(10);
       position: relative;
@@ -143,6 +146,7 @@
   }
   .planning {
     @include cfl(12);
+
     .groupe {
       @include cl-nm(3);
     }
@@ -189,6 +193,21 @@
     min-height: 100%;
     margin-left: 0;
     height: auto !important;
+    .creation{
+
+      li{
+        margin-bottom:$pd;
+        a{
+          text-decoration: none;
+          font-weight: bold;
+          display: block;
+
+        }
+      }
+    }
+    .wrapper{
+      margin-bottom: 1em;
+    }
   }
   .planning {
     @include cfl(12);

@@ -261,15 +261,16 @@ body {
       z-index: 10;
       a {
         margin-top: 40%;
-        @include cl(5);
-        @include offsetL(0.5);
+        @include cl-nm(5);
         height: 32px;
         font-family: $ff2;
+        margin-left: 13px;
+
         & + a {
           margin-top: 40%;
-          @include cl(5);
-          @include offsetL(1.5);
-          @include offsetR(0.5);
+          @include cl-nm(5);
+          margin-left: 5px;
+
         }
 
       }
@@ -277,6 +278,7 @@ body {
     .titre {
       background-color: $mc;
       height: 40px;
+      @include box-shadow(rgba(black,0.2) 0 2px 2px 1px);
       h3 {
         border-bottom: 0;
         margin: 0 auto;
@@ -311,7 +313,7 @@ body {
   .cours {
     @include c(12);
     background-color: white;
-    margin-top: 1em;
+    //margin-top: 1em;
     position: relative;
     max-width: 250px;
     height: 100px;
@@ -418,6 +420,7 @@ body {
     width: 150px;
     border: 1px solid $tc;
     position: relative;
+    background-color: white;
     &:hover, &:focus {
       .overDay {
         opacity: 1;
@@ -426,6 +429,8 @@ body {
     }
     .overDay {
       opacity: 0;
+      position: relative;
+      z-index: 10;
       text-align: center;
       a {
         display: inline-block;
@@ -437,6 +442,7 @@ body {
       display: inline-block;
       text-align: center;
       width: 100%;
+      pointer-events:none;
       margin-top: 10%;
       position: relative;
       z-index: 2;
@@ -446,7 +452,7 @@ body {
       position: relative;
       height: 100%;
       z-index: 1;
-      opacity: 0.7;
+      opacity: 1;
       pointer-events: none;
       @include abs-bot();
       &:hover, &:focus {
@@ -460,13 +466,16 @@ body {
         text-align: center;
         font-weight: bold;
         color: $tc;
+        cursor:pointer;
         @include single-transition(all, 0.2s, ease);
         .overSeance {
           color: $tc;
         }
         &:hover, &:focus {
-          //  @include scale(1.1);
+            @include scale(1.1);
           @include single-transition(all, 0.2s, ease);
+          border-bottom: 0;
+          @include box-shadow(rgba(black,0.3) 0 0 4px 0);
         }
       }
       .quatreH {
@@ -529,9 +538,10 @@ body {
 /* END INDEX CO*/
 .main {
   background-color: white;
-  padding-bottom: 3em;
   &:after {
     @include clear();
+  }
+  .title{
   }
 }
 .right{
@@ -558,13 +568,16 @@ body {
 .foot {
 
   background-color: $mc;
-  min-height: 30%;
+  min-height: 150px;
   position: relative;
+  height: auto;
+  display: block;
   .copyright {
     padding: 0 1em;
     @include abs-bot();
     text-align: center;
     color: white;
+    bottom:10px;
     a {
       color: white;
       text-decoration: underline;

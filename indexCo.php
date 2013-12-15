@@ -26,43 +26,44 @@
 <![endif]-->
 <h1 class="section" role="heading" aria-level="1">Page d'accueil du site e-commerce etude et vie</h1>
 <section class="container ">
-    <h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
-    <section class="banner" role="banner">
-        <nav role="navigation" class="nav">
-            <div class="wrapper">
-                <h1 class="section">Navigation principal du site</h1>
-                <a href="#main" class="reader">Passer au contenu directement</a>
-                <a class="accueil" href="index.php">HEPL</a>
-                <a class="menuLow" href="#menu"><span>Menu</span></a>
-                <ul class="menu" id="menu">
-                    <li><a href="">Gerer mes cours</a></li>
-                    <li><a href="">Gerer mes scéances</a></li>
-                    <li><a href="">Gerer des élèves</a></li>
-                    <li><a href="">Gerer des groupes</a></li>
-                    <li><a href="">Configuration</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="logo">
-            <h1 role="heading" aria-level="1"><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a>
-            </h1>
+<h1 class="section" role="heading" aria-level="1">Contenu de la page</h1>
+<section class="banner" role="banner">
+    <nav role="navigation" class="nav">
+        <div class="wrapper">
+            <h1 class="section">Navigation principal du site</h1>
+            <a href="#main" class="reader">Passer au contenu directement</a>
+            <a class="accueil" href="index.php">HEPL</a>
+            <a class="menuLow" href="#menu"><span>Menu</span></a>
+            <ul class="menu" id="menu">
+                <li><a href="">Gerer mes cours</a></li>
+                <li><a href="">Gerer mes scéances</a></li>
+                <li><a href="">Gerer des élèves</a></li>
+                <li><a href="">Gerer des groupes</a></li>
+                <li><a href="">Configuration</a></li>
+            </ul>
         </div>
-        <div class="deco">
-            <a href="">Déconnecter</a>
-        </div>
-    </section>
-    <section role="main" class="main" id="main">
-        <h1 class="section">Contenu principal du site</h1>
+    </nav>
+    <div class="logo">
+        <h1 role="heading" aria-level="1"><a class="prenom" href="">DOMINIQUE</a> <a class="nom" href="">VILAIN</a>
+        </h1>
+    </div>
+    <div class="deco">
+        <a href="">Déconnecter</a>
+    </div>
+</section>
+<section role="main" class="main" id="main">
+    <h1 class="section">Contenu principal du site</h1>
 
-        <div class="breadcrumbs">
-            <div class="wrapper">
-                <span>Accueil</span>
-            </div>
+    <div class="breadcrumbs">
+        <div class="wrapper">
+            <span>Accueil</span>
         </div>
-        <div class=" left">
-            <div class=" news">
+    </div>
+    <div class=" left">
+        <div class=" news">
+            <div class="wrapper">
                 <section class="sceanceEnCours">
-                    <h2 role="heading" aria-level="2">Scéance en cours</h2>
+                    <h2 role="heading" aria-level="2" class="title">Scéance en cours</h2>
 
                     <div class="sceance">
                         <div class="titre">
@@ -82,8 +83,20 @@
                 </section>
 
                 <section class="mesCours">
-                    <h2 role="heading" aria-level="2">Mes cours</h2>
+                    <h2 role="heading" aria-level="2" class="title">Mes cours</h2>
 
+                    <div class="cours">
+                        <div class="titre">
+                            <h3 role="heading" aria-level="3">Web</h3>
+                        </div>
+                        <div class="horaire">
+                            <span class="debut">8H00</span>
+                            <span class="fin">18H00</span>
+                        </div>
+                        <div class="overImage">
+                            <a href="" class="btn">Voir</a>
+                        </div>
+                    </div>
                     <div class="cours">
                         <div class="titre">
                             <h3 role="heading" aria-level="3">Web</h3>
@@ -110,9 +123,11 @@
                     </div>
                 </section>
             </div>
-            <div class=" calendrier">
+        </div>
+        <div class=" calendrier">
+            <div class="wrapper">
                 <section class="planning">
-                    <h2 role="heading" aria-level="2">Planning</h2>
+                    <h2 class="title" role="heading" aria-level="2">Planning</h2>
 
                     <div class="groupe">
                         <span class="jour">Lundi</span>
@@ -121,7 +136,7 @@
                             <span class="number">1</span>
 
                             <div class="overDay">
-                                <a href="" class="btn creer">
+                                <a href="" class="creer">
                                     Créer
                                 </a>
                             </div>
@@ -134,7 +149,7 @@
                             <span class="number">2</span>
 
                             <div class="overDay">
-                                <a href="" class="btn creer">
+                                <a href="" class=" creer">
                                     Créer
                                 </a>
                             </div>
@@ -154,7 +169,7 @@
                             <span class="number">3</span>
 
                             <div class="overDay">
-                                <a href="" class="btn creer">
+                                <a href="" class=" creer">
                                     Créer
                                 </a>
                             </div>
@@ -167,7 +182,7 @@
                             <span class="number">4</span>
 
                             <div class="overDay">
-                                <a href="" class="btn creer">
+                                <a href="" class=" creer">
                                     Créer
                                 </a>
                             </div>
@@ -180,7 +195,7 @@
                             <span class="number">5</span>
 
                             <div class="overDay">
-                                <a href="" class="btn creer">
+                                <a href="" class="creer">
                                     Créer
                                 </a>
                             </div>
@@ -190,35 +205,36 @@
                 </section>
             </div>
         </div>
-        <div class=" right">
-            <aside class="addContent">
-                <div class="wrapper">
-                    <ol class="creation">
-                        <li><a href="">Créer un cours</a></li>
-                        <li><a href="">Créer une scéance</a></li>
-                        <li><a href="">Créer un élève</a></li>
-                        <li><a href="">Créer un groupe</a></li>
-                    </ol>
-                </div>
-                <div class="wrapper">
-                    <div class="sceanceNext">
-                        <h3 role="heading">Scéances à venir</h3>
+    </div>
+    <div class=" right">
+        <aside class="addContent">
+            <div class="wrapper">
+                <ol class="creation">
+                    <li><a href="">Créer un cours</a></li>
+                    <li><a href="">Créer une scéance</a></li>
+                    <li><a href="">Créer un élève</a></li>
+                    <li><a href="">Créer un groupe</a></li>
+                </ol>
+            </div>
+            <div class="wrapper">
+                <div class="sceanceNext">
+                    <h3 role="heading">Scéances à venir</h3>
 
-                        <div class="sceance">
-                            <span class="cours">Cours: Web</span>
-                            <span class="date">Date: 20/12/2013</span>
-                            <span class="heure">Heure: 8:00 - 18:00</span>
-                        </div>
-                        <div class="sceance">
-                            <span class="cours">Cours: Web</span>
-                            <span class="date">Date: 20/12/2013</span>
-                            <span class="heure">Heure: 8:00 - 18:00</span>
-                        </div>
+                    <div class="sceance">
+                        <span class="cours">Cours: Web</span>
+                        <span class="date">Date: 20/12/2013</span>
+                        <span class="heure">Heure: 8:00 - 18:00</span>
+                    </div>
+                    <div class="sceance">
+                        <span class="cours">Cours: Web</span>
+                        <span class="date">Date: 20/12/2013</span>
+                        <span class="heure">Heure: 8:00 - 18:00</span>
                     </div>
                 </div>
-            </aside>
-        </div>
-    </section>
+            </div>
+        </aside>
+    </div>
+</section>
 
 </section>
 

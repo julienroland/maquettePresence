@@ -187,7 +187,7 @@
     //border:1px dotted $grey;
 
     @include c(12);
-    margin: 0.5em auto;
+    margin: auto;
   }
 }
 
@@ -341,10 +341,8 @@
     background-repeat: no-repeat;
     background-position: center;
     padding:2px;
-    background-color: white;
     &:hover,&:focus{
       @include scale(1.3);
-      background-color: white;
     }
   }
   .modifier {
