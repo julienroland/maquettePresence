@@ -67,8 +67,9 @@
                 <div class="groupe">2384</div>
                 <div class="titre">
                     <h3 role="heading" aria-level="3">Web</h3>
+                    <span class="option">option web</span>
                 </div>
-                <span class="option">option web</span>
+
 
                 <div class="horaire">
                     <span class="debut">8H00</span>
