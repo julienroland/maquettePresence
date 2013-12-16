@@ -102,13 +102,16 @@
 @media(min-width: 700px) {
   .banner {
     min-height: 250px;
+    position:relative;
+
   }
   .container {
     margin-top: 0;
 
   }
   .nav {
-    position: relative;
+    @include abs-bot();
+	top:auto;
     @include box-shadow(transparent 0 0 0 0);
     background-color: rgba($mc, 0.4);
     .menuLow {
@@ -134,7 +137,7 @@
           height: 100%;
           box-sizing: border-box;
           padding: 0 $pd;
-          color: rgba(white, 0.6);
+          color: white;
           padding-top: $pd/2;
         }
         & + li {

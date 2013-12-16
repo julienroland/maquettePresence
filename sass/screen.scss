@@ -157,10 +157,11 @@ body {
     @include cfl(2);
     font-weight: bold;
     max-width: 70px;
-    padding-top: $pd/2;
+    margin-left: 0;
     margin-bottom: 0;
-    text-align: center;
+    text-align: left;
     height: 50px;
+    font-size: 1.2em;
     &:hover, &:focus {
       background-color: darken($mc, 10%);
     }
@@ -260,16 +261,14 @@ body {
       box-sizing: border-box;
       z-index: 10;
       a {
-        margin-top: 40%;
-        @include cl-nm(5);
         height: 32px;
         font-family: $ff2;
-        margin-left: 13px;
-
+        margin: auto;
+        margin-top: 40%;
         & + a {
           margin-top: 40%;
           @include cl-nm(5);
-          margin-left: 5px;
+          margin-left: 15px;
 
         }
 
@@ -415,12 +414,15 @@ body {
     text-align: center;
   }
   .day {
-    @include c(12);
+    @include cf(12);
     height: 150px;
     width: 150px;
     border: 1px solid $tc;
     position: relative;
     background-color: white;
+    & + .day{
+      @include c(12);
+    }
     &:hover, &:focus {
       .overDay {
         opacity: 1;
