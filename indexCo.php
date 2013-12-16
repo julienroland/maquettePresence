@@ -43,7 +43,7 @@
                     <a class="accueil" href="index.php">HEPL</a>
                     <a class="menuLow" href="#menu"><span>Menu</span></a>
                     <ul class="menu" id="menu">
-                        <li><a href="">Gerer mes cours</a></li>
+                        <li><a href="cours.php">Gerer mes cours</a></li>
                         <li><a href="">Gerer mes scéances</a></li>
                         <li><a href="">Gerer des élèves</a></li>
                         <li><a href="">Gerer des groupes</a></li>
@@ -60,7 +60,6 @@
                     <span>Accueil</span>
                 </div>
             </div>
-            <div class=" left">
                 <div class=" news">
                     <div class="wrapper">
                         <section class="sceanceEnCours">
@@ -123,7 +122,7 @@
                             </div>
                         </section>
                     </div>
-                </div>
+                    </div>
                 <div class=" calendrier">
                     <div class="wrapper">
                         <section class="planning">
@@ -205,34 +204,6 @@
                         </section>
                     </div>
                 </div>
-            </div>
-            <div class=" right">
-                <aside class="addContent">
-                    <div class="wrapper">
-                        <ol class="creation">
-                            <li><a href="">Créer un cours</a></li>
-                            <li><a href="">Créer une scéance</a></li>
-                            <li><a href="">Créer un élève</a></li>
-                            <li><a href="">Créer un groupe</a></li>
-                        </ol>
-                    </div>
-                    <div class="wrapper">
-                        <div class="sceanceNext">
-                            <h3 role="heading">Scéances à venir</h3>
-
-                            <div class="sceance">
-                                <span class="cours">Cours: Web</span>
-                                <span class="date">Date: 20/12/2013</span>
-                                <span class="heure">Heure: 8:00 - 18:00</span>
-                            </div>
-                            <div class="sceance">
-                                <span class="cours">Cours: Web</span>
-                                <span class="date">Date: 20/12/2013</span>
-                                <span class="heure">Heure: 8:00 - 18:00</span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
             </div>
         </section>
 

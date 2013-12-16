@@ -265,7 +265,7 @@ h1, h2, h3, h4 {
 .creer {
   text-indent: -99999px;
   position: relative;
-  padding-left: 20px;
+  width: 16px;
   color: #111111;
   font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
   box-sizing: border-box;
@@ -289,8 +289,7 @@ h1, h2, h3, h4 {
     -moz-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     -o-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
-    text-indent: 0; }
+    transform: scale(1.1, 1.1); }
 
 .modifier {
   text-indent: -99999px;
@@ -471,7 +470,7 @@ body {
 
 .banner {
   height: 30%;
-  min-height: 100px; }
+  min-height: 120px; }
   .banner .deco {
     width: 100px;
     margin: auto; }
@@ -571,22 +570,22 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   right: 0;
   background-color: #5097bd;
   color: white;
-  font-size: 1.5em;
   font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
   padding: 0 0.5em;
   -webkit-box-shadow: black 0 0 4px 0;
   -moz-box-shadow: black 0 0 4px 0;
   box-shadow: black 0 0 4px 0; }
   .nav .wrapper {
-    position: relative; }
+    font-size: 1.5em;
+    position: relative;
+    padding: 0 1rem; }
   .nav .accueil {
     width: 15.66667%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 0.5%;
     display: block;
     box-sizing: border-box;
@@ -644,7 +643,7 @@ body {
     display: none;
     width: 100%;
     padding: 1em;
-    z-index: 90;
+    z-index: 20;
     position: absolute;
     left: 0;
     right: 0;
@@ -726,8 +725,7 @@ body {
       bottom: 0;
       margin: auto;
       text-align: center;
-      box-sizing: border-box;
-      z-index: 10; }
+      box-sizing: border-box; }
       .sceanceEnCours .sceance .overImage a {
         height: 32px;
         font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
@@ -768,14 +766,14 @@ body {
       display: block;
       margin: auto; }
 
-.mesCours {
+.mesCours, .gererMesCours {
   margin-top: 1em;
   padding: 0 1em;
   margin-bottom: 2em; }
-  .mesCours h2 {
+  .mesCours h2, .gererMesCours h2 {
     text-align: center;
     margin-bottom: 1em; }
-  .mesCours .cours {
+  .mesCours .cours, .gererMesCours .cours {
     width: 100%;
     margin: auto;
     display: block;
@@ -787,34 +785,34 @@ body {
     height: 100px;
     box-sizing: border-box;
     border: 1px solid #5097bd; }
-    .mesCours .cours:after {
+    .mesCours .cours:after, .gererMesCours .cours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .mesCours .cours:hover .titre, .mesCours .cours:focus .titre {
+    .mesCours .cours:hover .titre, .gererMesCours .cours:hover .titre, .mesCours .cours:focus .titre, .gererMesCours .cours:focus .titre {
       opacity: 0.5;
       -webkit-transition: opacity 0.3s ease, 1s;
       -webkit-transition-delay: 0.3s, 0s;
       -moz-transition: opacity 0.3s ease 0.3s, 1s;
       -o-transition: opacity 0.3s ease 0.3s, 1s;
       transition: opacity 0.3s ease 0.3s, 1s; }
-    .mesCours .cours:hover .horaire, .mesCours .cours:focus .horaire {
+    .mesCours .cours:hover .horaire, .gererMesCours .cours:hover .horaire, .mesCours .cours:focus .horaire, .gererMesCours .cours:focus .horaire {
       opacity: 0.5;
       -webkit-transition: opacity 0.3s ease, 1s;
       -webkit-transition-delay: 0.3s, 0s;
       -moz-transition: opacity 0.3s ease 0.3s, 1s;
       -o-transition: opacity 0.3s ease 0.3s, 1s;
       transition: opacity 0.3s ease 0.3s, 1s; }
-    .mesCours .cours:hover .overImage, .mesCours .cours:focus .overImage {
+    .mesCours .cours:hover .overImage, .gererMesCours .cours:hover .overImage, .mesCours .cours:focus .overImage, .gererMesCours .cours:focus .overImage {
       opacity: 1;
       -webkit-transition: opacity 0.3s ease, 1s;
       -webkit-transition-delay: 0.3s, 0s;
       -moz-transition: opacity 0.3s ease 0.3s, 1s;
       -o-transition: opacity 0.3s ease 0.3s, 1s;
       transition: opacity 0.3s ease 0.3s, 1s; }
-    .mesCours .cours .titre {
+    .mesCours .cours .titre, .gererMesCours .cours .titre {
       width: 75%;
       margin: auto;
       display: block;
@@ -824,20 +822,20 @@ body {
       padding-top: 33px;
       height: 100%;
       background-color: white; }
-      .mesCours .cours .titre:after {
+      .mesCours .cours .titre:after, .gererMesCours .cours .titre:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-      .mesCours .cours .titre h3 {
+      .mesCours .cours .titre h3, .gererMesCours .cours .titre h3 {
         border-bottom: 0;
         margin: 0 auto;
         color: #111111;
         padding-top: 10px;
         max-width: 100%;
         word-break: break-all; }
-    .mesCours .cours .horaire {
+    .mesCours .cours .horaire, .gererMesCours .cours .horaire {
       width: 25%;
       float: left;
       display: block;
@@ -848,22 +846,22 @@ body {
       font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
       color: white;
       background-color: #5097bd; }
-      .mesCours .cours .horaire:after {
+      .mesCours .cours .horaire:after, .gererMesCours .cours .horaire:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-      .mesCours .cours .horaire .debut, .mesCours .cours .horaire .fin {
+      .mesCours .cours .horaire .debut, .gererMesCours .cours .horaire .debut, .mesCours .cours .horaire .fin, .gererMesCours .cours .horaire .fin {
         height: 50%;
         display: block;
         box-sizing: border-box;
         padding-top: 25%;
         font-weight: bold;
         margin: auto; }
-      .mesCours .cours .horaire .debut {
+      .mesCours .cours .horaire .debut, .gererMesCours .cours .horaire .debut {
         border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
-    .mesCours .cours .overImage {
+    .mesCours .cours .overImage, .gererMesCours .cours .overImage {
       opacity: 0;
       height: 100px;
       position: absolute;
@@ -872,11 +870,23 @@ body {
       top: 0;
       bottom: 0;
       margin: auto;
-      font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
-      z-index: 10; }
-      .mesCours .cours .overImage a {
+      font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
+      .mesCours .cours .overImage a, .gererMesCours .cours .overImage a {
         margin-top: 30px;
         margin-left: 33%; }
+
+.gererMesCours {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  box-sizing: border-box; }
+  .gererMesCours:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
 
 .calendrier {
   background-color: #f2f2f2;
@@ -918,11 +928,11 @@ body {
     font-size: 1.272em;
     text-align: center; }
   .planning .day {
-    width: 99%;
+    width: 100%;
+    margin: auto;
     display: block;
     float: none;
     box-sizing: border-box;
-    margin: 0;
     height: 150px;
     width: 150px;
     border: 1px solid #111111;
@@ -960,7 +970,6 @@ body {
       right: 0;
       bottom: 0;
       margin: auto;
-      z-index: 10;
       text-align: center; }
       .planning .day .overDay a {
         display: inline-block; }
@@ -1084,6 +1093,8 @@ body {
   height: 40px;
   box-sizing: border-box;
   background-color: #f2f2f2; }
+  .breadcrumbs .wrapper {
+    padding: 0 1em; }
   .breadcrumbs a, .breadcrumbs span {
     display: inline-block;
     color: #111111;
@@ -1148,7 +1159,6 @@ body {
     .connexion .problemeCompte {
       width: 49%;
       float: left;
-      margin-left: 0.5%;
       margin-right: 0.5%;
       display: block;
       box-sizing: border-box;
@@ -1170,12 +1180,9 @@ body {
   /* END INDEX PAS CO */
   /* INDEX CO */
   .news {
+    padding: 3em 0;
     background-color: white;
-    width: 100%;
-    padding-bottom: 3em; }
-    .news .wrapper {
-      max-width: 900px;
-      margin: auto; }
+    width: 100%; }
     .news:after {
       content: "";
       display: block;
@@ -1183,9 +1190,6 @@ body {
       clear: both;
       visibility: hidden; }
 
-  .calendrier .wrapper {
-    max-width: 900px;
-    margin: auto; }
   .calendrier:after {
     content: "";
     display: block;
@@ -1195,12 +1199,11 @@ body {
 
   .sceanceEnCours {
     width: 49%;
-    float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
+    float: left;
     display: block;
-    box-sizing: border-box;
-    margin-bottom: 1%; }
+    box-sizing: border-box; }
     .sceanceEnCours:after {
       content: "";
       display: block;
@@ -1219,28 +1222,40 @@ body {
     .sceanceEnCours .sceance {
       margin-left: 0; }
 
-  .mesCours {
+  .mesCours, .gererMesCours {
     width: 49%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
     float: left;
+    margin-right: 0.5%;
     display: block;
-    box-sizing: border-box; }
-    .mesCours:after {
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .mesCours:after, .gererMesCours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .mesCours:after {
+    .mesCours:after, .gererMesCours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .mesCours .cours {
-      margin-left: 0; }
-    .mesCours h2 {
+    .mesCours .cours, .gererMesCours .cours {
+      margin-left: 0;
+      width: 99%;
+      float: left;
+      margin-right: 0.5%;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 1%; }
+      .mesCours .cours:after, .gererMesCours .cours:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+    .mesCours h2, .gererMesCours h2 {
       height: 50px;
       text-align: left; }
 
@@ -1336,7 +1351,6 @@ body {
   .planning {
     width: 99%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 0.5%;
     display: block;
     box-sizing: border-box;
@@ -1390,7 +1404,6 @@ body {
   .sceanceEnCours {
     width: 32.33333%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 0.5%;
     display: block;
     box-sizing: border-box;
@@ -1402,41 +1415,40 @@ body {
       clear: both;
       visibility: hidden; }
 
-  .mesCours {
+  .mesCours, .gererMesCours {
     width: 65.66667%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     float: left;
     display: block;
     box-sizing: border-box; }
-    .mesCours:after {
+    .mesCours:after, .gererMesCours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .mesCours .cours {
+    .mesCours .cours, .gererMesCours .cours {
       width: 49%;
-      float: left;
       margin-left: 0.5%;
       margin-right: 0.5%;
+      float: left;
       display: block;
-      box-sizing: border-box;
-      margin-bottom: 1%; }
-      .mesCours .cours:after {
+      box-sizing: border-box; }
+      .mesCours .cours:after, .gererMesCours .cours:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-      .mesCours .cours + .cours {
+      .mesCours .cours + .cours, .gererMesCours .cours + .cours {
         width: 49%;
         margin-left: 0.5%;
         margin-right: 0.5%;
         float: left;
         display: block;
         box-sizing: border-box; }
-        .mesCours .cours + .cours:after {
+        .mesCours .cours + .cours:after, .gererMesCours .cours + .cours:after {
           content: "";
           display: block;
           height: 0;
@@ -1473,7 +1485,6 @@ body {
   .planning {
     width: 99%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 0.5%;
     display: block;
     box-sizing: border-box;
@@ -1499,7 +1510,6 @@ body {
   .planning {
     width: 99%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 0.5%;
     display: block;
     box-sizing: border-box;

@@ -335,7 +335,7 @@
   .creer {
     text-indent: -99999px;
     position:relative;
-    padding-left: 20px;
+    width:16px;
     color:$tc;
     font-family: $ff2;
     box-sizing: border-box;
@@ -353,7 +353,6 @@
     }
     &:hover,&:focus{
       @include scale(1.1);
-      text-indent: 0;
     }
   }
   .modifier {
@@ -525,7 +524,7 @@
 
   width: colf($nNumber);
   float: left;
-  margin-left: gutter();
+  //margin-left: gutter();
   margin-right: gutter();
   display: block;
   box-sizing: border-box;

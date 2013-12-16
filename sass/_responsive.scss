@@ -33,30 +33,22 @@
   }
   /* END INDEX PAS CO */
   /* INDEX CO */
-  .news{
-
+  .news {
+    padding: 3em 0;
     background-color: white;
-    width:100%;
-    padding-bottom: 3em;
-    .wrapper{
-      max-width: colParent(12 , 9);
-      margin: auto;
-    }
-    &:after{
+    width: 100%;
+    &:after {
       @include clear();
     }
   }
-  .calendrier{
-  .wrapper{
-    max-width: colParent(12 , 9);
-    margin: auto;
-  }
-    &:after{
+  .calendrier {
+
+    &:after {
       @include clear();
     }
   }
   .sceanceEnCours {
-    @include cfl(6);
+    @include cl(6);
     &:after {
       @include clear();
     }
@@ -69,12 +61,13 @@
     }
   }
   .mesCours {
-    @include cl(6);
+    @include cfl(6);
     &:after {
       @include clear();
     }
     .cours {
       margin-left: 0;
+      @include cfl(12);
     }
     h2 {
       height: 50px;
@@ -102,7 +95,7 @@
 @media(min-width: 700px) {
   .banner {
     min-height: 250px;
-    position:relative;
+    position: relative;
 
   }
   .container {
@@ -111,7 +104,7 @@
   }
   .nav {
     @include abs-bot();
-	top:auto;
+    top: auto;
     @include box-shadow(transparent 0 0 0 0);
     background-color: rgba($mc, 0.4);
     .menuLow {
@@ -162,8 +155,8 @@
       .nom {
         display: inline-block;
       }
-      .prenom{
-       color:white;
+      .prenom {
+        color: white;
       }
     }
   }
@@ -181,7 +174,7 @@
   .mesCours {
     @include cl(8);
     .cours {
-      @include cfl(6);
+      @include cl(6);
 
       & + .cours {
         @include cl(6);
@@ -192,26 +185,26 @@
   .addContent {
 
     @include c(12);
-    max-width:colParent(12,3);
+    max-width: colParent(12, 3);
     min-height: 100%;
     margin-left: 0;
     height: auto !important;
-    .creation{
+    .creation {
 
-      li{
-        margin-bottom:$pd;
-        a{
+      li {
+        margin-bottom: $pd;
+        a {
           text-decoration: none;
           font-weight: bold;
           display: block;
-          &:hover,&:focus{
-          	text-decoration: underline;
+          &:hover, &:focus {
+            text-decoration: underline;
           }
 
         }
       }
     }
-    .wrapper{
+    .wrapper {
       margin-bottom: 1em;
     }
   }

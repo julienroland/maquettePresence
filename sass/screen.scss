@@ -36,7 +36,7 @@ body {
 
 .banner {
   height: 30%;
-  min-height: 100px;
+  min-height: 120px;
   .deco {
     width: 100px;
     margin: auto;
@@ -142,16 +142,18 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   right: 0;
   background-color: $mc;
   color: white;
-  font-size: 1.5em;
   font-family: $ff2;
   padding: 0 $pd;
   @include box-shadow(black 0 0 4px 0);
   .wrapper {
+    font-size: 1.5em;
     position: relative;
+    padding:0 1rem;
+
   }
   .accueil {
     @include cfl(2);
@@ -199,7 +201,7 @@ body {
     display: none;
     width: 100%;
     padding: 1em;
-    z-index: 90;
+    z-index: 20;
     @include abs-top();
     top: 50px;
     li {
@@ -259,7 +261,7 @@ body {
       @include abs();
       text-align: center;
       box-sizing: border-box;
-      z-index: 10;
+     // z-index: 10;
       a {
         height: 32px;
         font-family: $ff2;
@@ -378,7 +380,7 @@ body {
       height: 100px;
       @include abs();
       font-family: $ff2;
-      z-index: 10;
+     // z-index: 10;
       a {
         margin-top: 30px;
         margin-left: 33%;
@@ -386,6 +388,10 @@ body {
       }
     }
   }
+}
+.gererMesCours{
+  @extend .mesCours;
+  @include c(12);
 }
 
 .calendrier {
@@ -414,7 +420,7 @@ body {
     text-align: center;
   }
   .day {
-    @include cf(12);
+    @include c(12);
     height: 150px;
     width: 150px;
     border: 1px solid $tc;
@@ -433,7 +439,7 @@ body {
     .overDay {
       opacity: 0;
      @include abs-bot();
-      z-index: 10;
+     // z-index: 10;
       text-align: center;
       a {
         display: inline-block;
@@ -558,11 +564,13 @@ body {
 /* BREADCRUMB */
 
 .breadcrumbs {
-  padding: 0 1em;
+  padding:0 1em;
   height: 40px;
   box-sizing: border-box;
   background-color: $greyL;
-
+.wrapper{
+  padding:0 1em;
+}
   a, span {
     display: inline-block;
     color: $tc;
