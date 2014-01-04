@@ -1457,6 +1457,9 @@ a {
 
 /* END POP UP */
 /*  presenceTotalCours */
+.dataGraph {
+  display: none; }
+
 .presenceTotalCours {
   padding: 1em; }
   .presenceTotalCours h2 {
@@ -1472,7 +1475,8 @@ a {
     box-sizing: border-box;
     font-size: 80px;
     font-weight: bold;
-    text-align: center; }
+    text-align: center;
+    margin: 0.5em auto; }
     .presenceTotalCours .pourcentagePresenceTotalCours:after {
       content: "";
       display: block;
@@ -1486,13 +1490,18 @@ a {
     float: none;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    margin: 0.5em auto; }
     .presenceTotalCours .graphPresenceTotalCours:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
+    .presenceTotalCours .graphPresenceTotalCours canvas {
+      margin: auto;
+      width: 400px;
+      display: block; }
 
 /*  END presenceTotalCours */
 /* MEDIA QUERIES */

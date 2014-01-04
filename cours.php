@@ -133,14 +133,19 @@
         </aside>
     </div>
     <div class="wrapper">
-        <section class="presenceTotalCours wrapper">
+        <section class="presenceTotalCours">
             <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à vos cours</h2>
             <hr/>
             <div class="pourcentagePresenceTotalCours">
-                <span>80%</span>
+                <span>60%</span>
             </div>
             <div class="graphPresenceTotalCours">
-                
+            <ul class="dataGraph" data-total="60">
+                <li data-percent="30">Web</li>
+                <li data-percent="30">2D</li>
+                <li data-percent="0">3D</li>
+            </ul>
+                <canvas id="graphPresenceTotalCours" width="400" height="300">
             </div>
             
         </section>
@@ -150,5 +155,7 @@
 </section>
 
 </section>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/kinetic.js"></script>
+<script src="js/graphTotalCours.js"></script>
 <?php include('footer.php'); ?>
