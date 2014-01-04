@@ -198,8 +198,8 @@ a{
  }
  a{
   @include a();
- }
- .accueil {
+}
+.accueil {
   @include cfl(2);
   font-weight: bold;
   max-width: 70px;
@@ -451,7 +451,9 @@ a, ul {
     }
   }
 }
-
+.helper{
+  display:none; 
+}
 .gererMesCours {
   @extend .mesCours;
   @include c(12);
@@ -459,11 +461,40 @@ a, ul {
   h2{
     border-bottom: 0;
   }
+  
   .cours {
     &:hover,&:focus{
       .groupe {
         @include single-transition(opacity,0.3s,ease);
         //opacity: 0.5;
+      }
+    }
+    .overImage{
+      display:none;
+      a{
+        float:left;
+        margin-top: 40px;
+        margin-left: 30px;
+        &+a{
+          margin-left: 20px;
+        }
+      }
+      .delete{
+        text-indent: -99999px;
+        top:-5px;
+        right:-5px;
+        margin-left: 0;
+        margin-top: 0;
+        position:absolute;
+        background-image: image-url('framework/icon/close.png');
+        width:16px;
+        height:16px;
+        padding:0;
+        background-color: transparent;
+        &:hover,&:focus{
+          border:0;
+          @include box-shadow( 0 0 0 0);
+        }
       }
     }
     .titre {
@@ -478,16 +509,20 @@ a, ul {
         text-align: center;
         color: lighten($tc, 10%);
       }
+
     }
     .groupe {
       background-color: $mc;
-      height: 25px;
+      height: 30px;
+      display:inline-block;
+      line-height: 30px;
       //opacity: 1;
-      width: 50px;
+      min-width: 50px;
       position: absolute;
       color: white;
       text-align: center;
       font-weight: bold;
+      vertical-align: middle;
       font-family: $ff2;
     }
     .horaire {
@@ -723,6 +758,41 @@ a, ul {
 }
 
 /* END FOOTER */
+/* POP UP */
+.popup{
+  display:block;
+  @include abs();
+  top:auto;
+  bottom:auto;
+  z-index:200;
+  padding:1em;
+  @include box-sizing(border-box);
+  width:400px;
+  height:auto;
+  min-height:250px;
+  background-color: $greyL;
+  @include box-shadow($greyL2 0 0 2px 0);
+  border:1px solid $greyL2;
+  .close{
+    
+    width:16px;
+    height:16px;
+    background-image: image-url('framework/icon/close.png');
+    @include abs-top-right();
+    a{
+      text-indent: -99999px;
+      display:block;
+      @include a();
+    }
+  }
+  .left{
+    @include cfl(6);
+  }
+  .right{
+    @include cl(6);
+  }
+}
+/* END POP UP */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

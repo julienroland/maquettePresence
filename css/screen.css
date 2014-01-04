@@ -966,6 +966,9 @@ a {
         margin-top: 30px;
         margin-left: 33%; }
 
+.helper {
+  display: none; }
+
 .gererMesCours {
   width: 100%;
   margin: auto;
@@ -988,6 +991,31 @@ a {
     -moz-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease; }
+  .gererMesCours .cours .overImage {
+    display: none; }
+    .gererMesCours .cours .overImage a {
+      float: left;
+      margin-top: 40px;
+      margin-left: 30px; }
+      .gererMesCours .cours .overImage a + a {
+        margin-left: 20px; }
+    .gererMesCours .cours .overImage .delete {
+      text-indent: -99999px;
+      top: -5px;
+      right: -5px;
+      margin-left: 0;
+      margin-top: 0;
+      position: absolute;
+      background-image: url('../img/framework/icon/close.png?1388845961');
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      background-color: transparent; }
+      .gererMesCours .cours .overImage .delete:hover, .gererMesCours .cours .overImage .delete:focus {
+        border: 0;
+        -webkit-box-shadow: 0 0 0 0;
+        -moz-box-shadow: 0 0 0 0;
+        box-shadow: 0 0 0 0; }
   .gererMesCours .cours .titre {
     padding-top: 0;
     height: auto;
@@ -1000,12 +1028,15 @@ a {
       color: #2b2b2b; }
   .gererMesCours .cours .groupe {
     background-color: #5097bd;
-    height: 25px;
-    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    min-width: 50px;
     position: absolute;
     color: white;
     text-align: center;
     font-weight: bold;
+    vertical-align: middle;
     font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif; }
   .gererMesCours .cours .horaire {
     top: 0; }
@@ -1290,6 +1321,79 @@ a {
         border-bottom: 0; }
 
 /* END FOOTER */
+/* POP UP */
+.popup {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  top: auto;
+  bottom: auto;
+  z-index: 200;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 400px;
+  height: auto;
+  min-height: 250px;
+  background-color: #f2f2f2;
+  -webkit-box-shadow: #bfbfbf 0 0 2px 0;
+  -moz-box-shadow: #bfbfbf 0 0 2px 0;
+  box-shadow: #bfbfbf 0 0 2px 0;
+  border: 1px solid #bfbfbf; }
+  .popup .close {
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/framework/icon/close.png?1388845961');
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: auto; }
+    .popup .close a {
+      text-indent: -99999px;
+      display: block;
+      border-top: 0;
+      border-bottom: 0; }
+      .popup .close a:hover, .popup .close a:after {
+        border-top: 0;
+        border-bottom: 0; }
+  .popup .left {
+    width: 49%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .popup .left:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .popup .right {
+    width: 49%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .popup .right:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+/* END POP UP */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
@@ -1369,21 +1473,6 @@ a {
     clear: both;
     visibility: hidden; }
 
-  .gererMesCours {
-    width: 100%;
-    margin: auto;
-    display: block;
-    float: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    .gererMesCours:after {
-      content: "";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-
   .sceanceEnCours {
     width: 49%;
     margin-left: 0.5%;
@@ -1450,6 +1539,21 @@ a {
         visibility: hidden; }
     .mesCours h2, .gererMesCours h2 {
       text-align: left; }
+
+  .gererMesCours {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .gererMesCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
 
   .planning h2 {
     text-align: left; }
@@ -1532,6 +1636,8 @@ a {
           box-sizing: border-box;
           padding: 0 0.5em;
           color: white; }
+          .nav .menu li a:hover:after, .nav .menu li a:focus:after {
+            content: none; }
         .nav .menu li + li {
           width: 20%;
           float: left;
@@ -1575,39 +1681,81 @@ a {
         display: block;
         height: 0;
         clear: both;
-        visibility: hidden; } }
+        visibility: hidden; }
+
+  .gererMesCours {
+    width: 75%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+    max-width: 900px;
+    min-height: 300px; }
+    .gererMesCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .helper {
+    width: 25%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 300px;
+    padding: 1em;
+    min-height: 400px;
+    background-color: #e5e5e5;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.8; }
+    .helper:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .helper a {
+      color: #111111; } }
 @media (min-width: 900px) {
   .logo h1 .nom {
     display: inline-block; }
   .logo h1 .prenom {
     color: white; }
 
-  .main .left {
-    width: 75%;
-    float: left;
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    .main .left:after {
-      content: "";
+  .main {
+    min-height: 400px; }
+    .main .left {
+      width: 75%;
+      float: left;
       display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-  .main .right {
-    width: 25%;
-    float: left;
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    .main .right:after {
-      content: "";
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .main .left:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+    .main .right {
+      width: 25%;
+      float: left;
       display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .main .right:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
 
   .sceanceEnCours {
     width: 32.33333%;
@@ -1671,6 +1819,21 @@ a {
           height: 0;
           clear: both;
           visibility: hidden; }
+
+  .gererMesCours {
+    width: 75%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 0 0; }
+    .gererMesCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
 
   .addContent {
     width: 100%;

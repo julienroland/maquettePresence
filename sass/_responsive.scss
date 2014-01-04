@@ -47,9 +47,7 @@
       @include clear();
     }
   }
-  .gererMesCours{
-    @include c(12);
-  }
+
   .sceanceEnCours {
     @include cl(6);
     &:after {
@@ -66,28 +64,31 @@
   .mesCours {
     @include cfl(6);
    // padding:0em;
-    &:after {
-      @include clear();
-    }
-    .cours {
-      margin: auto;
-      @include c(12);
-      margin-bottom: $pd;
-    }
-    h2 {
-      
-      text-align: left;
-    }
+   &:after {
+    @include clear();
   }
-  .planning {
+  .cours {
+    margin: auto;
+    @include c(12);
+    margin-bottom: $pd;
+  }
+  h2 {
 
-    h2 {
-      text-align: left;
-    }
-    .groupe {
-      @include cl-nm(4);
-    }
-    .jour {
+    text-align: left;
+  }
+}
+.gererMesCours{
+  @include c(12);
+}
+.planning {
+
+  h2 {
+    text-align: left;
+  }
+  .groupe {
+    @include cl-nm(4);
+  }
+  .jour {
       //@include cl-nm(6);
     }
     .day {
@@ -137,6 +138,11 @@
           box-sizing: border-box;
           padding: 0 $pd;
           color: white;
+          &:hover,&:focus{
+            &:after{
+              content:none;
+            }
+          }
         }
         & + li {
           @include cl-nm(2.4);
@@ -150,6 +156,24 @@
 
     .groupe {
       @include cl-nm(3);
+    }
+  }
+  .gererMesCours{
+    @include cfl-nm(9);
+    max-width:colParent(9,12);
+    min-height: 300px;
+  }
+  .helper{
+    @include cl-nm(3);
+    max-width:colParent(3,12);
+    padding:1em;
+    min-height: 400px;
+    background-color: darken($greyL,5%);
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.8;
+    a{
+      color:$tc;
     }
   }
 }
@@ -166,6 +190,7 @@
     }
   }
   .main {
+    min-height: 400px;
     .left {
       @include cl-nm(9);
     }
@@ -185,6 +210,9 @@
         @include cl(6);
       }
     }
+  }
+  .gererMesCours{
+    @include cfl-nm(9);
   }
 
   .addContent {

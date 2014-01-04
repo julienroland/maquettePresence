@@ -5,7 +5,7 @@
 		cWeb = '#000',
 		aCours = ["web"],
 		$DaySceance = $('.day').find('.sceances');
-		if($(window).width() > 800){
+		if($(window).width() >= 800){
 			$(window).scroll(function () {
 				if($( window).scrollTop() >= 200){
 					$Nav.css({
@@ -32,6 +32,12 @@
 						'-o-box-shadow':'black 0 0 0 0',
 					});
 				}
+			});
+		}
+		else if($(window).width() < 800)
+		{
+			$Nav.css({
+				position:"fixed",
 			});
 		}
 		$.each($('.mesCours').find('.cours'),function(){
@@ -66,7 +72,7 @@ var openMenu = function( e ){
 		'-webkit-boxShadow':'rgba(0,0,0,0.4) 0 3px 3px 0',
 		backgroundColor: '#5097bd',
 	});
-	
+
 }
 
 
