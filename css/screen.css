@@ -510,7 +510,7 @@ a {
 
 .banner {
   height: 30%;
-  min-height: 180px; }
+  min-height: 130px; }
   .banner .deco {
     width: 100px;
     margin: auto; }
@@ -1456,6 +1456,45 @@ a {
     margin-bottom: 1em; }
 
 /* END POP UP */
+/*  presenceTotalCours */
+.presenceTotalCours {
+  padding: 1em; }
+  .presenceTotalCours h2 {
+    border-bottom: 0;
+    text-align: left; }
+  .presenceTotalCours .pourcentagePresenceTotalCours {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center; }
+    .presenceTotalCours .pourcentagePresenceTotalCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .presenceTotalCours .graphPresenceTotalCours {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .presenceTotalCours .graphPresenceTotalCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+/*  END presenceTotalCours */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
@@ -1467,6 +1506,9 @@ a {
   /* INDEX PAS CO */
   .logo h1 {
     font-size: 2.618em; }
+
+  .banner {
+    min-height: 180px; }
 
   .intro {
     display: block;

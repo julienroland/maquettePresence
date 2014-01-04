@@ -58,7 +58,7 @@ a{
 
 .banner {
   height: 30%;
-  min-height: 180px;
+  min-height: 130px;
   .deco {
     width: 100px;
     margin: auto;
@@ -774,7 +774,7 @@ a, ul {
   @include box-shadow($greyL2 0 0 4px 0);
   border:1px solid $greyL2;
   .close{
-    
+
     width:16px;
     height:16px;
     background-image: image-url('framework/icon/close.png');
@@ -809,7 +809,7 @@ a, ul {
     @include c(12);
   }
   input[type="submit"]{
-    
+
   }
 }
 .popupModifierCours{
@@ -832,6 +832,24 @@ a, ul {
 }
 
 /* END POP UP */
+/*  presenceTotalCours */
+.presenceTotalCours{
+  padding:1em;
+  h2{
+    border-bottom: 0;
+    text-align: left;
+  }
+  .pourcentagePresenceTotalCours{
+    @include c(12);
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .graphPresenceTotalCours{
+    @include c(12);
+  }
+}
+/*  END presenceTotalCours */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

@@ -132,6 +132,19 @@
             </ul>
         </aside>
     </div>
+    <div class="wrapper">
+        <section class="presenceTotalCours wrapper">
+            <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à vos cours</h2>
+            <hr/>
+            <div class="pourcentagePresenceTotalCours">
+                <span>80%</span>
+            </div>
+            <div class="graphPresenceTotalCours">
+                
+            </div>
+            
+        </section>
+    </div>
     
 
 </section>
