@@ -1322,8 +1322,8 @@ a {
 
 /* END FOOTER */
 /* POP UP */
-.popup {
-  display: block;
+.popupCreerCours, .popupModifierCours, .popupSupprimerCours, .popupVoirCours {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -1345,7 +1345,7 @@ a {
   -moz-box-shadow: #bfbfbf 0 0 4px 0;
   box-shadow: #bfbfbf 0 0 4px 0;
   border: 1px solid #bfbfbf; }
-  .popup .close {
+  .popupCreerCours .close, .popupModifierCours .close, .popupSupprimerCours .close, .popupVoirCours .close {
     width: 16px;
     height: 16px;
     background-image: url('../img/framework/icon/close.png?1388845961');
@@ -1353,17 +1353,17 @@ a {
     left: 0;
     top: 0;
     margin: auto; }
-    .popup .close a {
+    .popupCreerCours .close a, .popupModifierCours .close a, .popupSupprimerCours .close a, .popupVoirCours .close a {
       text-indent: -99999px;
       display: block;
       border-top: 0;
       border-bottom: 0; }
-      .popup .close a:hover, .popup .close a:after {
+      .popupCreerCours .close a:hover, .popupModifierCours .close a:hover, .popupSupprimerCours .close a:hover, .popupVoirCours .close a:hover, .popupCreerCours .close a:after, .popupModifierCours .close a:after, .popupSupprimerCours .close a:after, .popupVoirCours .close a:after {
         border-top: 0;
         border-bottom: 0; }
-  .popup hr {
+  .popupCreerCours hr, .popupModifierCours hr, .popupSupprimerCours hr, .popupVoirCours hr {
     margin-bottom: 0.5em; }
-  .popup .leftForm {
+  .popupCreerCours .leftForm, .popupModifierCours .leftForm, .popupSupprimerCours .leftForm, .popupVoirCours .leftForm {
     width: 44.83333%;
     float: left;
     margin-left: 0.5%;
@@ -1374,13 +1374,13 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%;
     margin-bottom: 1em; }
-    .popup .leftForm:after {
+    .popupCreerCours .leftForm:after, .popupModifierCours .leftForm:after, .popupSupprimerCours .leftForm:after, .popupVoirCours .leftForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popup .rightForm {
+  .popupCreerCours .rightForm, .popupModifierCours .rightForm, .popupSupprimerCours .rightForm, .popupVoirCours .rightForm {
     width: 44.83333%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1391,13 +1391,13 @@ a {
     box-sizing: border-box;
     margin-left: 7.33333%;
     margin-bottom: 1em; }
-    .popup .rightForm:after {
+    .popupCreerCours .rightForm:after, .popupModifierCours .rightForm:after, .popupSupprimerCours .rightForm:after, .popupVoirCours .rightForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popup label {
+  .popupCreerCours label, .popupModifierCours label, .popupSupprimerCours label, .popupVoirCours label {
     width: 100%;
     margin: auto;
     display: block;
@@ -1406,13 +1406,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-bottom: 0; }
-    .popup label:after {
+    .popupCreerCours label:after, .popupModifierCours label:after, .popupSupprimerCours label:after, .popupVoirCours label:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popup input {
+  .popupCreerCours input, .popupModifierCours input, .popupSupprimerCours input, .popupVoirCours input {
     width: 100%;
     margin: auto;
     display: block;
@@ -1421,13 +1421,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top: 0; }
-    .popup input:after {
+    .popupCreerCours input:after, .popupModifierCours input:after, .popupSupprimerCours input:after, .popupVoirCours input:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popup select {
+  .popupCreerCours select, .popupModifierCours select, .popupSupprimerCours select, .popupVoirCours select {
     width: 100%;
     margin: auto;
     display: block;
@@ -1435,12 +1435,25 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .popup select:after {
+    .popupCreerCours select:after, .popupModifierCours select:after, .popupSupprimerCours select:after, .popupVoirCours select:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
+
+.popupModifierCours {
+  display: none; }
+
+.popupSupprimerCours {
+  display: none; }
+  .popupSupprimerCours select {
+    margin-bottom: 1em; }
+
+.popupVoirCours {
+  display: none; }
+  .popupVoirCours select {
+    margin-bottom: 1em; }
 
 /* END POP UP */
 /* MEDIA QUERIES */

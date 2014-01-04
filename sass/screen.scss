@@ -759,8 +759,8 @@ a, ul {
 
 /* END FOOTER */
 /* POP UP */
-.popup{
-  display:block;
+.popupCreerCours{
+  display:none;
   @include abs();
   top:auto;
   bottom:auto;
@@ -812,6 +812,25 @@ a, ul {
     
   }
 }
+.popupModifierCours{
+  @extend .popupCreerCours;
+  display:none;
+}
+.popupSupprimerCours{
+  @extend .popupCreerCours;
+  display:none;
+  select{
+    margin-bottom: 1em;
+  }
+}
+.popupVoirCours{
+  @extend .popupCreerCours;
+  display:none;
+  select{
+    margin-bottom: 1em;
+  }
+}
+
 /* END POP UP */
 /* MEDIA QUERIES */
 @import "responsive";

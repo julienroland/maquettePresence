@@ -64,9 +64,33 @@
 		/* MENU */
 
 		/* POP UP */
-		$('.popup .close').on('click','a',closePopup);
+		$('.popupCreerCours .close').on('click','a',closePopup);
+		$('.popupModifierCours .close').on('click','a',closePopup);
+		$('.popupSupprimerCours .close').on('click','a',closePopup);
+		$('.popupVoirCours .close').on('click','a',closePopup);
+
+		$('.helper a[data-link="creer"').on('click',showCreerPopup);
+		$('.helper a[data-link="modifier"').on('click',showModifierPopup);
+		$('.helper a[data-link="supprimer"').on('click',showSupprimerPopup);
+		$('.helper a[data-link="voir"').on('click',showVoirPopup);
 		/* END POP UP */
 	});
+var showCreerPopup = function( e ){
+	e.preventDefault();
+	$('.popupCreerCours').fadeIn();
+};
+var showModifierPopup = function( e ){
+	e.preventDefault();
+	$('.popupModifierCours').fadeIn();
+};
+var showSupprimerPopup = function( e ){
+	e.preventDefault();
+	$('.popupSupprimerCours').fadeIn();
+};
+var showVoirPopup = function( e ){
+	e.preventDefault();
+	$('.popupVoirCours').fadeIn();
+};
 var openMenu = function( e ){
 	e.preventDefault();
 	var $this = $(this).parent('.wrapper').find('.menu');
@@ -75,12 +99,11 @@ var openMenu = function( e ){
 		'-webkit-boxShadow':'rgba(0,0,0,0.4) 0 3px 3px 0',
 		backgroundColor: '#5097bd',
 	});
-}
+};
 var closePopup = function( e ){
-	console.log($(this));
 	e.preventDefault();
-	$(this).parent().parent('.popup').fadeOut('fast');
-}
+	$(this).parent().parent().fadeOut('fast');
+};
 
 
 }).call(this,jQuery);
