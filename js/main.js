@@ -62,7 +62,10 @@
 		$('.menuLow').on('click',openMenu);
 
 		/* MENU */
-		
+
+		/* POP UP */
+		$('.popup .close').on('click','a',closePopup);
+		/* END POP UP */
 	});
 var openMenu = function( e ){
 	e.preventDefault();
@@ -72,7 +75,11 @@ var openMenu = function( e ){
 		'-webkit-boxShadow':'rgba(0,0,0,0.4) 0 3px 3px 0',
 		backgroundColor: '#5097bd',
 	});
-
+}
+var closePopup = function( e ){
+	console.log($(this));
+	e.preventDefault();
+	$(this).parent().parent('.popup').fadeOut('fast');
 }
 
 

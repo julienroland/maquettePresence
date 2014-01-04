@@ -771,25 +771,45 @@ a, ul {
   height:auto;
   min-height:250px;
   background-color: $greyL;
-  @include box-shadow($greyL2 0 0 2px 0);
+  @include box-shadow($greyL2 0 0 4px 0);
   border:1px solid $greyL2;
   .close{
     
     width:16px;
     height:16px;
     background-image: image-url('framework/icon/close.png');
-    @include abs-top-right();
+    @include abs-top-left();
     a{
       text-indent: -99999px;
       display:block;
       @include a();
     }
   }
-  .left{
-    @include cfl(6);
+  hr{
+    margin-bottom: 0.5em;
   }
-  .right{
-    @include cl(6);
+  .leftForm{
+    @include cfl(5.5);
+    margin-bottom: 1em;
+  }
+  .rightForm{
+    @include cl(5.5);
+    @include offsetL(1);
+    margin-bottom: 1em;
+  }
+  label{
+    @include c(12);
+    padding-bottom: 0;
+  }
+  input{
+    @include c(12);
+    margin-top: 0;  
+  }
+  select{
+    @include c(12);
+  }
+  input[type="submit"]{
+    
   }
 }
 /* END POP UP */

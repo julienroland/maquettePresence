@@ -35,21 +35,21 @@
                 <h3 aria-level="3" role="heading" class="indexTitle">Crée un nouveau cours</h3>
                 <hr/>
                 <form action="">
-                    <div class="left">
+                <div class="leftForm">
                         <label for="intitule">Intitulé</label>
                         <input type="text" name="intitule" id="intitume" placeholder="Math">
 
-                        <label for="duree">Durée</label>
+                        <label for="duree">Durée (heure(s))</label>
                         <select name="duree" id="duree">
                             <option value="1">1</option>
-                        </select><span> heure(s)</span>
+                        </select>
 
                         <label for="anneeLevel">Année d'étude</label>
                         <select name="anneeLevel" id="anneeLevel">
                             <option value="1">1e inforgraphie</option>
                         </select> 
                     </div>
-                    <div class="right">
+                    <div class="rightForm">
                         <label for="option">Option</label>
                         <select multiple="1" name="option[]" id="option">
                             <option value="1">Web</option>
@@ -60,6 +60,7 @@
                             <option value="1">2283</option>
                         </select>
                     </div>
+                    <input type="submit" value="Créer" class="btn">
                 </form>
             </div>
         </section>

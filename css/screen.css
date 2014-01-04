@@ -1341,16 +1341,16 @@ a {
   height: auto;
   min-height: 250px;
   background-color: #f2f2f2;
-  -webkit-box-shadow: #bfbfbf 0 0 2px 0;
-  -moz-box-shadow: #bfbfbf 0 0 2px 0;
-  box-shadow: #bfbfbf 0 0 2px 0;
+  -webkit-box-shadow: #bfbfbf 0 0 4px 0;
+  -moz-box-shadow: #bfbfbf 0 0 4px 0;
+  box-shadow: #bfbfbf 0 0 4px 0;
   border: 1px solid #bfbfbf; }
   .popup .close {
     width: 16px;
     height: 16px;
     background-image: url('../img/framework/icon/close.png?1388845961');
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     margin: auto; }
     .popup .close a {
@@ -1361,8 +1361,10 @@ a {
       .popup .close a:hover, .popup .close a:after {
         border-top: 0;
         border-bottom: 0; }
-  .popup .left {
-    width: 49%;
+  .popup hr {
+    margin-bottom: 0.5em; }
+  .popup .leftForm {
+    width: 44.83333%;
     float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1370,23 +1372,70 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin-bottom: 1%; }
-    .popup .left:after {
+    margin-bottom: 1%;
+    margin-bottom: 1em; }
+    .popup .leftForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popup .right {
-    width: 49%;
+  .popup .rightForm {
+    width: 44.83333%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 7.33333%;
+    margin-bottom: 1em; }
+    .popup .rightForm:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .popup label {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 0; }
+    .popup label:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .popup input {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 0; }
+    .popup input:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .popup select {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .popup .right:after {
+    .popup select:after {
       content: "";
       display: block;
       height: 0;
