@@ -28,6 +28,28 @@ body {
   height: auto !important;
 
 }
+.titleIndex{
+  margin-bottom: 1em;
+  font-size: 24px;
+}
+hr{
+  border:0;
+  height: 1px;
+  border-left: 50px solid #000;
+  background: $greyL2;
+  margin-bottom: 2em;
+}
+a{
+  text-decoration: none;
+  border-top: 1px solid transparent;
+  border-bottom: 1px dotted $tc;
+  @include transition(all 0.3s ease);
+  &:hover,&:focus{
+    border-bottom: 0;
+    border-top: 1px solid $tc;
+    @include transition(all 0.3s ease);
+  }
+}
 
 .container {
   margin-top: 50px;
@@ -36,7 +58,7 @@ body {
 
 .banner {
   height: 30%;
-  min-height: 130px;
+  min-height: 180px;
   .deco {
     width: 100px;
     margin: auto;
@@ -63,6 +85,7 @@ body {
   margin-bottom: 0.5em;
   font-family: $ff2;
   padding-top: $pd;
+  margin-top: 0;
   h1 {
     border-bottom: 0;
     font-size: 1.7em;
@@ -70,6 +93,7 @@ body {
       text-decoration: none;
       color: white;
       font-weight: bold;
+      @include a();
     }
   }
 }
@@ -121,6 +145,13 @@ body {
     text-align: center;
     display: inline-block;
     height: 20px;
+    a{
+      @include a();
+      border-bottom:1px dotted $mc;
+      &:hover,&:focus{
+        border-bottom:1px dotted transparent;
+      }
+    }
   }
 }
 
@@ -133,17 +164,26 @@ body {
     font-size: 1.3em;
     .nom {
       display: none;
+      @include a();
+    }
+    .prenom{
+      @include a();
     }
   }
 }
-
+.accueil{
+  h2{
+    border-bottom: 0;
+  }
+}
 .nav {
   height: 50px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 100;
   right: 0;
+  //opacity:.99;
   background-color: $mc;
   color: white;
   font-family: $ff2;
@@ -152,37 +192,45 @@ body {
   .wrapper {
     font-size: 1.5em;
     position: relative;
-    padding: 0 1rem;
+   // opacity:.99;
+   padding: 0 1rem;
 
+ }
+ a{
+  @include a();
+ }
+ .accueil {
+  @include cfl(2);
+  font-weight: bold;
+  max-width: 70px;
+  margin-left: 0;
+  margin-bottom: 0;
+  text-align: left;
+  height: 50px;
+  font-size: 1.2em;
+  &:hover, &:focus {
+    //background-color: darken($mc, 10%);
+    text-decoration: underline;
   }
-  .accueil {
-    @include cfl(2);
-    font-weight: bold;
-    max-width: 70px;
-    margin-left: 0;
-    margin-bottom: 0;
-    text-align: left;
-    height: 50px;
-    font-size: 1.2em;
-    &:hover, &:focus {
-      background-color: darken($mc, 10%);
-    }
-  }
+}
 
-  a, ul {
-    display: block;
-    color: white;
-    text-decoration: none;
-  }
-  .menuLow {
+a, ul {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+.menuLow {
+  float: right;
+  @include abs-top();
+  left: 100px;
+  height:50px;
+  line-height: 50px;
+  padding-right: 36px;
+  display: block;
+  span {
     float: right;
-    @include abs-top();
-    left: 100px;
-    padding-right: 36px;
-    display: block;
-    span {
-      float: right;
-    }
+    vertical-align: middle;
+  }
     //padding-right: 16px;
     &:after {
       @include abs-right();
@@ -202,17 +250,33 @@ body {
     width: 100%;
     padding: 1em;
     z-index: 20;
+    
     @include abs-top();
     top: 50px;
     li {
       display: inline-block;
       width: 100%;
+      line-height: 50px;
       font-size: 1em;
       margin-bottom: 0.5em;
       a {
-        padding: $pd;
+        padding: 0 $pd;
+        @include box-sizing(border-box);
+        vertical-align: middle;
+        line-height: 50px;
+        @include transition(all 0.3s ease);
         &:hover, &:focus {
           background-color: darken($mc, 10%);
+          @include transition(all 0.3s ease);
+          &:after{
+            content:"";
+            @include transition(all 0.3s ease);
+            display:inline-block;
+            width:32px;
+            height:32px;
+            vertical-align: middle;
+            background-image: image-url('framework/icon/chevron-rightWhite.png');
+          }
         }
       }
     }
@@ -239,25 +303,21 @@ body {
     &:hover, &:focus {
 
       .titre {
-        opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease);
+
       }
       .number {
-        opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease);
+
       }
       .text {
-        opacity: 0.5;
-        @include single-transition(opacity, 0.3s, ease);
+
       }
       .overImage {
-        opacity: 1;
+        display:block;
         @include single-transition(opacity, 0.3s, ease);
       }
     }
     .overImage {
-      display: block;
-      opacity: 0;
+      display: none;
       @include abs();
       text-align: center;
       box-sizing: border-box;
@@ -279,7 +339,7 @@ body {
     .titre {
       background-color: $mc;
       height: 40px;
-      @include box-shadow(rgba(black, 0.2) 0 2px 2px 1px);
+      @include box-shadow(rgba(black, 0.2) 0 2px 2px 0px);
       h3 {
         border-bottom: 0;
         margin: 0 auto;
@@ -307,6 +367,7 @@ body {
   margin-top: 1em;
   padding: 0 1em;
   margin-bottom: 2em;
+
   h2 {
     text-align: center;
     margin-bottom: 1em;
@@ -322,16 +383,14 @@ body {
     border: 1px solid $mc;
     &:hover, &:focus {
       .titre {
-        opacity: 0.5;
-        @include single-transition(opacity 0.3s ease 0.3s);
+
       }
       .horaire {
-        opacity: 0.5;
-        @include single-transition(opacity 0.3s ease 0.3s);
+
       }
 
       .overImage {
-        opacity: 1;
+        display:block;
         @include single-transition(opacity 0.3s ease 0.3s);
       }
     }
@@ -361,6 +420,7 @@ body {
       background-color: $mc;
       .debut, .fin {
         height: 50%;
+        text-align:center;
         display: block;
         box-sizing: border-box;
         padding-top: 25%;
@@ -376,10 +436,12 @@ body {
       }
     }
     .overImage {
-      opacity: 0;
+      display:none;
       height: 100px;
       @include abs();
       font-family: $ff2;
+      @include transition(all 0.3s ease);
+      display:none;
       // z-index: 10;
       a {
         margin-top: 30px;
@@ -393,13 +455,15 @@ body {
 .gererMesCours {
   @extend .mesCours;
   @include c(12);
-  padding: 3em 0;
-
+  padding: 3em 1em;
+  h2{
+    border-bottom: 0;
+  }
   .cours {
     &:hover,&:focus{
       .groupe {
         @include single-transition(opacity,0.3s,ease);
-        opacity: 0.5;
+        //opacity: 0.5;
       }
     }
     .titre {
@@ -418,7 +482,7 @@ body {
     .groupe {
       background-color: $mc;
       height: 25px;
-      opacity: 1;
+      //opacity: 1;
       width: 50px;
       position: absolute;
       color: white;
@@ -469,13 +533,13 @@ body {
     }
     &:hover, &:focus {
       .overDay {
-        opacity: 1;
+        display:block;
         @include single-transition(opacity 0.3s ease 0.3s);
 
       }
     }
     .overDay {
-      opacity: 0;
+      display:none;
       @include abs-bot();
       // z-index: 10;
       text-align: center;
@@ -494,62 +558,72 @@ body {
       pointer-events: none;
       margin-top: 10%;
       position: relative;
-      z-index: 2;
+      z-index: 20;
       &:after {
         content: ".";
       }
     }
     .sceances {
+      @include c(12);
       color: white;
       position: relative;
       height: 100%;
-      z-index: 1;
-      opacity: 1;
+      z-index: 10;
+      padding:0 5px;
       pointer-events: none;
       @include abs-bot();
       &:hover, &:focus {
-        opacity: 1;
+        //opacity: 1;
       }
       li {
-        padding: 0 $pd;
+        @include c(12);
+        padding: 0 5px;
+        margin:2.5px 0;
+        @include border-radius(5px);
         pointer-events: auto;
-        background-color: $mc;
+        background-color: #d97d1a;
         border-bottom: 1px solid white;
         text-align: center;
         font-weight: bold;
         color: white;
+        position:relative;
         cursor: pointer;
+        display:inline-block;
+        vertical-align: middle;
+        z-index: 1;
         @include single-transition(all, 0.2s, ease);
         .overSeance {
           color: $tc;
         }
         &:hover, &:focus {
-          @include scale(1.1);
-          @include single-transition(all, 0.2s, ease);
-          border-bottom: 0;
-          @include box-shadow(rgba(black, 0.3) 0 0 4px 0);
-        }
-      }
-      .quatreH {
-        height: 50%;
-      }
-      .deuxH {
-        height: 25%;
-      }
-      .troisH {
+         // @include scale(1.1);
+         @include single-transition(all, 0.2s, ease);
+         border-bottom: 0;
+         z-index: 2;
+         position:relative;
+         @include box-shadow(rgba(black, 0.3) 0 0 4px 0);
+       }
+     }
+     .quatreH {
+      height: 50%;
+    }
+    .deuxH {
+      height: 25%;
+    }
+    .troisH {
 
-      }
-      .sixH {
+    }
+    .sixH {
 
-      }
-      .septH {
+    }
+    .septH {
 
-      }
-      .huitH {
+    }
+    .huitH {
 
-      }
     }
   }
+}
 }
 
 .addContent {
@@ -638,7 +712,12 @@ body {
     bottom: 10px;
     a {
       color: white;
-      text-decoration: underline;
+      border-top: 1px solid transparent;
+      border-bottom: 1px dotted white;
+      &:hover,&:focus{
+        border-top: 1px solid white;
+        border-bottom: 0;
+      }
     }
   }
 }

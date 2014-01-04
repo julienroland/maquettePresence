@@ -43,7 +43,14 @@
     font-family: $ff;
   }
 }
-
+@mixin a(){
+  border-top:0;
+  border-bottom:0;
+  &:hover,&:after{
+    border-top:0;
+    border-bottom:0;
+  }
+}
 @mixin table() {
   table {
 
@@ -281,6 +288,19 @@
     &:hover label {
       background-color: red;
     }
+    &:focus:invalid{
+    border:1px solid red;
+    @include box-shadow($errorBackground 0 0 2px 1px);
+    }
+    &:focus:valid{
+      border:1px solid green;
+      @include box-shadow($succesBackground 0 0 2px 1px);
+    
+    }
+
+  }
+  input[type="submit"]:hover{
+    cursor:pointer;
   }
   @media(max-width: $m1) {
     input {
@@ -352,7 +372,7 @@
       @include abs-left();
     }
     &:hover,&:focus{
-      @include scale(1.1);
+     // @include scale(1.1);
     }
   }
   .modifier {
@@ -404,7 +424,7 @@
   color: white;
   position: fixed;
   width: 100%;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   bottom: 0;
   left: 0;
   right: 0;
@@ -433,11 +453,11 @@
         text-decoration: none;
         color: white;
         font-weight: bold;
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         border-top: 5px solid #efefef;
         &:hover, &:focus {
           // background-color: darken($greyDH,2%);
-          box-sizing: border-box;
+          @include box-sizing(border-box);
           border-top: 5px solid darken($greyDH, 20%);
           outline: none;
         }
@@ -467,7 +487,7 @@
   //margin-left: 0;
   display: block;
   float: none;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
 
   &:after {
     @include clear();
@@ -479,7 +499,7 @@
   width: colf($nNumber);
   display: block;
   float: none;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   margin: 0;
   &:after {
     @include clear();
@@ -493,7 +513,7 @@
   margin-right: gutter();
   float: left;
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   &:after {
     @include clear();
   }
@@ -504,7 +524,7 @@
   width: colAlone($nNumber);
   float: left;
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   &:after {
     @include clear();
   }
@@ -524,10 +544,10 @@
 
   width: colf($nNumber);
   float: left;
-  //margin-left: gutter();
+  margin-left: gutter();
   margin-right: gutter();
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   //margin-top:0; 
   margin-bottom: gutter() * 2;
   &:after {
@@ -540,7 +560,7 @@
   width: colAlone($nNumber);
   float: left;
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   margin-top: 0;
   margin-bottom: 0;
   &:after {
@@ -554,7 +574,7 @@
   margin-left: gutter();
   float: right;
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   &:after {
     @include clear();
   }
@@ -562,10 +582,12 @@
 
 @mixin cfr($nNumber) {
 
-  width: col($nNumber);
+  width: colf($nNumber);
   float: right;
+  margin-left: gutter();
+  margin-right: gutter();
   display: block;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   &:after {
     @include clear();
   }
@@ -577,7 +599,7 @@
   margin: auto;
   text-align: center;
   float: none;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   &:after {
     @include clear();
   }

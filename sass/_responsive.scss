@@ -47,6 +47,9 @@
       @include clear();
     }
   }
+  .gererMesCours{
+    @include c(12);
+  }
   .sceanceEnCours {
     @include cl(6);
     &:after {
@@ -54,23 +57,25 @@
     }
     h2 {
       text-align: left;
-      height: 50px;
+      
     }
     .sceance {
-      margin-left: 0;
+      margin: auto;
     }
   }
   .mesCours {
     @include cfl(6);
+   // padding:0em;
     &:after {
       @include clear();
     }
     .cours {
-      margin-left: 0;
-      @include cfl(12);
+      margin: auto;
+      @include c(12);
+      margin-bottom: $pd;
     }
     h2 {
-      height: 50px;
+      
       text-align: left;
     }
   }
@@ -92,7 +97,7 @@
   /* END INDEX CO */
 }
 
-@media(min-width: 700px) {
+@media(min-width: 800px) {
   .banner {
     min-height: 250px;
     position: relative;
@@ -117,21 +122,21 @@
       top: 0;
       height: 50px;
       padding: 0;
-      max-width: 600px;
+      max-width: 800px;
       li {
         display: inline-block;
         @include cl-nm(2.4);
         font-size: 0.8em;
-        line-height: 1.1em;
+
         height: 100%;
         margin-bottom: 0;
         text-align: center;
+        line-height: 50px;
         a {
           height: 100%;
           box-sizing: border-box;
           padding: 0 $pd;
           color: white;
-          padding-top: $pd/2;
         }
         & + li {
           @include cl-nm(2.4);
