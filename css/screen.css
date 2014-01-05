@@ -1599,6 +1599,8 @@ a {
   .gererMonCours .cours {
     float: none;
     margin: 1em auto; }
+    .gererMonCours .cours .overImage .btn {
+      margin-left: 60px; }
 
 .elevesDuCours {
   margin-bottom: 1em;
@@ -1633,6 +1635,28 @@ a {
       height: 0;
       clear: both;
       visibility: hidden; }
+    .elevesDuCours .eleve .percent {
+      font-size: 34px;
+      width: 80px;
+      text-align: center;
+      margin: auto;
+      height: 80px;
+      line-height: 80px;
+      background-color: #111111;
+      color: white;
+      padding: 4px;
+      display: none;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      font-weight: bold; }
+      .elevesDuCours .eleve .percent span {
+        vertical-align: middle;
+        text-align: center;
+        display: inline-block;
+        height: auto; }
     .elevesDuCours .eleve img {
       max-width: 80px;
       margin: auto;
@@ -1649,6 +1673,23 @@ a {
       text-align: center; }
     .elevesDuCours .eleve .nom {
       font-weight: bold; }
+
+.sceancesNext, .sceancesOld {
+  padding: 1em;
+  text-align: center; }
+  .sceancesNext ol, .sceancesOld ol {
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+    display: inline-block;
+    font-weight: bold;
+    list-style-type: decimal; }
+    .sceancesNext ol li, .sceancesOld ol li {
+      line-height: 1.8;
+      width: 100%; }
+
+.sceancesOld ol li a {
+  color: #111111; }
 
 /* END VOIR COURS*/
 /* OVERLAY */
@@ -1689,6 +1730,41 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .elevesDuCours .eleve:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .sceancesNext {
+    width: 44.83333%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    margin-right: 3.16667%; }
+    .sceancesNext:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .sceancesOld {
+    width: 44.83333%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 3.16667%; }
+    .sceancesOld:after {
       content: "";
       display: block;
       height: 0;

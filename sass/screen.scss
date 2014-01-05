@@ -29,7 +29,7 @@ body {
 
 }
 .quote{
-font-size: 18px;
+  font-size: 18px;
 //padding-left: 70px;
 //padding-right: 70px;
 margin:1em 0;
@@ -52,9 +52,9 @@ position:relative;
   display:none;
   background-repeat: no-repeat;
 }
-  b{
-    font-weight: bold;
-  }
+b{
+  font-weight: bold;
+}
 }
 .titleIndex{
   margin-bottom: 1em;
@@ -907,8 +907,8 @@ a, ul {
 
     font-weight: bold;
     .percent{
-          font-size: 50px;
-          line-height: 50px;
+      font-size: 50px;
+      line-height: 50px;
     }
     .nom{
       font-weight: normal;
@@ -939,6 +939,11 @@ a, ul {
   .cours{
     float:none;
     margin:1em auto;
+    .overImage{
+      .btn{
+        margin-left: 60px;
+      }
+    }
   }
 }
 .elevesDuCours{
@@ -949,6 +954,26 @@ a, ul {
     @include cl(6);
     max-width: 150px;
     padding:$pd;
+    .percent{
+      font-size: 34px;
+      width:80px;
+      text-align: center;
+      margin: auto;
+      height:80px;
+      line-height: 80px;
+      background-color: $tc;
+      color:white;
+      padding:4px;
+      display:none;
+      @include border-radius(50%);
+      font-weight: bold;
+      span{
+        vertical-align: middle;
+        text-align: center;
+        display:inline-block;
+        height:auto;
+      }
+    }
     img{
       max-width: 80px;
       margin: auto;
@@ -969,6 +994,36 @@ a, ul {
 
     }
   }
+
+}
+.sceancesNext,.sceancesOld{
+  padding:1em;
+  text-align: center;
+  ol{
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+    display:inline-block;
+    font-weight: bold;
+    list-style-type: decimal;
+    li{
+
+      line-height: 1.8;
+      width:100%;
+    }
+  }
+}
+.sceancesNext{
+
+}
+.sceancesOld{
+ol{
+  li{
+    a{
+      color:$tc;
+    }
+  }
+}
 }
 /* END VOIR COURS*/
 /* OVERLAY */

@@ -7,7 +7,8 @@
 	$PopupCreerCours = $('.popupCreerCours'),
 	$PopupModifierCours = $('.popupModifierCours'),
 	$PopupSupprimerCours = $('.popupSupprimerCours'),
-	$PopupVoirCours = $('.popupVoirCours');
+	$PopupVoirCours = $('.popupVoirCours'),
+	$eleve = $('.elevesDuCours .eleve');
 
 	$(function(){ //dans config, on peut changer les couleurs, enregistrer dans un json et les recups ave un tit js
 		
@@ -46,30 +47,70 @@
 		$('.helper a[data-link="supprimer"').on('click',showSupprimerPopup);
 		$('.helper a[data-link="voir"').on('click',showVoirPopup);
 		/* END POP UP */
+
 		/* COLOR */
 		$('#color').change(function(){
 			console.log($('#color').val());
 		});
 		/* END COLOR*/
+
 		/* OVERLAY */
+
 		$Overlay.on('click',hideAll);
 		/* END OVERLAY */
+
 		/* HELPER VOIR COURS */
+
 		$('.helper.voirCours .groupe li').on('click','a',showEleveGroupe);
 		/* END HELPER VOIR COURS */
 
+		/* HELPER PRESENCE COURS */
+
+		$('.helper.voirCours .presence li').on('click','a',showPresenceEleveGroupe);
+
+		/* END HELPER PRESENCE COURS */
+
 	});
+var showPresenceEleveGroupe = function( e ){
+	e.preventDefault();
+	if($(this).attr('data-link') === 'presence'){
+		$(this).attr('data-link','image');
+		$(this).html('Revoir les photos');
+
+		
+		$.each($eleve,function(){
+			$(this).find('img').hide();
+
+			$(this).find('.percent span').html('70%');
+			$(this).find('.percent').show();
+
+		});
+	}
+	else
+	{
+		$(this).attr('data-link','presence');
+		$(this).html('Voir les présences');
+
+		
+		$.each($eleve,function(){
+			$(this).find('.percent').hide();	
+			$(this).find('img').show();
+		});
+	}
+};
 var showEleveGroupe = function( e ){
 	e.preventDefault();
 
 	$('.helper.voirCours .groupe li.active').removeClass('active');
 	$(this).parent().addClass('active');
 
+	$('.helper.voirCours .presence li > a').attr('data-groupe',$(this).attr('data-groupe'));
+
 	if($(this).attr('data-link') === 'tri'){
 		if($(this).attr('data-groupe') !== 'all'){
 			var $groupe = $(this).attr('data-groupe');
 			var $this = $(this);
-			$.each($('.elevesDuCours .eleve'),function(){
+			$.each($eleve,function(){
 
 				if($(this).find('.groupe').attr('data-groupe') !== $groupe){
 
@@ -82,7 +123,7 @@ var showEleveGroupe = function( e ){
 			});
 		}
 		else{
-			$.each($('.elevesDuCours .eleve'),function(){
+			$.each($eleve,function(){
 				$(this).fadeIn();
 			});
 		}
@@ -160,6 +201,7 @@ var openMenu = function( e ){
 var closePopup = function( e ){
 	e.preventDefault();
 	$(this).parent().parent().fadeOut('fast');
+	$Overlay.fadeOut();
 };
 
 
