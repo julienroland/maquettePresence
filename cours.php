@@ -141,11 +141,11 @@
             </div>
             <div class="graphPresenceTotalCours">
             <ul class="dataGraph" data-total="60">
-                <li data-percent="30">Web</li>
-                <li data-percent="30">2D</li>
-                <li data-percent="0">3D</li>
+                <li data-percent="30" data-cours="web">Web</li>
+                <li data-percent="30" data-cours="2D">2D</li>
+                <li data-percent="0" data-cours="3D">3D</li>
             </ul>
-                <canvas id="graphPresenceTotalCours" width="400" height="300">
+                <canvas id="graphPresenceTotalCours" width="500" height="300">
             </div>
             
         </section>

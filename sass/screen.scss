@@ -100,7 +100,7 @@ a{
 
 .main.one {
   background-color: transparent;
-  
+
 }
 
 .intro {
@@ -856,6 +856,7 @@ a, ul {
     canvas{
       margin: auto;
       width:400px;
+      position:relative;
       display:block;
     }
   }

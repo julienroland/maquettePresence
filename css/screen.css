@@ -1501,6 +1501,7 @@ a {
     .presenceTotalCours .graphPresenceTotalCours canvas {
       margin: auto;
       width: 400px;
+      position: relative;
       display: block; }
 
 /*  END presenceTotalCours */
