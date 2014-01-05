@@ -5,41 +5,7 @@
 		cWeb = '#000',
 		aCours = ["web"],
 		$DaySceance = $('.day').find('.sceances');
-		if($(window).width() >= 800){
-			$(window).scroll(function () {
-				if($( window).scrollTop() >= 200){
-					$Nav.css({
-						position:'fixed',
-						top:0,
-						bottom:'auto',
-						backgroundColor:'rgba(80, 151, 189, 1)',
-						boxShadow:'black 0 0 4px 0',
-						'-webkit-boxShadow':'black 0 0 4px 0',
-						'-moz-box-shadow':'black 0 0 4px 0',
-						'-ms-box-shadow':'black 0 0 4px 0',
-						'-o-box-shadow':'black 0 0 4px 0',
-					});
-				}else{
-					$Nav.css({
-						position:'absolute',
-						top:'auto',
-						bottom:0,
-						backgroundColor:'rgba(80, 151, 189, 0.4)',
-						boxShadow:'black 0 0 0px 0',
-						'-webkit-boxShadow':'black 0 0 0px 0',
-						'-moz-box-shadow':'black 0 0 0 0',
-						'-ms-box-shadow':'black 0 0 0 0',
-						'-o-box-shadow':'black 0 0 0 0',
-					});
-				}
-			});
-		}
-		else if($(window).width() < 800)
-		{
-			$Nav.css({
-				position:"fixed",
-			});
-		}
+		
 		$.each($('.mesCours').find('.cours'),function(){
 			var $type = $(this).attr('data-type');
 			if($type ==="web"){ //avec les données json on boucle pour changer la couleur
@@ -74,6 +40,12 @@
 		$('.helper a[data-link="supprimer"').on('click',showSupprimerPopup);
 		$('.helper a[data-link="voir"').on('click',showVoirPopup);
 		/* END POP UP */
+		/* COLOR */
+		/*$('#color').change(function(){
+			console.log($('#color').val());
+		});*/
+		/* END COLOR*/
+		
 	});
 var showCreerPopup = function( e ){
 	e.preventDefault();

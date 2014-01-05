@@ -1268,7 +1268,8 @@ a {
 
 /* END INDEX CO*/
 .main {
-  background-color: white; }
+  background-color: white;
+  padding-bottom: 3em; }
   .main:after {
     content: "";
     display: block;
@@ -1502,7 +1503,66 @@ a {
       margin: auto;
       width: 400px;
       position: relative;
-      display: block; }
+      display: block;
+      overflow: visible; }
+
+.presenceParCours {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em; }
+  .presenceParCours:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .presenceParCours h2 {
+    border-bottom: 0;
+    text-align: left; }
+  .presenceParCours .pourcentagePresenceParCours {
+    width: 50%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0.5em auto;
+    text-align: center;
+    font-weight: bold; }
+    .presenceParCours .pourcentagePresenceParCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .presenceParCours .pourcentagePresenceParCours .percent {
+      font-size: 50px;
+      line-height: 50px; }
+    .presenceParCours .pourcentagePresenceParCours .nom {
+      font-weight: normal;
+      background-color: #111111;
+      padding: 0.5em;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      color: white;
+      width: auto;
+      margin: auto;
+      margin-bottom: 0.5em; }
+      .presenceParCours .pourcentagePresenceParCours .nom a {
+        color: white;
+        border: 0; }
+    .presenceParCours .pourcentagePresenceParCours span {
+      display: inline-block;
+      width: 100%;
+      text-align: center; }
 
 /*  END presenceTotalCours */
 /* MEDIA QUERIES */
@@ -1685,7 +1745,108 @@ a {
       clear: both;
       visibility: hidden; }
 
-  /* END INDEX CO */ }
+  /* END INDEX CO */
+  .presenceParCours .pourcentagePresenceParCours {
+    width: 33.33333%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .presenceParCours .pourcentagePresenceParCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; } }
+@media (min-width: 600px) {
+  .gererMesCours .cours {
+    width: 49%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .gererMesCours .cours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .gererMesCours .cours + .cours {
+      width: 49%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .gererMesCours .cours + .cours:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; } }
+@media (min-width: 700px) {
+  .presenceParCours .pourcentagePresenceParCours {
+    width: 25%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .presenceParCours .pourcentagePresenceParCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .presenceParCours .pourcentagePresenceParCours .nom {
+      margin-bottom: 1em; }
+
+  .presenceTotalCours:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .presenceTotalCours .pourcentagePresenceTotalCours {
+    width: 32.33333%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-size: 120px; }
+    .presenceTotalCours .pourcentagePresenceTotalCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .presenceTotalCours .graphPresenceTotalCours {
+    width: 65.66667%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .presenceTotalCours .graphPresenceTotalCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; } }
 @media (min-width: 800px) {
   .banner {
     min-height: 250px;
@@ -1872,7 +2033,7 @@ a {
         visibility: hidden; }
 
   .sceanceEnCours {
-    width: 32.33333%;
+    width: 24%;
     float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1889,7 +2050,7 @@ a {
       visibility: hidden; }
 
   .mesCours, .gererMesCours {
-    width: 65.66667%;
+    width: 74%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     float: left;
@@ -1995,7 +2156,7 @@ a {
       clear: both;
       visibility: hidden; }
     .planning .groupe {
-      width: 25%;
+      width: 20%;
       float: left;
       display: block;
       -webkit-box-sizing: border-box;

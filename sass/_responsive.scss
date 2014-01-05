@@ -99,8 +99,45 @@
     }
   }
   /* END INDEX CO */
+  .presenceParCours{
+    .pourcentagePresenceParCours{
+      @include cl-nm(4);
+    }
+  }
 }
-
+@media(min-width: 600px) {
+  .gererMesCours{
+    .cours{
+      @include cfl(6);
+      & + .cours{
+        @include cl(6);
+      }
+    }
+  }
+}
+@media(min-width: 700px) {
+  .presenceParCours{
+    .pourcentagePresenceParCours{
+      @include cl-nm(3);
+      .nom{
+        margin-bottom: 1em;
+      }
+    }
+  }
+  .presenceTotalCours {
+    &:after{
+      @include clear();
+    }
+    .pourcentagePresenceTotalCours{
+      @include cfl(4);
+      margin-top: 1%;
+      font-size: 120px;
+    }
+    .graphPresenceTotalCours{
+      @include cl(8);
+    }
+  }
+}
 @media(min-width: 800px) {
   .banner {
     min-height: 250px;
@@ -179,6 +216,7 @@
       color:$tc;
     }
   }
+  
 }
 
 @media(min-width: 900px) {
@@ -202,10 +240,10 @@
     }
   }
   .sceanceEnCours {
-    @include cfl(4);
+    @include cfl(3);
   }
   .mesCours {
-    @include cl(8);
+    @include cl(9);
     .cours {
       @include cl(6);
 
@@ -247,7 +285,7 @@
   .planning {
     @include cfl(12);
     .groupe {
-      @include cl-nm(3);
+      @include cl-nm(2.4);
     }
   }
 }

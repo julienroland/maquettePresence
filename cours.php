@@ -24,6 +24,43 @@
                     <span class="fin">3e</span>
                 </div>
                 <div class="overImage">
+                    <a href="voirCours" class="btn" title="Voir ce cours">Voir</a>
+                    <a href="" class="btn" title="Modifier ce cours">Modifier</a>
+                    <a href="" title="Supprimer ce cours" class="btn delete">Supprimer</a>
+
+                </div>
+            </div>  
+            <div class="cours">
+                <div class="groupe">2384</div>
+                <div class="titre">
+                    <h3 role="heading" aria-level="3">Web</h3>
+                    <span class="option">option web</span>
+                </div>
+
+
+                <div class="horaire">
+                    <span class="debut">8H00</span>
+                    <span class="fin">3e</span>
+                </div>
+                <div class="overImage">
+                    <a href="" class="btn" title="Voir ce cours">Voir</a>
+                    <a href="" class="btn" title="Modifier ce cours">Modifier</a>
+                    <a href="" title="Supprimer ce cours" class="btn delete">Supprimer</a>
+
+                </div>
+            </div> <div class="cours">
+                <div class="groupe">2384</div>
+                <div class="titre">
+                    <h3 role="heading" aria-level="3">Web</h3>
+                    <span class="option">option web</span>
+                </div>
+
+
+                <div class="horaire">
+                    <span class="debut">8H00</span>
+                    <span class="fin">3e</span>
+                </div>
+                <div class="overImage">
                     <a href="" class="btn" title="Voir ce cours">Voir</a>
                     <a href="" class="btn" title="Modifier ce cours">Modifier</a>
                     <a href="" title="Supprimer ce cours" class="btn delete">Supprimer</a>
@@ -141,13 +178,33 @@
             </div>
             <div class="graphPresenceTotalCours">
             <ul class="dataGraph" data-total="60">
-                <li data-percent="30" data-cours="web">Web</li>
-                <li data-percent="30" data-cours="2D">2D</li>
-                <li data-percent="0" data-cours="3D">3D</li>
+                <li data-percent="60" data-cours="web">Web</li>
+                <li data-percent="30" data-cours="2d">2D</li>
+                <li data-percent="0" data-cours="3d">3D</li>
             </ul>
-                <canvas id="graphPresenceTotalCours" width="500" height="300">
+                <canvas id="graphPresenceTotalCours" width="600" height="300">
+            </div>
+           
+        </section>
+    </div> 
+    <div class="wrapper">
+        <section class="presenceParCours">
+            <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence par cours</h2>
+            <hr/>
+            <div class="pourcentagePresenceParCours">
+            <span class="nom"><a href="" title="Voir le cours">Web</a></span>
+                <span class="percent">50%</span>
+            </div>
+             <div class="pourcentagePresenceParCours">
+             <span class="nom"><a href="">3D</a></span>
+                <span class="percent">0%</span>
+            </div>
+            <div class="pourcentagePresenceParCours">
+             <span class="nom"><a href="">2D</a></span>
+                <span class="percent">50%</span>
             </div>
             
+           
         </section>
     </div>
     
@@ -156,6 +213,6 @@
 
 </section>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/kinetic.js"></script>
+
 <script src="js/graphTotalCours.js"></script>
 <?php include('footer.php'); ?>

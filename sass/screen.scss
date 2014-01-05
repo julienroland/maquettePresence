@@ -699,6 +699,7 @@ a, ul {
 /* END INDEX CO*/
 .main {
   background-color: white;
+  padding-bottom: 3em;
   &:after {
     @include clear();
   }
@@ -858,6 +859,46 @@ a, ul {
       width:400px;
       position:relative;
       display:block;
+      overflow:visible;
+    }
+  }
+
+}
+.presenceParCours{
+  @include c(12);
+  padding:1em;
+  h2{
+    border-bottom: 0;
+    text-align: left;
+  }
+  .pourcentagePresenceParCours{
+    @include cl-nm(6);
+    margin:$pd auto;
+    text-align: center;
+
+    font-weight: bold;
+    .percent{
+          font-size: 50px;
+          line-height: 50px;
+    }
+    .nom{
+      font-weight: normal;
+      background-color: $tc;
+      padding:$pd;
+      @include border-radius(50%);
+      color:white;
+      width:auto;
+      margin: auto;
+      margin-bottom: $pd;
+      a{
+        color:white;
+        border:0;
+      }
+    }
+    span{
+      display:inline-block;
+      width:100%;
+      text-align: center;
     }
   }
 }
