@@ -28,6 +28,34 @@ body {
   height: auto !important;
 
 }
+.quote{
+font-size: 18px;
+//padding-left: 70px;
+//padding-right: 70px;
+margin:1em 0;
+position:relative;
+&:before{
+  content:"";
+  background-image: image-url('framework/icon/quote2.png');
+  width:64px;
+  @include abs-left();
+  height:48px;
+  display:none;
+  background-repeat: no-repeat;
+}
+&:after{
+  content:"";
+  background-image: image-url('framework/icon/quote.png');
+  width:64px;
+  @include abs-right();
+  height:48px;
+  display:none;
+  background-repeat: no-repeat;
+}
+  b{
+    font-weight: bold;
+  }
+}
 .titleIndex{
   margin-bottom: 1em;
   font-size: 24px;
@@ -458,7 +486,8 @@ a, ul {
 .gererMesCours {
   @extend .mesCours;
   @include c(12);
-  padding: 3em 1em;
+  padding: 1em;
+  padding-bottom: 3em;
   h2{
     border-bottom: 0;
   }
@@ -699,7 +728,7 @@ a, ul {
 /* END INDEX CO*/
 .main {
   background-color: white;
-  padding-bottom: 3em;
+  //padding-bottom: 3em;
   &:after {
     @include clear();
   }
@@ -903,6 +932,56 @@ a, ul {
   }
 }
 /*  END presenceTotalCours */
+/* VOIR COURS */
+.gererMonCours{
+  @extend .gererMesCours;
+  margin-bottom: 1em;
+  .cours{
+    float:none;
+    margin:1em auto;
+  }
+}
+.elevesDuCours{
+  margin-bottom: 1em;
+  padding:1em;
+  @include c(12);
+  .eleve{
+    @include cl(6);
+    max-width: 150px;
+    padding:$pd;
+    img{
+      max-width: 80px;
+      margin: auto;
+      display:block;
+      @include border-radius(50%);
+      margin-bottom: $pd;
+    }
+    span{
+      display:inline-block;
+      width:100%;
+      text-align: center;
+    }
+    .nom{
+      font-weight: bold;
+
+    }
+    .groupe{
+
+    }
+  }
+}
+/* END VOIR COURS*/
+/* OVERLAY */
+.overlay{
+  width:100%;
+  height:100%;
+  display:none;
+  @include abs();
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0 ,0 , 0 ,0.8);
+}
+/* END OVERLAY */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

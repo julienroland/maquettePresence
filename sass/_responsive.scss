@@ -8,6 +8,11 @@
       font-size: 2.618em;
     }
   }
+  .elevesDuCours{
+    .eleve{
+      @include cl(4);
+    }
+  }
   .banner{
     min-height: 180px;
   }
@@ -109,8 +114,11 @@
   .gererMesCours{
     .cours{
       @include cfl(6);
+      margin:1em auto;
+        float:none;
       & + .cours{
         @include cl(6);
+
       }
     }
   }
@@ -122,6 +130,11 @@
       .nom{
         margin-bottom: 1em;
       }
+    }
+  }
+   .elevesDuCours{
+    .eleve{
+      @include cl(3);
     }
   }
   .presenceTotalCours {
@@ -143,6 +156,20 @@
     min-height: 250px;
     position: relative;
 
+  }
+  .quote{
+    width:auto;
+    display:inline-block;
+    font-size: 18px;
+    text-align: center; 
+    padding-left: 70px;
+    padding-right: 70px;
+    &:before{
+      display:block;
+    }
+    &:after{
+      display:block;
+    }
   }
   .container {
     margin-top: 0;
@@ -201,12 +228,14 @@
   .gererMesCours{
     @include cfl-nm(9);
     max-width:colParent(9,12);
-    min-height: 300px;
+    min-height: 400px;
   }
   .helper{
     @include cl-nm(3);
     max-width:colParent(3,12);
     padding:1em;
+    position:relative;
+    padding-top: 3em;
     min-height: 400px;
     background-color: darken($greyL,5%);
     margin: auto;
@@ -215,8 +244,24 @@
     a{
       color:$tc;
     }
+    .active{
+      background-color: $mc;
+      padding:$pd;
+    margin-bottom: $pd;
+      a{
+        color:white;
+        font-weight: bold;
+        border:0;
+        &:hover,&:focus{
+          border:0;
+        }
+      }
+    }
   }
-  
+  .elevesDuCours{
+    @include cfl(9);
+  }
+
 }
 
 @media(min-width: 900px) {
@@ -286,6 +331,13 @@
     @include cfl(12);
     .groupe {
       @include cl-nm(2.4);
+    }
+  }
+  .gererMonCours{
+    @extend .gererMesCours;
+    .cours{
+      float:none;
+      margin:1em auto;
     }
   }
 }

@@ -24,7 +24,7 @@
                     <span class="fin">3e</span>
                 </div>
                 <div class="overImage">
-                    <a href="voirCours" class="btn" title="Voir ce cours">Voir</a>
+                    <a href="voirCours.php" class="btn" title="Voir ce cours">Voir</a>
                     <a href="" class="btn" title="Modifier ce cours">Modifier</a>
                     <a href="" title="Supprimer ce cours" class="btn delete">Supprimer</a>
 

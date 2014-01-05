@@ -41,7 +41,7 @@
                             <span class="fin">18H00</span>
                         </div>
                         <div class="overImage">
-                            <a href="" class="btn">Voir</a>
+                            <a href="voirCours.php" class="btn">Voir</a>
                         </div>
                     </div>
                     <div class="cours" data-type="web">
