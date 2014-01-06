@@ -1,0 +1,19 @@
+
+{
+	"color":{
+		"cours":[
+			{ 
+				"color":"#00ff04",
+				"cours":"web"
+			},
+			{ 
+				"color":"#03fc65",
+				"cours":"2d"
+			},
+			 {
+				"color":"#a88216",
+				"cours":"3d"
+			}
+		]
+	}
+}
