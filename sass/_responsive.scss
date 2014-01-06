@@ -8,6 +8,19 @@
       font-size: 2.618em;
     }
   }
+  .temps{
+   // margin-left: 100px;
+  }
+  .ligneSceances{
+    .moreContent{
+      //margin-left: 100px;
+    }
+    .ligne{
+      .anneeEcole{
+        display:block;
+      }
+    }
+  }
   .elevesDuCours{
     .eleve{
       @include cl(4);

@@ -28,11 +28,66 @@ body {
   height: auto !important;
 
 }
+.delete{
+  text-indent: -99999px;
+  top:-5px;
+  right:-5px;
+  margin-left: 0;
+  margin-top: 0;
+  position:absolute;
+  background-repeat: no-repeat;
+  background-image: image-url('framework/icon/close.png');
+  width:16px!important;
+  height:16px!important;
+  padding:0;
+  background-color: transparent!important;
+  &:hover,&:focus{
+    border:0;
+    @include box-shadow( 0 0 0 0);
+  }
+}
 .separator{
   border-bottom: 1px solid $greyL2;
   display:inline-block;
   height:1px;
   width:100%;
+}
+.actions{
+  background-color: $mc;
+  color:white;
+  font-weight: bold;
+  border:1px solid darken($mc,10%);
+  @include box-shadow($greyD 0 0 10px 0);
+  width:200px;
+  height:50px;
+  position:absolute;
+  display:none;
+  z-index: 20;
+  span{
+    display:block;
+    height:100%;
+    text-align: center;
+    line-height: 50px;
+    @include cfl(4);
+    & + span{
+      @include cl(4);
+    }
+  }
+  a{
+
+    @include a();
+    display:inline-block;
+    border:0;
+    vertical-align: middle;
+    width:80%;
+    height:30px;
+    background-color: $greyL;
+    @include transition(all 0.3s ease);
+    &:hover,&:focus{
+      @include box-shadow($greyD2 0 0 6px 0px inset);
+      @include transition(all 0.3s ease);
+    }
+  } 
 }
 .quote{
   font-size: 18px;
@@ -80,7 +135,7 @@ a{
   border-bottom: 1px dotted $tc;
   @include transition(all 0.3s ease);
   &:hover,&:focus{
-    border-bottom: 0;
+    border-bottom: 1px solid transparent;
     border-top: 1px solid $tc;
     @include transition(all 0.3s ease);
   }
@@ -517,23 +572,7 @@ a, ul {
           margin-left: 20px;
         }
       }
-      .delete{
-        text-indent: -99999px;
-        top:-5px;
-        right:-5px;
-        margin-left: 0;
-        margin-top: 0;
-        position:absolute;
-        background-image: image-url('framework/icon/close.png');
-        width:16px;
-        height:16px;
-        padding:0;
-        background-color: transparent;
-        &:hover,&:focus{
-          border:0;
-          @include box-shadow( 0 0 0 0);
-        }
-      }
+
     }
     .titre {
       padding-top: 0;
@@ -869,7 +908,12 @@ a, ul {
     margin-bottom: 1em;
   }
 }
-
+.popupModifierSceanceLigne{
+  @extend .popupModifierCours;
+}
+.popupSupprimerSceanceLigne{
+  @extend .popupSupprimerCours;
+}
 /* END POP UP */
 /*  presenceTotalCours */
 .dataGraph{
@@ -1161,6 +1205,169 @@ a, ul {
   padding:1em;
 
 }
+.ligneSceances{
+  @include c(12);
+  padding:1em;
+  padding-bottom: 3em;
+  position:relative;
+  text-align: center;
+  .moreContent{
+    display:inline-block;
+    text-align: center;
+    margin: auto;
+    color:$tc;
+    font-size: 18px;
+    margin-top: 1em;
+
+  }
+
+  .ligne{
+    @include c(12);
+    min-height: 300px;
+    height:100%;
+    position:relative;
+    .anneeEcole{
+      @include cfl(2);
+      @include abs-left();
+      padding:1em $pd;
+      height:100%;
+      min-height: 300px;
+      width:100px;
+      border-right: 1px solid $greyL2;
+      background-color: $greyL;
+      display:none;
+
+      label{
+        display:block;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+      input{
+        margin-top: 0;
+        display:block;
+        float:none;
+        max-width:100%;
+      }
+      .anneeTemps{
+
+        .betweenAnnee{
+          @include abs();
+          display:block;
+          min-height: 50px;
+          height:60%;
+          margin:auto;
+          span{
+            width:50%;
+            min-height: 50px;
+            @include box-sizing(border-box);
+            display:block;
+            height:100%;
+            border-right: 1px solid $greyL2;
+            &:after{
+              @include clear();
+            }
+          }
+        }
+        li{
+          line-height: 1;
+          display:inline-block;
+          text-align: center;
+          span{
+            display:inline-block;
+            width:100%;
+          }
+          .separatorDate{
+            line-height: 0.5;
+            height:5px;
+          }
+        }
+
+        .one{
+          @include abs-top();
+          top:1em;
+        }
+        .two{
+          @include abs-bot();
+          bottom:1em;
+        }
+      }
+    }
+    .temps{
+
+      position: relative;
+      height:100%;
+
+      &:after{
+        content:"";
+        width:2px;
+        height:100%;
+        background-color: $greyL2;
+        @include abs();
+        z-index: 0;
+        visibility:visible;
+      }
+
+    }
+    .mois{
+      margin:0 auto;
+      position:relative;
+      width: 80px;
+      text-align: center;
+      background-color: darken($greyD2,10%);
+      line-height: 30px;
+      color:white;
+      font-weight: bold;
+      height: 30px;
+      z-index: 1;
+      span{
+        vertical-align: middle;
+      }
+    }
+
+    .sceancesMois{
+      @include c(12);
+      margin:$pd 0;
+      li{
+        font-size: 18px;
+        margin:$pd 0;
+        position:relative;
+        a{
+
+          color:$tc;
+        }
+      }
+      .impair{
+        @include cfl(6);
+        text-align: right;
+        padding-right: 2em;
+        &:after{
+          content:"";
+          visibility:visible;
+          @include abs-right();
+          width:1.8em;
+          background-color: $greyL2;
+          height:1px;
+
+        }
+      }
+      .pair{
+        @include cl(6);
+        padding-left: 2em;
+        text-align: left;
+        margin-top: 2em;
+        margin-bottom: 0;
+        &:before{
+          content:"";
+          visibility:visible;
+          @include abs-left();
+          width:1.8em;
+          background-color: $greyL2;
+          height:1px;
+        }
+      }
+    }
+  }
+}
 /* END SCEANCES */
 /* OVERLAY */
 .overlay{
@@ -1170,7 +1377,7 @@ a, ul {
   @include abs();
   position: fixed;
   z-index: 100;
-  background-color: rgba(0 ,0 , 0 ,0.8);
+  background-color: rgba(0 ,0 , 0 ,0.9);
 }
 /* END OVERLAY */
 /* MEDIA QUERIES */

@@ -8,7 +8,13 @@
 	$PopupModifierCours = $('.popupModifierCours'),
 	$PopupSupprimerCours = $('.popupSupprimerCours'),
 	$PopupVoirCours = $('.popupVoirCours'),
-	$eleve = $('.elevesDuCours .eleve');
+	$eleve = $('.elevesDuCours .eleve'),
+	$actions = $('.actions'),
+	$ligne = $('.ligneSceances'),
+	$popupModifierSceanceLigne = $('.popupModifierSceanceLigne'),
+	$popupSupprimerSceanceLigne = $('.popupSupprimerSceanceLigne'),
+	mouseX,
+	mouseY;
 
 	$(function(){ //dans config, on peut changer les couleurs, enregistrer dans un json et les recups ave un tit js
 		
@@ -40,7 +46,8 @@
 		$('.popupCreerCours .close').on('click','a',closePopup);
 		$('.popupModifierCours .close').on('click','a',closePopup);
 		$('.popupSupprimerCours .close').on('click','a',closePopup);
-		$('.popupVoirCours .close').on('click','a',closePopup);
+		$('.close').on('click','a',closePopup);
+		$('.delete').on('click',closeActions);
 
 		$('.helper a[data-link="creer"').on('click',showCreerPopup);
 		$('.helper a[data-link="modifier"').on('click',showModifierPopup);
@@ -70,7 +77,50 @@
 
 		/* END HELPER PRESENCE COURS */
 
+		/* SCEANCES */
+
+		/* LIGNE */
+
+		$('.sceancesMois li').on('click','a',showActions);
+		
+		$actions.on('click','a.modifier',showModifierLignePopup);
+		$actions.on('click','a.supprimer',showSupprimerLignePopup);
+
+		/* END LIGNE */
+
+		/* END SCEANCES */
+
 	});
+var showSupprimerLignePopup = function( e ){
+	e.preventDefault();
+	mouseX = e.pageX; 
+	mouseY = e.pageY;
+
+	$popupSupprimerSceanceLigne.css({'top':mouseY+125,'left':0}).fadeIn();
+	overlay( $popupSupprimerSceanceLigne );
+
+
+	$popupModifierSceanceLigne.hide();
+};
+var showModifierLignePopup = function( e ){
+	e.preventDefault();
+	mouseX = e.pageX; 
+	mouseY = e.pageY;
+
+	$popupModifierSceanceLigne.css({'top':mouseY+125,'left':0}).fadeIn();
+	overlay( $popupModifierSceanceLigne );
+
+
+	$popupSupprimerSceanceLigne.hide();
+};
+var showActions = function( e ){
+	e.preventDefault();
+	mouseX = e.pageX; 
+	mouseY = e.pageY;
+
+	$actions.css({'top':mouseY+25,'left':mouseX-100}).fadeIn();
+	
+};
 var showPresenceEleveGroupe = function( e ){
 	e.preventDefault();
 	if($(this).attr('data-link') === 'presence'){
@@ -132,7 +182,10 @@ var showEleveGroupe = function( e ){
 var hideAll = function( e ){
 	e.preventDefault();
 	$Overlay.fadeOut();
+	$actions.fadeOut();
 
+	$popupModifierSceanceLigne.fadeOut();
+	$popupSupprimerSceanceLigne.fadeOut();
 	$PopupCreerCours.fadeOut();
 	$PopupModifierCours.fadeOut();
 	$PopupSupprimerCours.fadeOut();
@@ -202,7 +255,11 @@ var closePopup = function( e ){
 	e.preventDefault();
 	$(this).parent().parent().fadeOut('fast');
 	$Overlay.fadeOut();
+	$actions.fadeOut();
 };
-
+var closeActions = function( e ){
+	e.preventDefault();
+	$(this).parent().fadeOut();
+}
 
 }).call(this,jQuery);
