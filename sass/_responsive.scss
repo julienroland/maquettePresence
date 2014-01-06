@@ -47,6 +47,17 @@
       }
     }
   }
+  .presenceTotalCoursAnnee{
+
+    .pourcentagePresenceTotalCoursAnnee{
+      li{
+        @include cfl(6);
+        & + li{
+          @include cl(6);
+        }
+      }
+    }
+  }
   /* END INDEX PAS CO */
   /* INDEX CO */
   .news {
@@ -117,13 +128,16 @@
       @include cl-nm(4);
     }
   }
+  .sceances{
+    @extend .sceanceEnCours;
+    @include c(12);
+
+  }
 }
 @media(min-width: 600px) {
   .gererMesCours{
     .cours{
       @include cfl(6);
-      margin:1em auto;
-        float:none;
       & + .cours{
         @include cl(6);
 
@@ -140,7 +154,7 @@
       }
     }
   }
-   .elevesDuCours{
+  .elevesDuCours{
     .eleve{
       @include cl(3);
     }
@@ -255,7 +269,7 @@
     .active{
       background-color: $mc;
       padding:$pd;
-    margin-bottom: $pd;
+      margin-bottom: $pd;
       a{
         color:white;
         font-weight: bold;
@@ -269,10 +283,21 @@
   .elevesDuCours{
     @include cfl(9);
   }
+  .sceances{
+    @extend .sceanceEnCours;
+    @include cfl(9);
 
+  }
+  .planningSceances{
+    @extend .planning;
+    padding:1em;
+    @include cfl(9);
+
+  }
 }
 
 @media(min-width: 900px) {
+
   .logo {
     h1 {
       .nom {
@@ -348,6 +373,12 @@
       margin:1em auto;
     }
   }
+  .planningSceances{
+    @extend .planning;
+    padding:1em;
+    @include cfl(9);
+
+  }
 }
 
 @media (min-width: $mw) {
@@ -356,6 +387,12 @@
     .groupe {
       @include cl-nm(2.4);
     }
+  }
+  .planningSceances{
+    @extend .planning;
+    padding:1em;
+    @include cfl(9);
+
   }
 }
 

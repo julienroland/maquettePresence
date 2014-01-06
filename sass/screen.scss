@@ -28,6 +28,12 @@ body {
   height: auto !important;
 
 }
+.separator{
+  border-bottom: 1px solid $greyL2;
+  display:inline-block;
+  height:1px;
+  width:100%;
+}
 .quote{
   font-size: 18px;
 //padding-left: 70px;
@@ -59,6 +65,7 @@ b{
 .titleIndex{
   margin-bottom: 1em;
   font-size: 24px;
+  line-height: 1.1;
 }
 hr{
   border:0;
@@ -493,6 +500,7 @@ a, ul {
   }
   
   .cours {
+    margin-bottom: 1em;
     &:hover,&:focus{
       .groupe {
         @include single-transition(opacity,0.3s,ease);
@@ -868,6 +876,7 @@ a, ul {
   display:none;
 }
 .presenceTotalCours{
+  @include c(12);
   padding:1em;
   h2{
     border-bottom: 0;
@@ -875,10 +884,38 @@ a, ul {
   }
   .pourcentagePresenceTotalCours{
     @include c(12);
-    font-size: 80px;
+    
     font-weight: bold;
     text-align: center;
-    margin:$pd auto;
+    margin:1em auto;
+    margin-bottom: 3em;
+
+    li{
+      background-color: $greyL;
+      max-width: 180px;
+      margin: auto;
+      margin-bottom: 1em;
+      height:150px;
+      border:1px solid $greyD;
+    }
+    .percent{
+      font-size: 60px;
+      text-align: center;
+      @include c(12);
+
+    }
+    .annee{
+      font-size: 24px;
+      @include c(12);
+      margin-bottom: $pd;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      display:block;
+      color:white;
+      background-color: lighten(red,13%);
+      border-bottom:1px solid $greyD;
+    }
   }
   .graphPresenceTotalCours{
     @include c(12);
@@ -886,6 +923,7 @@ a, ul {
     canvas{
       margin: auto;
       width:400px;
+      max-width: 100%;
       position:relative;
       display:block;
       overflow:visible;
@@ -893,9 +931,26 @@ a, ul {
   }
 
 }
+.presenceCours{
+  padding:1em;
+  padding-bottom: 3em;
+  h2{
+    text-align: left;
+  }
+}
+.graphPresenceCours{
+
+  canvas{
+    max-width:100%;
+    max-height: 400px;
+    position:relative;
+    z-index: 0; 
+  }
+}
 .presenceParCours{
   @include c(12);
   padding:1em;
+  padding-bottom: 3em;
   h2{
     border-bottom: 0;
     text-align: left;
@@ -931,6 +986,60 @@ a, ul {
     }
   }
 }
+.presenceTotalCoursAnnee{
+  @include c(12);
+  padding:1em;
+  h2{
+    border-bottom: 0;
+    text-align: left;
+  }
+  .pourcentagePresenceTotalCoursAnnee{
+    @include c(12);
+    font-weight: bold;
+    text-align: center;
+    margin:1em auto;
+    margin-bottom: 3em;
+
+    li{
+      background-color: $greyL;
+      max-width: 160px;
+      margin: auto;
+      margin-bottom: 1em;
+      height:150px;
+      border:1px solid $greyD;
+    }
+    .percent{
+      font-size: 60px;
+      text-align: center;
+      @include c(12);
+
+    }
+    .annee{
+      font-size: 24px;
+      @include c(12);
+      margin-bottom: $pd;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      display:block;
+      color:white;
+      background-color: lighten(red,13%);
+      border-bottom:1px solid $greyD;
+    }
+  }
+  .graphPresenceTotalCours{
+    @include c(12);
+    margin:$pd auto;
+    canvas{
+      margin: auto;
+      width:400px;
+      position:relative;
+      display:block;
+      overflow:visible;
+    }
+  }
+
+}
 /*  END presenceTotalCours */
 /* VOIR COURS */
 .gererMonCours{
@@ -954,17 +1063,28 @@ a, ul {
     @include cl(6);
     max-width: 150px;
     padding:$pd;
+    a{
+      color:$tc;
+      @include a();
+      display:block;
+      @include transition(all 0.3s ease);
+      &:hover{
+        background-color: $greyL;
+        @include transition(all 0.3s ease);
+      }
+    }
     .percent{
       font-size: 34px;
       width:80px;
       text-align: center;
       margin: auto;
       height:80px;
+      @include box-sizing(border-box);
       line-height: 80px;
       background-color: $tc;
       color:white;
-      padding:4px;
       display:none;
+      margin-bottom: 5px;
       @include border-radius(50%);
       font-weight: bold;
       span{
@@ -979,7 +1099,7 @@ a, ul {
       margin: auto;
       display:block;
       @include border-radius(50%);
-      margin-bottom: $pd;
+      margin-bottom: 5px;
     }
     span{
       display:inline-block;
@@ -999,17 +1119,26 @@ a, ul {
 .sceancesNext,.sceancesOld{
   padding:1em;
   text-align: center;
+  height:100%;
+  padding-bottom: 3em;
   ol{
     font-size: 18px;
     text-align: center;
     font-style: italic;
     display:inline-block;
+    width:auto;
     font-weight: bold;
     list-style-type: decimal;
     li{
-
       line-height: 1.8;
-      width:100%;
+
+      a{
+        display:inline;
+        &:hover,&:focus{
+          border-top: 0;
+          display:inline;
+        }
+      }
     }
   }
 }
@@ -1017,15 +1146,22 @@ a, ul {
 
 }
 .sceancesOld{
-ol{
-  li{
-    a{
-      color:$tc;
+  ol{
+    li{
+      a{
+        color:$tc;
+      }
     }
   }
 }
-}
 /* END VOIR COURS*/
+/* SCEANCES */
+.planningSceances{
+  @extend .planning;
+  padding:1em;
+
+}
+/* END SCEANCES */
 /* OVERLAY */
 .overlay{
   width:100%;
