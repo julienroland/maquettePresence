@@ -29,10 +29,10 @@ body {
 
 }
 .actionsSmall{
-display:block;
-margin: auto;
-text-align: center;
-margin:$pd 0 ;
+  display:block;
+  margin: auto;
+  text-align: center;
+  margin:$pd 0 ;
 }
 .delete{
   text-indent: -99999px;
@@ -105,6 +105,9 @@ margin:$pd 0 ;
       @include cl(3);
     }
   }
+}
+.clear{
+  @include clear();
 }
 .quote{
   font-size: 18px;
@@ -842,6 +845,9 @@ a, ul {
   position: relative;
   height: auto;
   display: block;
+  .wrapper{
+    position:static;
+  }
   .copyright {
     padding: 0 1em;
     @include abs-bot();
@@ -1130,8 +1136,11 @@ a, ul {
   margin-bottom: 1em;
   padding:1em;
   @include c(12);
+  h2{
+    text-align: left;
+  }
   .eleve{
-    @include cl(6);
+    @include cl-nm(6);
     max-width: 150px;
     padding:$pd;
     a{
@@ -1183,6 +1192,30 @@ a, ul {
     }
     .groupe{
 
+    }
+  }
+  .presenceGroupe{
+    @include c(12);
+    margin:1em auto;
+    padding:1em;
+    text-align: center;
+    color:white;
+    display:none;
+    
+    h3{
+      line-height: 1.1;
+      color:$tc;
+    }
+    .percent{
+      font-size: 38px;
+      background-color: $tc;
+      font-weight: bold;
+      height:80px;
+      line-height: 80px;
+      vertical-align: middle;
+      @include border-radius(50%);
+      display:inline-block;
+      width:80px;
     }
   }
 
@@ -1398,6 +1431,15 @@ a, ul {
 .gererMaSceance{
   @extend .sceanceEnCours;
 }
+.graphPresenceParGroupe{
+  @include c(12);
+  canvas{
+    max-width: 100%;
+  }
+  h3{
+    
+  }
+}
 /* END SCEANCES */
 /* OVERLAY */
 .overlay{
@@ -1410,6 +1452,20 @@ a, ul {
   background-color: rgba(0 ,0 , 0 ,0.9);
 }
 /* END OVERLAY */
+/* PAGINATION */
+.nextOrOld{
+  @include c(12);
+  font-size: 18px;
+  max-width: 400px;
+  text-align: center;
+  a{
+    float:left;
+    &+a{
+      float:right;
+    }
+  }
+}
+/* END PAGINATION */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

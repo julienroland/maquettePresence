@@ -193,6 +193,9 @@
             </div>
 
         </section>
+        <aside class="helper">
+
+        </aside>
     </div> 
     <div class="wrapper">
         <section class="presenceParCours">
@@ -203,25 +206,28 @@
                 <span class="percent">50%</span>
             </div>
             <div class="pourcentagePresenceParCours">
-               <span class="nom"><a href="">3D</a></span>
-               <span class="percent">0%</span>
-           </div>
-           <div class="pourcentagePresenceParCours">
-               <span class="nom"><a href="">2D</a></span>
-               <span class="percent">50%</span>
-           </div>
+             <span class="nom"><a href="">3D</a></span>
+             <span class="percent">0%</span>
+         </div>
+         <div class="pourcentagePresenceParCours">
+             <span class="nom"><a href="">2D</a></span>
+             <span class="percent">50%</span>
+         </div>
 
-           
-       </section>
-   </div>
-   <div class="overlay">
 
-    </div>
+     </section>
+     <aside class="helper">
+
+     </aside>
+ </div>
+ <div class="overlay">
+
+ </div>
 
 </section>
 
 </section>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script src="js/graphTotalCours.js"></script>
+<script src="js/graphTotalCours-ck.js"></script>
 <?php include('footer.php'); ?>

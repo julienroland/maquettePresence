@@ -158,6 +158,11 @@
                 <span class="nom" data-slug="benjamin-soir">Benjamin Soir</span>
                 <span class="groupe" data-groupe="2382">2382</span>
             </div>
+            <div class="clear"></div>
+            <div class="presenceGroupe">
+                <h3>Total</h3>
+                <span class="percent">65%</span>
+            </div>
         </section>
         <aside class="helper voirCours">
             <ul class="groupe">
@@ -189,6 +194,9 @@
 
 
         </section>
+        <aside class="helper">
+            
+        </aside>
     </div>
     <div class="wrapper">
         <section class="presenceCours">
@@ -204,6 +212,9 @@
                 <canvas id="graphPresenceCours" width="800px" height="500">
                 </div>
             </section>
+            <aside class="helper">
+            
+        </aside>
         </div>
         <div class="wrapper">
             <section class="sceancesNext">
@@ -243,6 +254,9 @@
                     <li><a href="">Voir la liste complète</a></li>
                 </ol>
             </section>
+            <aside class="helper">
+            
+        </aside>
         </div>
 
     </section>

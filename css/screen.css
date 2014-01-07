@@ -180,6 +180,7 @@ h6 {
 
 .wrapper {
   max-width: 1200px;
+  position: relative;
   margin: auto;
   height: auto !important;
   box-sizing: border-box;
@@ -677,6 +678,13 @@ body {
         height: 0;
         clear: both;
         visibility: hidden; }
+
+.clear {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
 
 .quote {
   font-size: 18px;
@@ -1536,6 +1544,8 @@ a {
   position: relative;
   height: auto;
   display: block; }
+  .foot .wrapper {
+    position: static; }
   .foot .copyright {
     padding: 0 1em;
     position: absolute;
@@ -2001,10 +2011,10 @@ a {
     height: 0;
     clear: both;
     visibility: hidden; }
+  .elevesDuCours h2 {
+    text-align: left; }
   .elevesDuCours .eleve {
-    width: 49%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    width: 50%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
@@ -2077,6 +2087,42 @@ a {
       text-align: center; }
     .elevesDuCours .eleve .nom {
       font-weight: bold; }
+  .elevesDuCours .presenceGroupe {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1em auto;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    display: none; }
+    .elevesDuCours .presenceGroupe:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .elevesDuCours .presenceGroupe h3 {
+      line-height: 1.1;
+      color: #111111; }
+    .elevesDuCours .presenceGroupe .percent {
+      font-size: 38px;
+      background-color: #111111;
+      font-weight: bold;
+      height: 80px;
+      line-height: 80px;
+      vertical-align: middle;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      display: inline-block;
+      width: 80px; }
 
 .sceancesNext, .sceancesOld {
   padding: 1em;
@@ -2346,6 +2392,23 @@ a {
           background-color: #bfbfbf;
           height: 1px; }
 
+.graphPresenceParGroupe {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .graphPresenceParGroupe:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .graphPresenceParGroupe canvas {
+    max-width: 100%; }
+
 /* END SCEANCES */
 /* OVERLAY */
 .overlay {
@@ -2363,6 +2426,30 @@ a {
   background-color: rgba(0, 0, 0, 0.9); }
 
 /* END OVERLAY */
+/* PAGINATION */
+.nextOrOld {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18px;
+  max-width: 400px;
+  text-align: center; }
+  .nextOrOld:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .nextOrOld a {
+    float: left; }
+    .nextOrOld a + a {
+      float: right; }
+
+/* END PAGINATION */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
@@ -2379,9 +2466,7 @@ a {
     display: block; }
 
   .elevesDuCours .eleve {
-    width: 32.33333%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    width: 33.33333%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
@@ -2479,8 +2564,8 @@ a {
       .connexion .problemeCompte span {
         display: none; }
 
-  .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li {
-    width: 49%;
+  .presenceTotalCoursAnnee {
+    width: 74%;
     float: left;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -2489,27 +2574,43 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li:after {
+    .presenceTotalCoursAnnee:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li + li {
+    .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li {
       width: 49%;
+      float: left;
       margin-left: 0.5%;
       margin-right: 0.5%;
-      float: left;
       display: block;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
-      box-sizing: border-box; }
-      .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li + li:after {
+      box-sizing: border-box;
+      margin-bottom: 1%; }
+      .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
+      .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li + li {
+        width: 49%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
+        .presenceTotalCoursAnnee .pourcentagePresenceTotalCoursAnnee li + li:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
 
   /* END INDEX PAS CO */
   /* INDEX CO */
@@ -2724,9 +2825,7 @@ a {
       margin-bottom: 1em; }
 
   .elevesDuCours .eleve {
-    width: 24%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    width: 25%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
@@ -2783,8 +2882,58 @@ a {
     min-height: 250px;
     position: relative; }
 
+  .presenceTotalCoursAnnee {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .presenceTotalCoursAnnee:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .presenceCours {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .presenceCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
   .actionsSmall {
     display: none; }
+
+  .sceancesNext, .sceancesOld {
+    width: 36.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .sceancesNext:after, .sceancesOld:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
 
   .quote {
     width: auto;
@@ -2930,9 +3079,12 @@ a {
     box-sizing: border-box;
     max-width: 300px;
     padding: 1em;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     padding-top: 3em;
-    min-height: 400px;
     background-color: #e5e5e5;
     margin: auto;
     font-size: 16px;
@@ -3020,6 +3172,40 @@ a {
     margin-bottom: 1%;
     padding: 1em; }
     .gererMaSceance:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .presenceTotalCours {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .presenceTotalCours:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .presenceParCours {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .presenceParCours:after {
       content: "";
       display: block;
       height: 0;

@@ -14,12 +14,20 @@
 	$ligne = $('.ligneSceances'),
 	$popupModifierSceanceLigne = $('.popupModifierSceanceLigne'),
 	$popupSupprimerSceanceLigne = $('.popupSupprimerSceanceLigne'),
+	$sceanceId,
+	$slugEleve,
+	$groupeEleve,
+	$presenceId,
+	oColorCours,
+	oMyCoursColors = [],
+	oMyPresenceColors = [],
 	mouseX,
 	mouseY;
 
 	$(function(){ //dans config, on peut changer les couleurs, enregistrer dans un json et les recups ave un tit js
 		
-		
+		getPref();
+
 		$.each($('.mesCours').find('.cours'),function(){
 			var $type = $(this).attr('data-type');
 			if($type ==="web"){ //avec les données json on boucle pour changer la couleur
@@ -86,6 +94,10 @@
 
 		$actions.on('click','a.modifier',showModifierLignePopup);
 		$actions.on('click','a.supprimer',showSupprimerLignePopup);
+		$actionsPresence.find('.present').on('click',putPresent);
+		$actionsPresence.find('.justifier').on('click',putJustifier);
+		$actionsPresence.find('.absent').on('click',putAbsent);
+		$actionsPresence.find('.aucune').on('click',putAucune);
 
 		/* END LIGNE */
 		/* PRESENCE */
@@ -104,12 +116,100 @@
 		/* END ANCRES */
 
 	});
+var putPresent = function( e ){
+	e.preventDefault();
+	//requete ajax pour changer la presence
+	if(ajaxChangePresence( $slugEleve, $sceanceId, $(this).attr('data-presence'))){
+		
+		$that = $eleve.find('.nom[data-slug="'+$slugEleve+'"]');
+		$presenceId = $(this).attr('data-presence');
+
+		$that.css({
+			color:oMyPresenceColors[$presenceId],
+		});
+	}
+	
+};
+var putJustifier = function( e ){
+	e.preventDefault();
+	//requete ajax pour changer la presence
+	if(ajaxChangePresence( $slugEleve, $sceanceId, $(this).attr('data-presence'))){
+		
+		$that = $eleve.find('.nom[data-slug="'+$slugEleve+'"]');
+		$presenceId = $(this).attr('data-presence');
+
+		$that.css({
+			color:oMyPresenceColors[$presenceId],
+		});
+	}
+	
+};
+var putAbsent = function( e ){
+	e.preventDefault();
+	//requete ajax pour changer la presence
+	if(ajaxChangePresence( $slugEleve, $sceanceId, $(this).attr('data-presence'))){
+		
+		$that = $eleve.find('.nom[data-slug="'+$slugEleve+'"]');
+		$presenceId = $(this).attr('data-presence');
+
+		$that.css({
+			color:oMyPresenceColors[$presenceId],
+		});
+	}
+	
+};
+var putAucune = function( e ){
+	e.preventDefault();
+	//requete ajax pour changer la presence
+	if(ajaxChangePresence( $slugEleve, $sceanceId, $(this).attr('data-presence'))){
+		
+		$that = $eleve.find('.nom[data-slug="'+$slugEleve+'"]');
+		$presenceId = $(this).attr('data-presence');
+
+		$that.css({
+			color:oMyPresenceColors[$presenceId],
+		});
+	}
+	
+};
+var getPref= function(  ){
+	$.ajax({
+		async: false,
+		url: "config.json",
+		success: function( data ) {
+			oColorCours = data.color.cours;
+			oColorPresence = data.color.presence;
+
+			for(var i = 0;i <= oColorCours.length-1;i++){
+
+				oMyCoursColors[oColorCours[i].cours] = oColorCours[i].color;	
+			}
+			for(var i = 0;i <= oColorPresence.length-1;i++){
+
+				oMyPresenceColors[oColorPresence[i].presence] = oColorPresence[i].color;	
+			}
+		}
+	})
+
+	
+	
+};
+var ajaxChangePresence = function( $eleve, $sceance , $presence){
+	/*$.ajax({
+		url:"",
+		dataType:"json",
+		success:function( data ){
+			return true;
+		};
+	});*/
+return true;
+};
 var showSupprimerLignePopup = function( e ){
 	e.preventDefault();
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$popupSupprimerSceanceLigne.css({'top':mouseY+125,'left':0}).fadeIn();
+	$popupSupprimerSceanceLigne.css({'top':mouseY+125,'left':+130}).fadeIn();
 	overlay( $popupSupprimerSceanceLigne );
 
 
@@ -131,7 +231,7 @@ var showActions = function( e ){
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$actions.css({'top':mouseY+25,'left':mouseX-100}).fadeIn();
+	$actions.css({'top':mouseY+25,'left':mouseX-100}).fadeIn('fast');
 	
 };
 var showActionsPresence = function( e ){
@@ -139,7 +239,10 @@ var showActionsPresence = function( e ){
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$actionsPresence.css({'top':mouseY+25,'left':mouseX-100}).fadeIn();
+	$slugEleve = $(this).find('.nom').attr('data-slug');
+	$groupeEleve = $(this).find('.groupe').attr('data-groupe');
+	$sceanceId = Number($('.gererMaSceance').attr('data-sceance'));
+	$actionsPresence.css({'top':mouseY+50,'left':mouseX}).fadeIn('fast');
 	
 };
 var showPresenceEleveGroupe = function( e ){
@@ -148,6 +251,7 @@ var showPresenceEleveGroupe = function( e ){
 		$(this).attr('data-link','image');
 		$(this).html('Revoir les photos');
 
+		$('.presenceGroupe').fadeIn();
 		
 		$.each($eleve,function(){
 			$(this).find('img').hide();
@@ -162,6 +266,7 @@ var showPresenceEleveGroupe = function( e ){
 		$(this).attr('data-link','presence');
 		$(this).html('Voir les présences');
 
+		$('.presenceGroupe').fadeOut();
 		
 		$.each($eleve,function(){
 			$(this).find('.percent').hide();	

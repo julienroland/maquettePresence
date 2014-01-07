@@ -103,6 +103,7 @@
   .wrapper {
     max-width: $mw;
     //overflow:hidden;
+    position: relative;
     margin: auto;
     height: auto!important;
     box-sizing: border-box;

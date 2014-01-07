@@ -10,10 +10,42 @@
 				"color":"#03fc65",
 				"cours":"2d"
 			},
-			 {
+			{
 				"color":"#a88216",
 				"cours":"3d"
 			}
-		]
-	}
+			],
+		"presence":[
+			{
+				"color":"#37db3f",
+				"presence":"3"
+			},
+			{
+				"color":"#e0bc3e",
+				"presence":"2"
+			},
+			{
+				"color":"#d52828",
+				"presence":"1"
+			},
+			{
+				"color":"#111111",
+				"presence":"0"
+			}
+			],
+		"groupe":[
+			{
+				"color":"#ccc",
+				"groupe":"absent"
+			},
+			{
+				"color":"#37db3f",
+				"groupe":"2284"
+			},
+			{
+				"color":"#e0bc3e",
+				"groupe":"2282"
+			}
+			]
+		}
 }

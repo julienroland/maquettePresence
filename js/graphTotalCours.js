@@ -73,7 +73,7 @@ var plotData = function() {
 	for (var i = 0; i < Object.keys(myData).length ; i++) {
 
 		//GRAPH
-		ctx.fillStyle = myColors[myData[i].cours];;
+		ctx.fillStyle = myColors[myData[i].cours];
 		ctx.beginPath();
 		ctx.moveTo(width/2,height/2);
 		var arcsector = Math.PI * (2 * myData[i].percent / total);
@@ -85,7 +85,7 @@ var plotData = function() {
 
 		lastend += arcsector;
 		ctx.beginPath();
-		ctx.fillStyle = myColors[myData[i].cours];;
+		ctx.fillStyle = myColors[myData[i].cours];
 		ctx.rect(width,height/height + (i * 40),20,20);
 		ctx.fill();
 		ctx.stroke();

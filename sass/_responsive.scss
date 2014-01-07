@@ -10,10 +10,10 @@
   }
   .temps{
    // margin-left: 100px;
-  }
+ }
  
-  .ligneSceances{
-    .moreContent{
+ .ligneSceances{
+  .moreContent{
       //margin-left: 100px;
     }
     .ligne{
@@ -24,7 +24,7 @@
   }
   .elevesDuCours{
     .eleve{
-      @include cl(4);
+      @include cl-nm(4);
     }
   }
   .sceancesNext{
@@ -62,7 +62,7 @@
     }
   }
   .presenceTotalCoursAnnee{
-
+    @include cfl(9);
     .pourcentagePresenceTotalCoursAnnee{
       li{
         @include cfl(6);
@@ -147,7 +147,7 @@
     @include c(12);
 
   }
-   .gererMaSceance{
+  .gererMaSceance{
     @include c(12);
     padding:1em;
   }
@@ -174,7 +174,7 @@
   }
   .elevesDuCours{
     .eleve{
-      @include cl(3);
+      @include cl-nm(3);
     }
   }
   .presenceTotalCours {
@@ -197,8 +197,17 @@
     position: relative;
 
   }
+  .presenceTotalCoursAnnee{
+    @include cfl(9);
+  }
+  .presenceCours{
+    @include cfl(9);
+  }
   .actionsSmall{
     display:none;
+  }
+  .sceancesNext,.sceancesOld{
+    @include cl(4.5);
   }
   .quote{
     width:auto;
@@ -277,9 +286,9 @@
     @include cl-nm(3);
     max-width:colParent(3,12);
     padding:1em;
-    position:relative;
+    @include abs-right();
     padding-top: 3em;
-    min-height: 400px;
+    //min-height: 400px;
     background-color: darken($greyL,5%);
     margin: auto;
     font-size: 16px;
@@ -318,6 +327,12 @@
   .gererMaSceance{
     @include cfl(9);
     padding:1em;
+  }
+  .presenceTotalCours{
+    @include cfl(9);
+  } 
+  .presenceParCours{
+    @include cfl(9);
   }
 }
 
