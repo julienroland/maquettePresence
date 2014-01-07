@@ -23,7 +23,7 @@
                         <span class="text">présent(s)</span>
 
                         <div class="overImage">
-                            <a href="" class="btn">Voir</a>
+                            <a href="voirSceance.php" title="Voir la scéance" class="btn">Voir</a>
                         </div>
                     </div>
 

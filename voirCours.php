@@ -30,7 +30,7 @@
                 </div>
                 <div class="overImage">
                     <a href="" class="btn" title="Modifier ce cours">Modifier</a>
-                    <a href="" title="Supprimer ce cours" class="btn delete">Supprimer</a>
+                    <a href="" title="Supprimer ce cours" class="btn">Supprimer</a>
 
                 </div>
             </div>  
@@ -178,11 +178,11 @@
             <hr/>
             <ol class="pourcentagePresenceTotalCoursAnnee">
                 <li>
-                    <span class="annee">2013</span>
+                    <span class="annee">2013 - 2014</span>
                     <span class="percent">100%</span>
                 </li> 
                 <li>
-                    <span class="annee">2012</span>
+                    <span class="annee">2012 - 2013</span>
                     <span class="percent">100%</span>
                 </li>
             </ol>
@@ -192,7 +192,7 @@
     </div>
     <div class="wrapper">
         <section class="presenceCours">
-            <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à ce a cours par scéance</h2>
+            <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à ce cours par scéance</h2>
             <hr/>
 
             <div class="graphPresenceCours">

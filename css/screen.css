@@ -273,7 +273,12 @@ h1, h2, h3, h4 {
   font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
   box-sizing: border-box;
   display: inline-block;
-  font-size: 1em; }
+  font-size: 1em;
+  border-top: 0;
+  border-bottom: 0; }
+  .creer:hover, .creer:after {
+    border-top: 0;
+    border-bottom: 0; }
   .creer:before {
     content: "";
     display: block;
@@ -328,6 +333,62 @@ h1, h2, h3, h4 {
   background-color: white;
   border: 1px solid #111111; }
   .voir:hover, .voir:focus {
+    background-color: white; }
+
+.present {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/present.png?1389092374');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .present:hover, .present:focus {
+    background-color: white; }
+
+.absent {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/abs.png?1389092369');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .absent:hover, .absent:focus {
+    background-color: white; }
+
+.justifier {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/justifier.png?1389092381');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .justifier:hover, .justifier:focus {
+    background-color: white; }
+
+.aucune {
+  text-indent: -99999px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url('../img/framework/icon/aucune.png?1389092488');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  background-color: white;
+  border: 1px solid #111111; }
+  .aucune:hover, .aucune:focus {
     background-color: white; }
 
 input[type=search] ~ input[type=submit] {
@@ -478,12 +539,18 @@ body {
   background-attachment: fixed;
   height: auto !important; }
 
+.actionsSmall {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin: 0.5em 0; }
+
 .delete {
   text-indent: -99999px;
   top: -5px;
   right: -5px;
   margin-left: 0;
-  margin-top: 0;
+  margin-top: 0 !important;
   position: absolute;
   background-repeat: no-repeat;
   background-image: url('../img/framework/icon/close.png?1388845961');
@@ -503,7 +570,7 @@ body {
   height: 1px;
   width: 100%; }
 
-.actions {
+.actions, .actionsPresence {
   background-color: #5097bd;
   color: white;
   font-weight: bold;
@@ -516,7 +583,7 @@ body {
   position: absolute;
   display: none;
   z-index: 20; }
-  .actions span {
+  .actions span, .actionsPresence span {
     display: block;
     height: 100%;
     text-align: center;
@@ -530,13 +597,13 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .actions span:after {
+    .actions span:after, .actionsPresence span:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .actions span + span {
+    .actions span + span, .actionsPresence span + span {
       width: 32.33333%;
       margin-left: 0.5%;
       margin-right: 0.5%;
@@ -545,13 +612,13 @@ body {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
-      .actions span + span:after {
+      .actions span + span:after, .actionsPresence span + span:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-  .actions a {
+  .actions a, .actionsPresence a {
     border-top: 0;
     border-bottom: 0;
     display: inline-block;
@@ -559,15 +626,16 @@ body {
     vertical-align: middle;
     width: 80%;
     height: 30px;
+    text-indent: -999999px;
     background-color: #f2f2f2;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-    .actions a:hover, .actions a:after {
+    .actions a:hover, .actionsPresence a:hover, .actions a:after, .actionsPresence a:after {
       border-top: 0;
       border-bottom: 0; }
-    .actions a:hover, .actions a:focus {
+    .actions a:hover, .actionsPresence a:hover, .actions a:focus, .actionsPresence a:focus {
       -webkit-box-shadow: #666666 0 0 6px 0px inset;
       -moz-box-shadow: #666666 0 0 6px 0px inset;
       box-shadow: #666666 0 0 6px 0px inset;
@@ -575,6 +643,40 @@ body {
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease; }
+
+.actionsPresence {
+  width: 250px; }
+  .actionsPresence span {
+    width: 24%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .actionsPresence span:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .actionsPresence span + span {
+      width: 24%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .actionsPresence span + span:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
 
 .quote {
   font-size: 18px;
@@ -905,14 +1007,14 @@ a {
             vertical-align: middle;
             background-image: url('../img/framework/icon/chevron-rightWhite.png?1387805011'); }
 
-.sceanceEnCours {
+.sceanceEnCours, .gererMaSceance {
   margin-top: 1em;
   padding: 0 1em;
   margin-bottom: 2em; }
-  .sceanceEnCours h2 {
+  .sceanceEnCours h2, .gererMaSceance h2 {
     text-align: center;
     margin-bottom: 1em; }
-  .sceanceEnCours .sceance {
+  .sceanceEnCours .sceance, .gererMaSceance .sceance {
     width: 100%;
     margin: auto;
     display: block;
@@ -926,19 +1028,19 @@ a {
     height: 200px;
     border: 1px solid #5097bd;
     padding-bottom: 1em; }
-    .sceanceEnCours .sceance:after {
+    .sceanceEnCours .sceance:after, .gererMaSceance .sceance:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours .sceance:hover .overImage, .sceanceEnCours .sceance:focus .overImage {
+    .sceanceEnCours .sceance:hover .overImage, .gererMaSceance .sceance:hover .overImage, .sceanceEnCours .sceance:focus .overImage, .gererMaSceance .sceance:focus .overImage {
       display: block;
       -webkit-transition: opacity 0.3s ease;
       -moz-transition: opacity 0.3s ease;
       -o-transition: opacity 0.3s ease;
       transition: opacity 0.3s ease; }
-    .sceanceEnCours .sceance .overImage {
+    .sceanceEnCours .sceance .overImage, .gererMaSceance .sceance .overImage {
       display: none;
       position: absolute;
       left: 0;
@@ -948,12 +1050,12 @@ a {
       margin: auto;
       text-align: center;
       box-sizing: border-box; }
-      .sceanceEnCours .sceance .overImage a {
+      .sceanceEnCours .sceance .overImage a, .gererMaSceance .sceance .overImage a {
         height: 32px;
         font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
         margin: auto;
         margin-top: 40%; }
-        .sceanceEnCours .sceance .overImage a + a {
+        .sceanceEnCours .sceance .overImage a + a, .gererMaSceance .sceance .overImage a + a {
           margin-top: 40%;
           width: 41.66667%;
           float: left;
@@ -962,30 +1064,30 @@ a {
           -moz-box-sizing: border-box;
           box-sizing: border-box;
           margin-left: 15px; }
-          .sceanceEnCours .sceance .overImage a + a:after {
+          .sceanceEnCours .sceance .overImage a + a:after, .gererMaSceance .sceance .overImage a + a:after {
             content: "";
             display: block;
             height: 0;
             clear: both;
             visibility: hidden; }
-    .sceanceEnCours .sceance .titre {
+    .sceanceEnCours .sceance .titre, .gererMaSceance .sceance .titre {
       background-color: #5097bd;
       height: 40px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px;
       -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px;
       box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px; }
-      .sceanceEnCours .sceance .titre h3 {
+      .sceanceEnCours .sceance .titre h3, .gererMaSceance .sceance .titre h3 {
         border-bottom: 0;
         margin: 0 auto;
         color: white;
         padding-top: 10px; }
-    .sceanceEnCours .sceance .number {
+    .sceanceEnCours .sceance .number, .gererMaSceance .sceance .number {
       font-size: 4.778em;
       display: block;
       margin: auto;
       text-align: center;
       font-weight: bold; }
-    .sceanceEnCours .sceance .text {
+    .sceanceEnCours .sceance .text, .gererMaSceance .sceance .text {
       text-align: center;
       display: block;
       margin: auto; }
@@ -1324,6 +1426,16 @@ a {
           height: 0;
           clear: both;
           visibility: hidden; }
+        .planning .day .sceances li a, .planningSceances .day .sceances li a {
+          color: white;
+          border-top: 0;
+          border-bottom: 0;
+          display: block;
+          width: 100%;
+          height: 100%; }
+          .planning .day .sceances li a:hover, .planningSceances .day .sceances li a:hover, .planning .day .sceances li a:after, .planningSceances .day .sceances li a:after {
+            border-top: 0;
+            border-bottom: 0; }
         .planning .day .sceances li .overSeance, .planningSceances .day .sceances li .overSeance {
           color: #111111; }
         .planning .day .sceances li:hover, .planningSceances .day .sceances li:hover, .planning .day .sceances li:focus, .planningSceances .day .sceances li:focus {
@@ -1398,8 +1510,13 @@ a {
 
 /* BREADCRUMB */
 .breadcrumbs {
-  padding: 0 1em;
+  padding: 0;
   height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
   box-sizing: border-box;
   background-color: #f2f2f2; }
   .breadcrumbs .wrapper {
@@ -1865,7 +1982,8 @@ a {
     float: none;
     margin: 1em auto; }
     .gererMonCours .cours .overImage .btn {
-      margin-left: 60px; }
+      margin-left: 10px;
+      float: left; }
 
 .elevesDuCours {
   margin-bottom: 1em;
@@ -2413,7 +2531,7 @@ a {
     clear: both;
     visibility: hidden; }
 
-  .sceanceEnCours, .sceances {
+  .sceanceEnCours, .gererMaSceance, .sceances {
     width: 49%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -2422,21 +2540,21 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .sceanceEnCours:after, .sceances:after {
+    .sceanceEnCours:after, .gererMaSceance:after, .sceances:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours:after, .sceances:after {
+    .sceanceEnCours:after, .gererMaSceance:after, .sceances:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours h2, .sceances h2 {
+    .sceanceEnCours h2, .gererMaSceance h2, .sceances h2 {
       text-align: left; }
-    .sceanceEnCours .sceance, .sceances .sceance {
+    .sceanceEnCours .sceance, .gererMaSceance .sceance, .sceances .sceance {
       margin: auto; }
 
   .mesCours, .gererMesCours, .gererMonCours {
@@ -2535,6 +2653,22 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .sceances:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .gererMaSceance {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1em; }
+    .gererMaSceance:after {
       content: "";
       display: block;
       height: 0;
@@ -2648,6 +2782,9 @@ a {
   .banner {
     min-height: 250px;
     position: relative; }
+
+  .actionsSmall {
+    display: none; }
 
   .quote {
     width: auto;
@@ -2869,6 +3006,24 @@ a {
       display: block;
       height: 0;
       clear: both;
+      visibility: hidden; }
+
+  .gererMaSceance {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    padding: 1em; }
+    .gererMaSceance:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
       visibility: hidden; } }
 @media (min-width: 900px) {
   .logo h1 .nom {
@@ -2905,7 +3060,7 @@ a {
         clear: both;
         visibility: hidden; }
 
-  .sceanceEnCours {
+  .sceanceEnCours, .gererMaSceance {
     width: 24%;
     float: left;
     margin-left: 0.5%;
@@ -2915,7 +3070,7 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .sceanceEnCours:after {
+    .sceanceEnCours:after, .gererMaSceance:after {
       content: "";
       display: block;
       height: 0;
@@ -3058,6 +3213,24 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%; }
     .planningSceances:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+
+  .gererMaSceance {
+    width: 74%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    padding: 1em; }
+    .gererMaSceance:after {
       content: "";
       display: block;
       height: 0;

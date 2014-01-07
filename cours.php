@@ -7,6 +7,9 @@
             <a href="indexCo.php">Accueil</a>&nbsp;/&nbsp;<span>Mes cours</span>
         </div>
     </div>
+    <div class="wrapper actionsSmall">
+        <a href="creerCours.php" class="btn">Créer un cours</a>
+    </div>
     <div class="wrapper">
         <section class="gererMesCours">
             <h2 role="heading" aria-level="2" class="titleIndex">Mes cours</h2>
@@ -188,7 +191,7 @@
             </ul>
             <canvas id="graphPresenceTotalCours" width="600" height="300">
             </div>
-            
+
         </section>
     </div> 
     <div class="wrapper">
@@ -207,7 +210,7 @@
                <span class="nom"><a href="">2D</a></span>
                <span class="percent">50%</span>
            </div>
-           
+
            
        </section>
    </div>

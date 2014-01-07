@@ -10,6 +10,7 @@
 	$PopupVoirCours = $('.popupVoirCours'),
 	$eleve = $('.elevesDuCours .eleve'),
 	$actions = $('.actions'),
+	$actionsPresence = $('.actionsPresence'),
 	$ligne = $('.ligneSceances'),
 	$popupModifierSceanceLigne = $('.popupModifierSceanceLigne'),
 	$popupSupprimerSceanceLigne = $('.popupSupprimerSceanceLigne'),
@@ -82,13 +83,25 @@
 		/* LIGNE */
 
 		$('.sceancesMois li').on('click','a',showActions);
-		
+
 		$actions.on('click','a.modifier',showModifierLignePopup);
 		$actions.on('click','a.supprimer',showSupprimerLignePopup);
 
 		/* END LIGNE */
-
+		/* PRESENCE */
+		$('.elevesDuCours .eleve').on('click','a',showActionsPresence);
+		/* END PRESENCE */
 		/* END SCEANCES */
+
+		/* ANCRES */
+		$('a[href^="#"]').click(function(){
+			var the_id = $(this).attr("href");
+			$('html, body').animate({
+				scrollTop:$(the_id).offset().top
+			}, 'slow');
+			return false;
+		});
+		/* END ANCRES */
 
 	});
 var showSupprimerLignePopup = function( e ){
@@ -119,6 +132,14 @@ var showActions = function( e ){
 	mouseY = e.pageY;
 
 	$actions.css({'top':mouseY+25,'left':mouseX-100}).fadeIn();
+	
+};
+var showActionsPresence = function( e ){
+	e.preventDefault();
+	mouseX = e.pageX; 
+	mouseY = e.pageY;
+
+	$actionsPresence.css({'top':mouseY+25,'left':mouseX-100}).fadeIn();
 	
 };
 var showPresenceEleveGroupe = function( e ){

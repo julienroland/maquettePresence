@@ -11,6 +11,7 @@
   .temps{
    // margin-left: 100px;
   }
+ 
   .ligneSceances{
     .moreContent{
       //margin-left: 100px;
@@ -146,6 +147,10 @@
     @include c(12);
 
   }
+   .gererMaSceance{
+    @include c(12);
+    padding:1em;
+  }
 }
 @media(min-width: 600px) {
   .gererMesCours{
@@ -191,6 +196,9 @@
     min-height: 250px;
     position: relative;
 
+  }
+  .actionsSmall{
+    display:none;
   }
   .quote{
     width:auto;
@@ -307,6 +315,10 @@
     @include cfl(9);
 
   }
+  .gererMaSceance{
+    @include cfl(9);
+    padding:1em;
+  }
 }
 
 @media(min-width: 900px) {
@@ -391,6 +403,10 @@
     padding:1em;
     @include cfl(9);
 
+  }
+  .gererMaSceance{
+    @include cfl(9);
+    padding:1em;
   }
 }
 
