@@ -18,6 +18,7 @@
 	$slugEleve,
 	$groupeEleve,
 	$presenceId,
+	$search = $('.search').find('#search'),
 	oColorCours,
 	oMyCoursColors = [],
 	oMyPresenceColors = [],
@@ -114,8 +115,82 @@
 			return false;
 		});
 		/* END ANCRES */
+		/* ELEVES */
+		
+		$search.keydown(function(){
+			setTimeout(function() {
+				var $value = $search.val();
+				listEleves( $value );
+
+			}, 50);
+		});
+		/* END ELEVES */
+
 
 	});
+var listEleves = function( value ){
+	console.log(value);
+	var value = value.toLowerCase();
+	autocompleteEleves( value );
+	
+};
+var autocompleteEleves = function( value ){
+	
+	aData = dataAutocompleteEleves();
+	console.log(aData);
+
+	for(var i=0;i<aData.length;i++){
+
+		if( aData[i].indexOf(value) >= 0){
+			console.log('match');
+		}
+		else{
+			console.log('match pas');
+		}
+		console.log(i);
+	}
+};
+var dataAutocompleteEleves = function(){
+	var aDataNom = [],
+	aDataAnneeLevel = [],
+	aDataGroupe = [],
+	aDataOption = [],
+	$nom,
+	$anneeLevel,
+	$groupe,
+	$option;
+
+	$.each($('.eleves .etudiant'),function(){
+		$nom = $(this).find('.nom').attr('data-slug');
+		var ok = $.inArray($nom, aDataNom);
+		if(ok < 0){
+			aDataNom.push($nom);
+		}
+
+		$anneeLevel = $(this).find('.anneeLevel').attr('data-slug');
+		var ok = $.inArray($anneeLevel, aDataAnneeLevel);
+		if(ok < 0){
+			aDataAnneeLevel.push($anneeLevel);
+		}
+
+
+		$groupe = $(this).find('.groupe').text();
+		var ok = $.inArray($groupe, aDataGroupe);
+		if(ok < 0){
+			aDataGroupe.push($groupe);
+		}
+
+
+		$option = $(this).find('.option').text();
+		var ok = $.inArray($option, aDataOption);
+		if(ok < 0){
+			aDataOption.push($option);
+		}
+		
+	});
+	return aDataNom;
+};
+
 var putPresent = function( e ){
 	e.preventDefault();
 	//requete ajax pour changer la presence
@@ -129,7 +204,7 @@ var putPresent = function( e ){
 		});
 	}
 	
-};
+};autocompleteEleves();
 var putJustifier = function( e ){
 	e.preventDefault();
 	//requete ajax pour changer la presence

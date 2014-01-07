@@ -394,7 +394,7 @@ h1, h2, h3, h4 {
 
 input[type=search] ~ input[type=submit] {
   text-indent: -99999px;
-  background-image: url("../img/framework/icon/search.png");
+  background-image: url("../img/framework/icon/searchWhite.png");
   background-size: 16px;
   background-repeat: no-repeat;
   background-position: center; }
@@ -2435,8 +2435,10 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 1em 0;
+  font-weight: bold;
   font-size: 18px;
-  max-width: 400px;
+  max-width: 500px;
   text-align: center; }
   .nextOrOld:after {
     content: "";
@@ -2450,6 +2452,226 @@ a {
       float: right; }
 
 /* END PAGINATION */
+/* ELEVES*/
+.listEleves .search {
+  min-height: 50px;
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 300px; }
+  .listEleves .search:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .listEleves .search label {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 0; }
+    .listEleves .search label:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .listEleves .search input {
+    margin-top: 0; }
+  .listEleves .search input[type="search"] {
+    width: 65.66667%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .listEleves .search input[type="search"]:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .listEleves .search input[type="submit"] {
+    width: 32.33333%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .listEleves .search input[type="submit"]:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+.listEleves .list {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 300px;
+  margin: 1em auto;
+  padding: 1em; }
+  .listEleves .list:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .listEleves .list .identifier {
+    width: 15.66667%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    background-color: #f2f2f2;
+    padding: 0.5em;
+    border-right: 1px solid #bfbfbf;
+    border-top: 1px solid #bfbfbf;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px; }
+    .listEleves .list .identifier:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .listEleves .list .identifier span {
+      border-right: 3px solid #666666;
+      padding-right: 0.5em; }
+  .listEleves .list .eleves {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    padding-left: 100px;
+    font-size: 18px; }
+    .listEleves .list .eleves:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .listEleves .list .eleves li {
+      width: 100%;
+      margin: auto;
+      display: block;
+      float: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .listEleves .list .eleves li:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .listEleves .list .eleves li span {
+        display: block; }
+      .listEleves .list .eleves li .nom {
+        width: 40.66667%;
+        float: left;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 1%;
+        font-weight: bold;
+        max-width: 200px; }
+        .listEleves .list .eleves li .nom:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+      .listEleves .list .eleves li .anneeLevel {
+        width: 15.66667%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 100px; }
+        .listEleves .list .eleves li .anneeLevel:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+      .listEleves .list .eleves li .groupe {
+        width: 24%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 150px; }
+        .listEleves .list .eleves li .groupe:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+      .listEleves .list .eleves li .option {
+        width: 15.66667%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        float: left;
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 100px; }
+        .listEleves .list .eleves li .option:after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+    .listEleves .list .eleves .headerList {
+      background-color: #f2f2f2;
+      padding: 0 0.5em;
+      margin-bottom: 0.5em; }
+
+/* END ELEVES*/
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
