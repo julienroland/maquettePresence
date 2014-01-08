@@ -13,6 +13,10 @@
 			{
 				"color":"#a88216",
 				"cours":"3d"
+			},
+			{
+				"color":"#3ecbe0",
+				"cours":"typographie"
 			}
 			],
 		"presence":[
@@ -45,6 +49,10 @@
 			{
 				"color":"#e0bc3e",
 				"groupe":"2282"
+			},
+			{
+				"color":"#3e6ce0",
+				"groupe":"2283"
 			}
 			]
 		}

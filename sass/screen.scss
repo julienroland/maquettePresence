@@ -1469,10 +1469,38 @@ a, ul {
 }
 /* END PAGINATION */
 /* ELEVES*/
+.autoCompletionEleves{
+  @include abs-bot(); 
+  background-color: white;
+  font-weight: bold;
+  @include box-shadow( $greyL2 0 0 2px 0); 
+  bottom:-80px;
+  z-index: 20;
+  border:1px solid $greyL2;
+  li{
+    
+    a{
+      color:$tc;
+      padding:$pd;
+      display:block;
+      @include a();
+      &:hover,&:focus{
+        background-color: lighten($mc,20%);
+      }
+    }
+  }
+  .active a{
+    background-color: lighten($mc,10%);
+    &:hover,&:focus{
+      background-color: lighten($mc,5%);
+    }
+  }
+}
 .listEleves{
   .search{
     min-height: 50px;
     @include c(12);
+    position: relative;
     max-width: 300px;
     label{
       @include c(12);
@@ -1492,7 +1520,7 @@ a, ul {
     @include c(12);
     position:relative;
     min-height: 300px;
-    margin:1em auto;
+    margin:auto;
     padding:1em;
     .identifier{
       @include cfl(2);
@@ -1508,46 +1536,54 @@ a, ul {
       span{
         border-right: 3px solid $greyD2;
         padding-right: $pd;
+        display:block;
       }
     }
-    .eleves{
+    .range{
       @include c(12);
+      position:relative;
+    }
+    .eleves{
+      @include cl(9);
       display:block;
-      
       padding-left: 100px;
-      
       font-size: 18px;
       li{
         @include c(12);
+        padding:$pd 0;
+        border-bottom: 1px solid $greyL2;
         span{
          display:block;
 
-        }
-        .nom{
-          @include cfl(5);
-          font-weight: bold;
-          max-width: 200px;
-        }
-        .anneeLevel{
-          @include cl(2);
-          max-width: 100px;
-        }
-        .groupe{
-          @include cl(3);
-          max-width: 150px;
-        }
-        .option{
-          @include cl(2);
-          max-width: 100px;
-        }
+       }
+       .nom{
+        @include cfl(5);
+        font-weight: bold;
+        display:inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        max-width: 200px;
       }
-      .headerList{
-        background-color: $greyL;
-        padding:0 $pd;
-        margin-bottom: $pd;
+      .anneeLevel{
+        @include cl(2);
+        max-width: 100px;
+      }
+      .groupe{
+        @include cl(3);
+        max-width: 150px;
+      }
+      .option{
+        @include cl(2);
+        max-width: 100px;
       }
     }
+    .headerList{
+      background-color: $greyL;
+      padding:$pd $pd;
+      margin-bottom: $pd;
+    }
   }
+}
 }
 /* END ELEVES*/
 /* MEDIA QUERIES */

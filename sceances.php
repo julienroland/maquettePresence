@@ -36,12 +36,12 @@
                         </a>
                     </div>
                     <ol class="sceances">
-                        <li class="quatreH">
+                        <li class="quatreH" data-cours="web">
                             <a href="voirSceance.php" title="Voir la scéance">
                              Web
                          </a>
                      </li>
-                     <li class="deuxH">
+                     <li class="deuxH" data-cours="typographie">
                         <a href="voirSceance.php" title="Voir la scéance">Typographie</a>
                     </li>
                 </ol>

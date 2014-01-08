@@ -101,11 +101,11 @@
                                 </a>
                             </div>
                             <ol class="sceances">
-                                <li class="quatreH">
+                                <li class="quatreH" data-cours="web">
                                     <span>Web</span>
 
                                 </li>
-                                <li class="deuxH">Typographie</li>
+                                <li class="deuxH" data-cours="typographie">Typographie</li>
                             </ol>
                         </div>
                     </div>

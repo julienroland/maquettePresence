@@ -19,16 +19,17 @@
 	$groupeEleve,
 	$presenceId,
 	$search = $('.search').find('#search'),
-	oColorCours,
 	oMyCoursColors = [],
 	oMyPresenceColors = [],
+	oMyGroupeColors = [],
 	mouseX,
 	mouseY;
 
 	$(function(){ //dans config, on peut changer les couleurs, enregistrer dans un json et les recups ave un tit js
 		
 		getPref();
-
+		putColorSceances();
+		putColorGroupeEleves();
 		$.each($('.mesCours').find('.cours'),function(){
 			var $type = $(this).attr('data-type');
 			if($type ==="web"){ //avec les données json on boucle pour changer la couleur
@@ -128,6 +129,48 @@
 
 
 	});
+var putColorSceances  = function(){
+	$.each($('.sceances li'),function(){
+		var $sceance = $(this).attr('data-cours');
+
+		if( oMyCoursColors[$sceance]){
+			$(this).css({
+				backgroundColor:oMyCoursColors[$sceance],
+			})
+		}
+	});
+	
+
+};
+var putColorGroupeEleves = function(){
+
+	$.each($('.eleves li'),function(){
+		var $groupe = $(this).find('.groupe').attr('data-groupe');
+
+		if( oMyGroupeColors[$groupe]){
+			$(this).css({
+				backgroundColor:oMyGroupeColors[$groupe],
+				color:"white",
+
+			});
+			$(this).find('span > a').css({
+				color:"white",
+				borderBottom:"1px dotted white",
+				borderTop:0,
+			});
+		}
+	});
+};
+String.prototype.ucwords = function() {
+	var words = this.split(' '),
+		i = 0,
+		l = words.length;
+	for( ; i < l; i++) {
+		words[i] = words[i].charAt(0).toUpperCase() + 
+			   words[i].slice(1);
+	}
+	return(words.join(' '));
+};
 var listEleves = function( value ){
 	console.log(value);
 	var value = value.toLowerCase();
@@ -143,11 +186,16 @@ var autocompleteEleves = function( value ){
 
 		if( aData[i].indexOf(value) >= 0){
 			console.log('match');
+			console.log(aData[i]);
+			var $nomReplace = aData[i].replace('-'," ");
+			var $nomWellDisplay = $nomReplace.ucwords();
+			console.log($nomWellDisplay);
 		}
 		else{
 			console.log('match pas');
+			
 		}
-		console.log(i);
+
 	}
 };
 var dataAutocompleteEleves = function(){
@@ -160,34 +208,37 @@ var dataAutocompleteEleves = function(){
 	$groupe,
 	$option;
 
-	$.each($('.eleves .etudiant'),function(){
-		$nom = $(this).find('.nom').attr('data-slug');
-		var ok = $.inArray($nom, aDataNom);
-		if(ok < 0){
-			aDataNom.push($nom);
-		}
+	$.each($('.range'),function(){
+		$.each($('.eleves .etudiant'),function(){
+			$nom = $(this).find('.nom').attr('data-slug');
+			var ok = $.inArray($nom, aDataNom);
+			if(ok < 0){
+				aDataNom.push($nom);
+			}
 
-		$anneeLevel = $(this).find('.anneeLevel').attr('data-slug');
-		var ok = $.inArray($anneeLevel, aDataAnneeLevel);
-		if(ok < 0){
-			aDataAnneeLevel.push($anneeLevel);
-		}
-
-
-		$groupe = $(this).find('.groupe').text();
-		var ok = $.inArray($groupe, aDataGroupe);
-		if(ok < 0){
-			aDataGroupe.push($groupe);
-		}
+			$anneeLevel = $(this).find('.anneeLevel').attr('data-slug');
+			var ok = $.inArray($anneeLevel, aDataAnneeLevel);
+			if(ok < 0){
+				aDataAnneeLevel.push($anneeLevel);
+			}
 
 
-		$option = $(this).find('.option').text();
-		var ok = $.inArray($option, aDataOption);
-		if(ok < 0){
-			aDataOption.push($option);
-		}
-		
+			$groupe = $(this).find('.groupe').text();
+			var ok = $.inArray($groupe, aDataGroupe);
+			if(ok < 0){
+				aDataGroupe.push($groupe);
+			}
+
+
+			$option = $(this).find('.option').text();
+			var ok = $.inArray($option, aDataOption);
+			if(ok < 0){
+				aDataOption.push($option);
+			}
+
+		});
 	});
+	
 	return aDataNom;
 };
 
@@ -204,7 +255,7 @@ var putPresent = function( e ){
 		});
 	}
 	
-};autocompleteEleves();
+};
 var putJustifier = function( e ){
 	e.preventDefault();
 	//requete ajax pour changer la presence
@@ -252,8 +303,9 @@ var getPref= function(  ){
 		async: false,
 		url: "config.json",
 		success: function( data ) {
-			oColorCours = data.color.cours;
-			oColorPresence = data.color.presence;
+			var oColorCours = data.color.cours;
+			var oColorPresence = data.color.presence;
+			var oColorGroupe = data.color.groupe;
 
 			for(var i = 0;i <= oColorCours.length-1;i++){
 
@@ -262,6 +314,10 @@ var getPref= function(  ){
 			for(var i = 0;i <= oColorPresence.length-1;i++){
 
 				oMyPresenceColors[oColorPresence[i].presence] = oColorPresence[i].color;	
+			}
+			for(var i = 0;i <= oColorGroupe.length-1;i++){
+
+				oMyGroupeColors[oColorGroupe[i].groupe] = oColorGroupe[i].color;	
 			}
 		}
 	})
