@@ -30,6 +30,7 @@
 		getPref();
 		putColorSceances();
 		putColorGroupeEleves();
+		putColorGroupe();
 		$.each($('.mesCours').find('.cours'),function(){
 			var $type = $(this).attr('data-type');
 			if($type ==="web"){ //avec les données json on boucle pour changer la couleur
@@ -92,7 +93,13 @@
 
 		/* LIGNE */
 
-		$('.sceancesMois li').on('click','a',showActions);
+		$('.sceancesMois li').on('click','a',function( e ){
+			e.preventDefault();
+			mouseX = e.pageX; 
+			mouseY = e.pageY;
+			var $id = $(this).attr('data-sceance');
+			showActions($id,mouseX,mouseY);
+		});
 
 		$actions.on('click','a.modifier',showModifierLignePopup);
 		$actions.on('click','a.supprimer',showSupprimerLignePopup);
@@ -125,9 +132,25 @@
 
 			}, 50);
 		});
-
+		$('.eleves li').on('click','a',function( e ){
+			e.preventDefault();
+			mouseX = e.pageX; 
+			mouseY = e.pageY;
+			var $slug = $(this).parent().attr('data-slug');
+			showActions($slug,mouseX,mouseY);
+		});
+		
 		
 		/* END ELEVES */
+		/* GROUPE */
+		$('.listGroupes .groupe').on('click','a',function( e ){
+			e.preventDefault();
+			mouseX = e.pageX; 
+			mouseY = e.pageY;
+			var $id = $(this).attr('data-groupe');
+			showActions($id,mouseX,mouseY);
+		});
+		/* END GROUPE */
 
 
 	});
@@ -165,6 +188,26 @@ var putColorGroupeEleves = function(){
 
 		if( oMyGroupeColors[$groupe]){
 			$(this).css({
+				backgroundColor:oMyGroupeColors[$groupe],
+				color:"white",
+
+			});
+			$(this).find('span > a').css({
+				color:"white",
+				borderBottom:"1px dotted white",
+				borderTop:0,
+			});
+		}
+	});
+};
+var putColorGroupe = function(){
+
+	$.each($('.listGroupes .groupe'),function(){
+		var $groupe = $(this).find('.nom').attr('data-groupe');
+
+		if( oMyGroupeColors[$groupe]){
+			console.log($(this));
+			$(this).find('a').css({
 				backgroundColor:oMyGroupeColors[$groupe],
 				color:"white",
 
@@ -409,12 +452,33 @@ var showModifierLignePopup = function( e ){
 
 	$popupSupprimerSceanceLigne.hide();
 };
-var showActions = function( e ){
+var showSupprimerElevePopup = function( e ){
 	e.preventDefault();
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$actions.css({'top':mouseY+25,'left':mouseX-100}).fadeIn('fast');
+	$('.popupSupprimerEleves').css({'top':mouseY+125,'left':+130}).fadeIn();
+	overlay( $popupSupprimerSceanceLigne );
+
+
+	$popupModifierSceanceLigne.hide();
+};
+var showModifierElevePopup = function( e ){
+	e.preventDefault();
+	mouseX = e.pageX; 
+	mouseY = e.pageY;
+
+	$('.popupModifierEleves').css({'top':mouseY+125,'left':0}).fadeIn();
+	overlay( $popupModifierSceanceLigne );
+
+
+	$popupSupprimerSceanceLigne.hide();
+};
+var showActions = function($selector, x, y){
+
+	$actions.attr('data-id',$selector);
+
+	$actions.css({'top':y+25,'left':x-100}).fadeIn('fast');
 	
 };
 var showActionsPresence = function( e ){

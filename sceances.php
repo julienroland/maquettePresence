@@ -273,13 +273,9 @@
 </div>
 <div class="popupModifierSceanceLigne">
     <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
-    <h3 aria-level="3" role="heading" class="indexTitle">Modifier un cours</h3>
+    <h3 aria-level="3" role="heading" class="indexTitle">Modifier ce cours: web</h3>
     <hr/>
     <form action="">
-        <label for="cours">Quel cours ?</label>
-        <select name="cours" id="cours">
-            <option value="1">Web</option>
-        </select>
         <div class="leftForm">
             <label for="intitule">Intitulé</label>
             <input type="text" name="intitule" id="intitule" placeholder="Math">
@@ -310,13 +306,9 @@
 </div>
 <div class="popupSupprimerSceanceLigne">
     <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
-    <h3 aria-level="3" role="heading" class="indexTitle">Supprimer un cours</h3>
+    <h3 aria-level="3" role="heading" class="indexTitle">Supprimer ce cours: web</h3>
     <hr/>
     <form action="">
-        <label for="cours">Quel cours ?</label>
-        <select name="cours" id="cours">
-            <option value="1">Web</option>
-        </select>
 
         <input type="submit" value="Supprimer" class="btn">
     </form>

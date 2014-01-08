@@ -719,6 +719,7 @@ body {
 
 .titleIndex {
   margin-bottom: 1em;
+  text-align: left;
   font-size: 24px;
   line-height: 1.1; }
 
@@ -1015,14 +1016,14 @@ a {
             vertical-align: middle;
             background-image: url('../img/framework/icon/chevron-rightWhite.png?1387805011'); }
 
-.sceanceEnCours, .gererMaSceance {
+.sceanceEnCours, .gererMaSceance, .ficheEleve {
   margin-top: 1em;
   padding: 0 1em;
   margin-bottom: 2em; }
-  .sceanceEnCours h2, .gererMaSceance h2 {
+  .sceanceEnCours h2, .gererMaSceance h2, .ficheEleve h2 {
     text-align: center;
     margin-bottom: 1em; }
-  .sceanceEnCours .sceance, .gererMaSceance .sceance {
+  .sceanceEnCours .sceance, .gererMaSceance .sceance, .ficheEleve .sceance {
     width: 100%;
     margin: auto;
     display: block;
@@ -1036,19 +1037,19 @@ a {
     height: 200px;
     border: 1px solid #5097bd;
     padding-bottom: 1em; }
-    .sceanceEnCours .sceance:after, .gererMaSceance .sceance:after {
+    .sceanceEnCours .sceance:after, .gererMaSceance .sceance:after, .ficheEleve .sceance:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours .sceance:hover .overImage, .gererMaSceance .sceance:hover .overImage, .sceanceEnCours .sceance:focus .overImage, .gererMaSceance .sceance:focus .overImage {
+    .sceanceEnCours .sceance:hover .overImage, .gererMaSceance .sceance:hover .overImage, .ficheEleve .sceance:hover .overImage, .sceanceEnCours .sceance:focus .overImage, .gererMaSceance .sceance:focus .overImage, .ficheEleve .sceance:focus .overImage {
       display: block;
       -webkit-transition: opacity 0.3s ease;
       -moz-transition: opacity 0.3s ease;
       -o-transition: opacity 0.3s ease;
       transition: opacity 0.3s ease; }
-    .sceanceEnCours .sceance .overImage, .gererMaSceance .sceance .overImage {
+    .sceanceEnCours .sceance .overImage, .gererMaSceance .sceance .overImage, .ficheEleve .sceance .overImage {
       display: none;
       position: absolute;
       left: 0;
@@ -1058,12 +1059,12 @@ a {
       margin: auto;
       text-align: center;
       box-sizing: border-box; }
-      .sceanceEnCours .sceance .overImage a, .gererMaSceance .sceance .overImage a {
+      .sceanceEnCours .sceance .overImage a, .gererMaSceance .sceance .overImage a, .ficheEleve .sceance .overImage a {
         height: 32px;
         font-family: Oswald, georgia, "Helvetica neue", arial, freesans, clean, sans-serif;
         margin: auto;
         margin-top: 40%; }
-        .sceanceEnCours .sceance .overImage a + a, .gererMaSceance .sceance .overImage a + a {
+        .sceanceEnCours .sceance .overImage a + a, .gererMaSceance .sceance .overImage a + a, .ficheEleve .sceance .overImage a + a {
           margin-top: 40%;
           width: 41.66667%;
           float: left;
@@ -1072,30 +1073,30 @@ a {
           -moz-box-sizing: border-box;
           box-sizing: border-box;
           margin-left: 15px; }
-          .sceanceEnCours .sceance .overImage a + a:after, .gererMaSceance .sceance .overImage a + a:after {
+          .sceanceEnCours .sceance .overImage a + a:after, .gererMaSceance .sceance .overImage a + a:after, .ficheEleve .sceance .overImage a + a:after {
             content: "";
             display: block;
             height: 0;
             clear: both;
             visibility: hidden; }
-    .sceanceEnCours .sceance .titre, .gererMaSceance .sceance .titre {
+    .sceanceEnCours .sceance .titre, .gererMaSceance .sceance .titre, .ficheEleve .sceance .titre {
       background-color: #5097bd;
       height: 40px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px;
       -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px;
       box-shadow: rgba(0, 0, 0, 0.2) 0 2px 2px 0px; }
-      .sceanceEnCours .sceance .titre h3, .gererMaSceance .sceance .titre h3 {
+      .sceanceEnCours .sceance .titre h3, .gererMaSceance .sceance .titre h3, .ficheEleve .sceance .titre h3 {
         border-bottom: 0;
         margin: 0 auto;
         color: white;
         padding-top: 10px; }
-    .sceanceEnCours .sceance .number, .gererMaSceance .sceance .number {
+    .sceanceEnCours .sceance .number, .gererMaSceance .sceance .number, .ficheEleve .sceance .number {
       font-size: 4.778em;
       display: block;
       margin: auto;
       text-align: center;
       font-weight: bold; }
-    .sceanceEnCours .sceance .text, .gererMaSceance .sceance .text {
+    .sceanceEnCours .sceance .text, .gererMaSceance .sceance .text, .ficheEleve .sceance .text {
       text-align: center;
       display: block;
       margin: auto; }
@@ -1786,7 +1787,7 @@ a {
         height: 0;
         clear: both;
         visibility: hidden; }
-  .presenceTotalCours .graphPresenceTotalCours {
+  .presenceTotalCours .graphPresenceTotalCours, .presenceTotalCours .graphPresenceTotalCoursProf {
     width: 100%;
     margin: auto;
     display: block;
@@ -1795,13 +1796,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0.5em auto; }
-    .presenceTotalCours .graphPresenceTotalCours:after {
+    .presenceTotalCours .graphPresenceTotalCours:after, .presenceTotalCours .graphPresenceTotalCoursProf:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .presenceTotalCours .graphPresenceTotalCours canvas {
+    .presenceTotalCours .graphPresenceTotalCours canvas, .presenceTotalCours .graphPresenceTotalCoursProf canvas {
       margin: auto;
       width: 400px;
       max-width: 100%;
@@ -1962,7 +1963,7 @@ a {
         height: 0;
         clear: both;
         visibility: hidden; }
-  .presenceTotalCoursAnnee .graphPresenceTotalCours {
+  .presenceTotalCoursAnnee .graphPresenceTotalCours, .presenceTotalCoursAnnee .presenceTotalCours .graphPresenceTotalCoursProf, .presenceTotalCours .presenceTotalCoursAnnee .graphPresenceTotalCoursProf {
     width: 100%;
     margin: auto;
     display: block;
@@ -1971,13 +1972,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0.5em auto; }
-    .presenceTotalCoursAnnee .graphPresenceTotalCours:after {
+    .presenceTotalCoursAnnee .graphPresenceTotalCours:after, .presenceTotalCoursAnnee .presenceTotalCours .graphPresenceTotalCoursProf:after, .presenceTotalCours .presenceTotalCoursAnnee .graphPresenceTotalCoursProf:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .presenceTotalCoursAnnee .graphPresenceTotalCours canvas {
+    .presenceTotalCoursAnnee .graphPresenceTotalCours canvas, .presenceTotalCoursAnnee .presenceTotalCours .graphPresenceTotalCoursProf canvas, .presenceTotalCours .presenceTotalCoursAnnee .graphPresenceTotalCoursProf canvas {
       margin: auto;
       width: 400px;
       position: relative;
@@ -2732,7 +2733,108 @@ a {
         padding: 0.5em 0.5em;
         margin-bottom: 0.5em; }
 
+.ficheEleve {
+  position: relative; }
+  .ficheEleve b {
+    font-weight: bold; }
+  .ficheEleve .vcard {
+    width: 100%;
+    margin: auto;
+    display: block;
+    float: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 300px; }
+    .ficheEleve .vcard:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  .ficheEleve .photo {
+    margin: auto;
+    display: inline-block; }
+    .ficheEleve .photo img {
+      max-width: 100%; }
+  .ficheEleve .eleveNom {
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 0; }
+  .ficheEleve .groupe .list {
+    display: list-item;
+    list-style-type: circle;
+    margin-left: 1em; }
+
 /* END ELEVES*/
+/* GROUPES */
+.listGroupes {
+  padding: 1em; }
+  .listGroupes .groupe {
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 0.5%;
+    width: auto;
+    color: white; }
+    .listGroupes .groupe:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .listGroupes .groupe a {
+      color: white;
+      width: 100%;
+      margin: auto;
+      display: block;
+      float: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color: #111111;
+      border-top: 0;
+      border-bottom: 0;
+      padding: 0.5em;
+      text-align: center; }
+      .listGroupes .groupe a:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .listGroupes .groupe a:hover, .listGroupes .groupe a:after {
+        border-top: 0;
+        border-bottom: 0; }
+      .listGroupes .groupe a:hover, .listGroupes .groupe a:focus {
+        background-color: #2b2b2b; }
+    .listGroupes .groupe .nom {
+      font-weight: bold;
+      font-size: 18px;
+      display: inline-block;
+      width: 100%;
+      margin: auto;
+      display: block;
+      float: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .listGroupes .groupe .nom:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+    .listGroupes .groupe .nbEleve {
+      font-size: 0.8em;
+      display: inline-block; }
+
+/* END GROUPES */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
@@ -2915,7 +3017,7 @@ a {
     clear: both;
     visibility: hidden; }
 
-  .sceanceEnCours, .gererMaSceance, .sceances {
+  .sceanceEnCours, .gererMaSceance, .ficheEleve, .sceances {
     width: 49%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -2924,21 +3026,21 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .sceanceEnCours:after, .gererMaSceance:after, .sceances:after {
+    .sceanceEnCours:after, .gererMaSceance:after, .ficheEleve:after, .sceances:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours:after, .gererMaSceance:after, .sceances:after {
+    .sceanceEnCours:after, .gererMaSceance:after, .ficheEleve:after, .sceances:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .sceanceEnCours h2, .gererMaSceance h2, .sceances h2 {
+    .sceanceEnCours h2, .gererMaSceance h2, .ficheEleve h2, .sceances h2 {
       text-align: left; }
-    .sceanceEnCours .sceance, .gererMaSceance .sceance, .sceances .sceance {
+    .sceanceEnCours .sceance, .gererMaSceance .sceance, .ficheEleve .sceance, .sceances .sceance {
       margin: auto; }
 
   .mesCours, .gererMesCours, .gererMonCours {
@@ -3043,7 +3145,7 @@ a {
       clear: both;
       visibility: hidden; }
 
-  .gererMaSceance {
+  .gererMaSceance, .ficheEleve {
     width: 100%;
     margin: auto;
     display: block;
@@ -3052,7 +3154,7 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 1em; }
-    .gererMaSceance:after {
+    .gererMaSceance:after, .ficheEleve:after {
       content: "";
       display: block;
       height: 0;
@@ -3145,7 +3247,7 @@ a {
       height: 0;
       clear: both;
       visibility: hidden; }
-  .presenceTotalCours .graphPresenceTotalCours {
+  .presenceTotalCours .graphPresenceTotalCours, .presenceTotalCours .graphPresenceTotalCoursProf {
     width: 65.66667%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -3154,7 +3256,7 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .presenceTotalCours .graphPresenceTotalCours:after {
+    .presenceTotalCours .graphPresenceTotalCours:after, .presenceTotalCours .graphPresenceTotalCoursProf:after {
       content: "";
       display: block;
       height: 0;
@@ -3460,7 +3562,7 @@ a {
       clear: both;
       visibility: hidden; }
 
-  .gererMaSceance {
+  .gererMaSceance, .ficheEleve {
     width: 74%;
     float: left;
     margin-left: 0.5%;
@@ -3471,7 +3573,7 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%;
     padding: 1em; }
-    .gererMaSceance:after {
+    .gererMaSceance:after, .ficheEleve:after {
       content: "";
       display: block;
       height: 0;
@@ -3546,7 +3648,7 @@ a {
         clear: both;
         visibility: hidden; }
 
-  .sceanceEnCours, .gererMaSceance {
+  .sceanceEnCours, .gererMaSceance, .ficheEleve {
     width: 24%;
     float: left;
     margin-left: 0.5%;
@@ -3556,7 +3658,7 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .sceanceEnCours:after, .gererMaSceance:after {
+    .sceanceEnCours:after, .gererMaSceance:after, .ficheEleve:after {
       content: "";
       display: block;
       height: 0;
@@ -3705,7 +3807,7 @@ a {
       clear: both;
       visibility: hidden; }
 
-  .gererMaSceance {
+  .gererMaSceance, .ficheEleve {
     width: 74%;
     float: left;
     margin-left: 0.5%;
@@ -3716,7 +3818,7 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%;
     padding: 1em; }
-    .gererMaSceance:after {
+    .gererMaSceance:after, .ficheEleve:after {
       content: "";
       display: block;
       height: 0;

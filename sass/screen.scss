@@ -139,6 +139,7 @@ b{
 }
 .titleIndex{
   margin-bottom: 1em;
+  text-align: left;
   font-size: 24px;
   line-height: 1.1;
 }
@@ -1005,6 +1006,9 @@ a, ul {
       overflow:visible;
     }
   }
+  .graphPresenceTotalCoursProf{
+    @extend .graphPresenceTotalCours;
+  }
 
 }
 .presenceCours{
@@ -1593,7 +1597,70 @@ a, ul {
   }
 }
 }
+.ficheEleve{
+  @extend .gererMaSceance;
+  position:relative;
+  b{
+    font-weight: bold;
+  }
+  .vcard{
+    @include c(12);
+    max-width: 300px;
+  }
+  .photo{
+    margin: auto;
+    display:inline-block;
+    img{
+      max-width: 100%;
+    }
+  }
+  .eleveNom{
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .groupe{
+    .list{
+      display:list-item;
+      list-style-type: circle;
+      margin-left: 1em;
+    }
+  }
+}
 /* END ELEVES*/
+/* GROUPES */
+.listGroupes{
+  padding:1em;
+  .groupe{
+    @include cl(12);
+    margin-bottom: gutter();
+    width:auto;
+    color:white;
+    a{
+      color:white;
+      @include c(12);
+      background-color: $tc;
+      @include a();
+      padding:$pd;
+      text-align: center;
+      &:hover,&:focus{
+        background-color: lighten($tc,10%);
+      }
+    }
+    .nom{
+      font-weight: bold;
+      font-size: 18px;
+      display:inline-block;
+      @include c(12);
+    }
+    .nbEleve{
+      font-size: 0.8em;
+      display:inline-block;
+    }
+
+  }
+}
+/* END GROUPES */
 /* MEDIA QUERIES */
 @import "responsive";
 /* END MEDIA*/

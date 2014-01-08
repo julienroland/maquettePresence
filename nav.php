@@ -8,7 +8,7 @@
         <li><a href="cours.php">Mes cours</a></li>
             <li><a href="sceances.php">Mes scéances</a></li>
             <li><a href="eleves.php">Elèves</a></li>
-            <li><a href="groupes.php">mes groupes</a></li>
+            <li><a href="groupes.php">Mes groupes</a></li>
             <li><a href="config.php">Configuration</a></li>
         </ul>
     </div>

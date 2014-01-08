@@ -45,7 +45,7 @@ var plotData = function() {
 	total = 100,
 	offset = Math.PI / 2;
 
-	$data = $('.dataGraph li');
+	$data = $('.graphPresenceTotalCours .dataGraph li');
 	
 	var i = 0;
 	$.each($data,function(){
