@@ -103,7 +103,7 @@
 
 		/* END LIGNE */
 		/* PRESENCE */
-		$('.elevesDuCours .eleve').on('click','a',showActionsPresence);
+		$('.elevesDuCours.presenceCours .eleve').on('click','a',showActionsPresence);
 		/* END PRESENCE */
 		/* END SCEANCES */
 
@@ -125,10 +125,26 @@
 
 			}, 50);
 		});
+
+		
 		/* END ELEVES */
 
 
 	});
+var goToEleve = function( e ){
+	e.preventDefault();
+	$slug = $(this).attr('data-slug');
+	$that = $('.list .range li[data-slug="'+$slug+'"]');
+	goTo($that);
+	$that.find('.nom a').focus();
+
+	
+};
+var goTo = function($selector){
+	$('html, body').animate({
+		scrollTop: $selector.offset().top
+	}, 400);
+};
 var putColorSceances  = function(){
 	$.each($('.sceances li'),function(){
 		var $sceance = $(this).attr('data-cours');
@@ -161,41 +177,77 @@ var putColorGroupeEleves = function(){
 		}
 	});
 };
-String.prototype.ucwords = function() {
-	var words = this.split(' '),
-		i = 0,
-		l = words.length;
-	for( ; i < l; i++) {
-		words[i] = words[i].charAt(0).toUpperCase() + 
-			   words[i].slice(1);
-	}
-	return(words.join(' '));
-};
+
 var listEleves = function( value ){
-	console.log(value);
 	var value = value.toLowerCase();
-	autocompleteEleves( value );
+	if($.type(value)==="string"){
+		autocompleteEleves( value );
+		$('.listAutocomplete li').on('click','a',goToEleve);
+	}
+	
+};
+var addNameToList = function( sNom ,sSlug ){
+	var $inSide = $('.search .listAutocomplete li');
+	var bExist = false;
+	if($inSide.length > 0){
+		$.each($inSide,function(){
+			
+			if($(this).find('a').attr('data-slug') === sSlug){
+				bExist = true;
+			}
+			
+		});
+		if(!bExist){
+			$('.search .autoCompletionEleves').show();
+			$('.search .listAutocomplete').append('<li><a href="voirEleve.php" data-slug="'+sSlug+'" title="Voir la fiche de l\'élève">'+sNom+'</a></li>');
+		}
+	}
+	else{
+
+		if(!bExist){
+			$('.search .autoCompletionEleves').show();
+			$('.search .listAutocomplete').append('<li><a href="voirEleve.php" data-slug="'+sSlug+'" title="Voir la fiche de l\'élève">'+sNom+'</a></li>');
+		}
+	}
+	
+};
+var removeNameToList = function( sSlug ){
+
+	var $inSide = $('.search .listAutocomplete li');
+	if(sSlug !== "all"){
+		$.each($inSide,function(){
+			
+			if($(this).find('a').attr('data-slug') === sSlug){
+				$(this).remove();
+			}
+			
+		});
+	}else{
+		$inSide.remove();
+	}
 	
 };
 var autocompleteEleves = function( value ){
-	
-	aData = dataAutocompleteEleves();
-	console.log(aData);
+	if(value !== ""){
+		aData = dataAutocompleteEleves();
 
-	for(var i=0;i<aData.length;i++){
+		for(var i=0;i<aData.length;i++){
 
-		if( aData[i].indexOf(value) >= 0){
-			console.log('match');
-			console.log(aData[i]);
-			var $nomReplace = aData[i].replace('-'," ");
-			var $nomWellDisplay = $nomReplace.ucwords();
-			console.log($nomWellDisplay);
+			if( aData[i].indexOf(value) >= 0){
+
+				var sNomReplace = aData[i].replace('-'," ");
+				var sNomWellDisplay = sNomReplace.ucwords();
+				addNameToList(sNomWellDisplay, aData[i]);
+
+			}
+			else{
+				removeNameToList( aData[i]);
+			}
+
 		}
-		else{
-			console.log('match pas');
-			
-		}
-
+	}
+	else{
+		removeNameToList( "all");
 	}
 };
 var dataAutocompleteEleves = function(){
@@ -517,6 +569,16 @@ var closePopup = function( e ){
 var closeActions = function( e ){
 	e.preventDefault();
 	$(this).parent().fadeOut();
-}
+};
+String.prototype.ucwords = function() {
+	var words = this.split(' '),
+	i = 0,
+	l = words.length;
+	for( ; i < l; i++) {
+		words[i] = words[i].charAt(0).toUpperCase() + 
+		words[i].slice(1);
+	}
+	return(words.join(' '));
+};
 
 }).call(this,jQuery);

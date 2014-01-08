@@ -1470,18 +1470,20 @@ a, ul {
 /* END PAGINATION */
 /* ELEVES*/
 .autoCompletionEleves{
-  @include abs-bot(); 
+  @include abs(); 
   background-color: white;
   font-weight: bold;
+  top:80px;
   @include box-shadow( $greyL2 0 0 2px 0); 
-  bottom:-80px;
-  z-index: 20;
+  bottom:auto;
+  z-index: 100;
   border:1px solid $greyL2;
+  display:none;
   li{
-    
+
     a{
       color:$tc;
-      padding:$pd;
+      padding:$pd/2 $pd;
       display:block;
       @include a();
       &:hover,&:focus{
@@ -1497,6 +1499,7 @@ a, ul {
   }
 }
 .listEleves{
+  padding:1em 0;
   .search{
     min-height: 50px;
     @include c(12);
@@ -1544,7 +1547,7 @@ a, ul {
       position:relative;
     }
     .eleves{
-      @include cl(9);
+      @include c(12);
       display:block;
       padding-left: 100px;
       font-size: 18px;
@@ -1554,9 +1557,14 @@ a, ul {
         border-bottom: 1px solid $greyL2;
         span{
          display:block;
-
-       }
-       .nom{
+         a{
+          padding:2px;
+        }
+        a:focus,a:hover{
+          outline:2px solid white;
+        }
+      }
+      .nom{
         @include cfl(5);
         font-weight: bold;
         display:inline-block;

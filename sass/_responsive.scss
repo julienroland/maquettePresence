@@ -197,6 +197,9 @@
     position: relative;
 
   }
+  .listEleves{
+  @include cfl(9);
+  }
   .presenceTotalCoursAnnee{
     @include cfl(9);
   }
