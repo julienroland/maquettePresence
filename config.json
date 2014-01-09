@@ -22,19 +22,23 @@
 		"presence":[
 			{
 				"color":"#37db3f",
-				"presence":"3"
+				"presence":"3",
+				"slug":"Présent"
 			},
 			{
 				"color":"#e0bc3e",
-				"presence":"2"
+				"presence":"2",
+				"slug":"Absence justifié"
 			},
 			{
 				"color":"#d52828",
-				"presence":"1"
+				"presence":"1",
+				"slug":"Absent"
 			},
 			{
 				"color":"#111111",
-				"presence":"0"
+				"presence":"0",
+				"slug":"Aucune"
 			}
 			],
 		"groupe":[

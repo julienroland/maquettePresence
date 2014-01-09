@@ -2922,6 +2922,72 @@ a {
     margin-left: 1em; }
 
 /* END GROUPES */
+/* CONFIG */
+.couleur {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em; }
+  .couleur:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .couleur h2 {
+    text-align: left; }
+  .couleur button {
+    min-width: 200px;
+    height: 40px;
+    margin-left: 0.5%;
+    font-size: 15px; }
+
+.config {
+  margin: 1em 0;
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1em;
+  margin-bottom: 3em; }
+  .config:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .config h3 {
+    text-align: left; }
+  .config ul li {
+    display: block;
+    margin-left: 1em;
+    line-height: 40px;
+    min-height: 40px;
+    font-size: 18px;
+    margin-bottom: 0.5em; }
+    .config ul li label {
+      float: left;
+      vertical-align: middle;
+      min-width: 150px;
+      padding: 0; }
+    .config ul li input {
+      float: left;
+      margin-left: 1em;
+      width: 40px; }
+
+input[type="color"] {
+  padding: 0;
+  margin: 0; }
+
+/*  END CONFIG */
 /* MEDIA QUERIES */
 /* CONFIG */
 /* typography */
@@ -3295,6 +3361,38 @@ a {
       visibility: hidden; }
     .presenceParCours .pourcentagePresenceParCours .nom {
       margin-bottom: 1em; }
+
+  .config {
+    width: 49%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .config:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .config + .config {
+      width: 49%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .config + .config:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
 
   .elevesDuCours .eleve, .elevesGroupe .eleve, .groupeDetails .eleve {
     width: 25%;
@@ -3705,6 +3803,38 @@ a {
     display: inline-block; }
   .logo h1 .prenom {
     color: white; }
+
+  .config {
+    width: 32.33333%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .config:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .config + .config {
+      width: 32.33333%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .config + .config:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
 
   .main {
     min-height: 400px; }

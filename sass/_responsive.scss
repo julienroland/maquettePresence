@@ -172,6 +172,12 @@
       }
     }
   }
+  .config{
+    @include cfl(6);
+    & +.config{
+      @include cl(6);
+    }
+  }
   .elevesDuCours{
     .eleve{
       @include cl-nm(3);
@@ -198,7 +204,7 @@
 
   }
   .listEleves{
-  @include cfl(9);
+    @include cfl(9);
   }
   .presenceTotalCoursAnnee{
     @include cfl(9);
@@ -349,6 +355,12 @@
       .prenom {
         color: white;
       }
+    }
+  }
+   .config{
+    @include cfl(4);
+    & +.config{
+      @include cl(4);
     }
   }
   .main {

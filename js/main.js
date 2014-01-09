@@ -1,7 +1,6 @@
 ;(function( $ ){
 	var $Nav = $(".nav" ),
 	cWeb = '#000',
-	aCours = ["web"],
 	$DaySceance = $('.day').find('.sceances'),
 	$Overlay = $('.overlay'),
 	$PopupCreer = $('.popupCreer'),
@@ -25,6 +24,10 @@
 	oMyCoursColors = [],
 	oMyPresenceColors = [],
 	oMyGroupeColors = [],
+	oColorCours,
+	oColorPresence,
+	oColorGroupe,
+	$config = $('.config'),
 	mouseX,
 	mouseY;
 
@@ -34,6 +37,7 @@
 		putColorSceances();
 		putColorGroupeEleves();
 		putColorGroupe();
+
 		$.each($('.mesCours').find('.cours'),function(){
 			var $type = $(this).attr('data-type');
 			if($type ==="web"){ //avec les données json on boucle pour changer la couleur
@@ -166,9 +170,61 @@
 
 		$actionsEleves.on('click','a.supprimer',showSupprimerThisPopup);
 		/* END GROUPE */
+		/* CONFIG */
+
+		displayConfig();
+
+		$('.couleur .save').on('click',savePref);
+		
+		/* END CONFIG */
 
 
 	});
+var displayConfig = function(){
+
+	displayConfigCours();
+	displayConfigPresence();
+	displayConfigGroupe();
+
+};
+var displayConfigCours = function(){
+
+	for(var i = 0;i<oColorCours.length;i++){
+
+		$config.find('.cours').append('<li><label for="color'+oColorCours[i].cours+'">'+oColorCours[i].cours.capitalize()+'</label><input type="color" value="'+oColorCours[i].color+'" name="color'+oColorCours[i].cours+'" id="color'+oColorCours[i].cours+'"></li>');
+	}
+};
+var displayConfigGroupe = function(){
+
+	for(var i = 0;i<oColorGroupe.length;i++){
+
+		$config.find('.groupe').append('<li><label for="color'+oColorGroupe[i].groupe+'">'+oColorGroupe[i].groupe.capitalize()+'</label><input type="color" value="'+oColorGroupe[i].color+'" name="color'+oColorGroupe[i].groupe+'" id="color'+oColorGroupe[i].groupe+'"></li>');
+	}
+};
+var displayConfigPresence = function(){
+
+	for(var i = 0;i<oColorPresence.length;i++){
+
+		$config.find('.presence').append('<li><label for="color'+oColorPresence[i].presence+'">'+oColorPresence[i].slug+'</label><input type="color" value="'+oColorPresence[i].color+'" name="color'+oColorPresence[i].presence+'" id="color'+oColorPresence[i].presence+'"></li>');
+	}
+};
+var savePref = function(){
+	$.each($('.config ul li'),function(){
+
+			var key = $(this).find('label').html().toLowerCase();
+			var data = $(this).find('input').val();
+			savePrefAjax("color","presence",key,data);
+	});
+	
+};
+var savePrefAjax = function(what , of , key , data){
+	$.ajax({
+		url: "",//url/what/of/key/data
+		success: function( data ) {
+			console.log('ajax');
+		}
+	})
+};
 var goToEleve = function( e ){
 	e.preventDefault();
 	$(this).parent().parent().parent().hide();
@@ -415,9 +471,21 @@ var getPref= function(  ){
 		async: false,
 		url: "config.json",
 		success: function( data ) {
-			var oColorCours = data.color.cours;
-			var oColorPresence = data.color.presence;
-			var oColorGroupe = data.color.groupe;
+			//var oMyColors = [];
+			/*$.each(data.color,function(key){
+				console.log(key);
+				console.log($(this));
+				oMyColors[key] = []; 
+				for(var i = 0;i <= $(this).length-1;i++){
+
+					 oMyColors[key][$(this)[i].cours] = $(this)[i].color;	
+			}
+			console.log(oMyColors);
+
+			});*/
+			oColorCours = data.color.cours;
+			oColorPresence = data.color.presence;
+			oColorGroupe = data.color.groupe;
 
 			for(var i = 0;i <= oColorCours.length-1;i++){
 
@@ -674,6 +742,7 @@ var closeActions = function( e ){
 	e.preventDefault();
 	$(this).parent().fadeOut();
 };
+
 String.prototype.ucwords = function() {
 	var words = this.split(' '),
 	i = 0,
@@ -684,5 +753,8 @@ String.prototype.ucwords = function() {
 	}
 	return(words.join(' '));
 };
+String.prototype.capitalize = function() {
+	return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
 }).call(this,jQuery);
