@@ -4,16 +4,19 @@
 	aCours = ["web"],
 	$DaySceance = $('.day').find('.sceances'),
 	$Overlay = $('.overlay'),
-	$PopupCreerCours = $('.popupCreerCours'),
-	$PopupModifierCours = $('.popupModifierCours'),
-	$PopupSupprimerCours = $('.popupSupprimerCours'),
-	$PopupVoirCours = $('.popupVoirCours'),
+	$PopupCreer = $('.popupCreer'),
+	$PopupModifier = $('.popupModifier'),
+	$PopupSupprimer = $('.popupSupprimer'),
+	$PopupVoir = $('.popupVoir'),
+	$PopupAjouter = $('.popupAjouter'),
 	$eleve = $('.elevesDuCours .eleve'),
 	$actions = $('.actions'),
 	$actionsPresence = $('.actionsPresence'),
+	$actionsEleves = $('.actionsEleves'),
+	$actionsEleves = $('.actionsEleves'),
 	$ligne = $('.ligneSceances'),
-	$popupModifierSceanceLigne = $('.popupModifierSceanceLigne'),
-	$popupSupprimerSceanceLigne = $('.popupSupprimerSceanceLigne'),
+	$popupModifierThis = $('.popupModifierThis'),
+	$popupSupprimerThis = $('.popupSupprimerThis'),
 	$sceanceId,
 	$slugEleve,
 	$groupeEleve,
@@ -65,6 +68,7 @@
 		$('.helper a[data-link="modifier"').on('click',showModifierPopup);
 		$('.helper a[data-link="supprimer"').on('click',showSupprimerPopup);
 		$('.helper a[data-link="voir"').on('click',showVoirPopup);
+		$('.helper a[data-link="ajouter"').on('click',showAjouterPopup);
 		/* END POP UP */
 
 		/* COLOR */
@@ -101,8 +105,8 @@
 			showActions($id,mouseX,mouseY);
 		});
 
-		$actions.on('click','a.modifier',showModifierLignePopup);
-		$actions.on('click','a.supprimer',showSupprimerLignePopup);
+		$actions.on('click','a.modifier',showModifierThisPopup);
+		$actions.on('click','a.supprimer',showSupprimerThisPopup);
 		$actionsPresence.find('.present').on('click',putPresent);
 		$actionsPresence.find('.justifier').on('click',putJustifier);
 		$actionsPresence.find('.absent').on('click',putAbsent);
@@ -132,6 +136,7 @@
 
 			}, 50);
 		});
+		
 		$('.eleves li').on('click','a',function( e ){
 			e.preventDefault();
 			mouseX = e.pageX; 
@@ -150,12 +155,23 @@
 			var $id = $(this).attr('data-groupe');
 			showActions($id,mouseX,mouseY);
 		});
+
+		$('.elevesGroupe .eleve').on('click','a',function( e ){
+			e.preventDefault();
+			mouseX = e.pageX; 
+			mouseY = e.pageY;
+			var $id = $(this).attr('data-groupe');
+			showActionsEleves($id,mouseX,mouseY);
+		});
+
+		$actionsEleves.on('click','a.supprimer',showSupprimerThisPopup);
 		/* END GROUPE */
 
 
 	});
 var goToEleve = function( e ){
 	e.preventDefault();
+	$(this).parent().parent().parent().hide();
 	$slug = $(this).attr('data-slug');
 	$that = $('.list .range li[data-slug="'+$slug+'"]');
 	goTo($that);
@@ -206,7 +222,7 @@ var putColorGroupe = function(){
 		var $groupe = $(this).find('.nom').attr('data-groupe');
 
 		if( oMyGroupeColors[$groupe]){
-			console.log($(this));
+
 			$(this).find('a').css({
 				backgroundColor:oMyGroupeColors[$groupe],
 				color:"white",
@@ -291,6 +307,7 @@ var autocompleteEleves = function( value ){
 	}
 	else{
 		removeNameToList( "all");
+		$('.autoCompletionEleves').hide();
 	}
 };
 var dataAutocompleteEleves = function(){
@@ -430,27 +447,27 @@ var ajaxChangePresence = function( $eleve, $sceance , $presence){
 	});*/
 return true;
 };
-var showSupprimerLignePopup = function( e ){
+var showSupprimerThisPopup = function( e ){
 	e.preventDefault();
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$popupSupprimerSceanceLigne.css({'top':mouseY+125,'left':+130}).fadeIn();
-	overlay( $popupSupprimerSceanceLigne );
+	$popupSupprimerThis.css({'top':mouseY+125,'left':+130}).fadeIn();
+	overlay( $popupSupprimerThis );
 
 
-	$popupModifierSceanceLigne.hide();
+	$popupModifierThis.hide();
 };
-var showModifierLignePopup = function( e ){
+var showModifierThisPopup = function( e ){
 	e.preventDefault();
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$popupModifierSceanceLigne.css({'top':mouseY+125,'left':0}).fadeIn();
-	overlay( $popupModifierSceanceLigne );
+	$popupModifierThis.css({'top':mouseY+125,'left':0}).fadeIn();
+	overlay( $popupModifierThis );
 
 
-	$popupSupprimerSceanceLigne.hide();
+	$popupSupprimerThis.hide();
 };
 var showSupprimerElevePopup = function( e ){
 	e.preventDefault();
@@ -458,10 +475,10 @@ var showSupprimerElevePopup = function( e ){
 	mouseY = e.pageY;
 
 	$('.popupSupprimerEleves').css({'top':mouseY+125,'left':+130}).fadeIn();
-	overlay( $popupSupprimerSceanceLigne );
+	overlay( $popupSupprimerThis );
 
 
-	$popupModifierSceanceLigne.hide();
+	$popupModifierThis.hide();
 };
 var showModifierElevePopup = function( e ){
 	e.preventDefault();
@@ -469,16 +486,23 @@ var showModifierElevePopup = function( e ){
 	mouseY = e.pageY;
 
 	$('.popupModifierEleves').css({'top':mouseY+125,'left':0}).fadeIn();
-	overlay( $popupModifierSceanceLigne );
+	overlay( $popupModifierThis );
 
 
-	$popupSupprimerSceanceLigne.hide();
+	$popupSupprimerThis.hide();
 };
 var showActions = function($selector, x, y){
 
 	$actions.attr('data-id',$selector);
 
 	$actions.css({'top':y+25,'left':x-100}).fadeIn('fast');
+	
+};
+var showActionsEleves = function($selector, x, y){
+
+	$actionsEleves.attr('data-id',$selector);
+
+	$actionsEleves.css({'top':y+25,'left':x-100}).fadeIn('fast');
 	
 };
 var showActionsPresence = function( e ){
@@ -556,18 +580,21 @@ var hideAll = function( e ){
 	e.preventDefault();
 	$Overlay.fadeOut();
 	$actions.fadeOut();
+	$actionsPresence.fadeOut();
+	$actionsEleves.fadeOut();
 
-	$popupModifierSceanceLigne.fadeOut();
-	$popupSupprimerSceanceLigne.fadeOut();
-	$PopupCreerCours.fadeOut();
-	$PopupModifierCours.fadeOut();
-	$PopupSupprimerCours.fadeOut();
-	$PopupVoirCours.fadeOut();
+	$popupModifierThis.fadeOut();
+	$popupSupprimerThis.fadeOut();
+	$PopupCreer.fadeOut();
+	$PopupModifier.fadeOut();
+	$PopupSupprimer.fadeOut();
+	$PopupVoir.fadeOut();
+	$PopupAjouter.fadeOut();
 };
 var overlay = function( $Selector ){
 	$('html, body').animate({
 		scrollTop: $Selector.offset().top
-	}, 1000,function(){
+	}, 800,function(){
 		$Overlay.css({
 			height:$(window).height(),
 			width:$(window).width(),
@@ -577,43 +604,56 @@ var overlay = function( $Selector ){
 };
 var showCreerPopup = function( e ){
 	e.preventDefault();
-	$PopupCreerCours.fadeIn();
-	overlay( $PopupCreerCours );
+	$PopupCreer.fadeIn();
+	overlay( $PopupCreer );
 
 
-	$PopupModifierCours.hide();
-	$PopupSupprimerCours.hide();
-	$PopupVoirCours.hide();
+	$PopupModifier.hide();
+	$PopupSupprimer.hide();
+	$PopupVoir.hide();
+	$PopupAjouter.hide();
 
 };
 
 var showModifierPopup = function( e ){
 	e.preventDefault();
-	$PopupModifierCours.fadeIn();
-	overlay( $PopupModifierCours );
+	$PopupModifier.fadeIn();
+	overlay( $PopupModifier );
 
-
-	$PopupCreerCours.hide();
-	$PopupSupprimerCours.hide();
-	$PopupVoirCours.hide();
+	$PopupCreer.hide();
+	$PopupSupprimer.hide();
+	$PopupVoir.hide();
+	$PopupAjouter.hide();
 };
 var showSupprimerPopup = function( e ){
 	e.preventDefault();
-	$PopupSupprimerCours.fadeIn();
-	overlay( $PopupSupprimerCours );
+	$PopupSupprimer.fadeIn();
+	overlay( $PopupSupprimer );
 
-	$PopupModifierCours.hide();
-	$PopupCreerCours.hide();
-	$PopupVoirCours.hide();
+	$PopupModifier.hide();
+	$PopupCreer.hide();
+	$PopupVoir.hide();
+	$PopupAjouter.hide();
 };
 var showVoirPopup = function( e ){
 	e.preventDefault();
-	$PopupVoirCours.fadeIn();
-	overlay( $PopupVoirCours );
+	$PopupVoir.fadeIn();
+	overlay( $PopupVoir );
 
-	$PopupModifierCours.hide();
-	$PopupSupprimerCours.hide();
-	$PopupCreerCours.hide();
+	$PopupModifier.hide();
+	$PopupSupprimer.hide();
+	$PopupCreer.hide();
+	$PopupAjouter.hide();
+};
+var showAjouterPopup = function( e ){
+	e.preventDefault();
+	$PopupAjouter.fadeIn();
+	overlay( $PopupAjouter );
+
+	$PopupModifier.hide();
+	$PopupSupprimer.hide();
+	$PopupCreer.hide();
+	$PopupVoir.hide();
 };
 var openMenu = function( e ){
 	e.preventDefault();

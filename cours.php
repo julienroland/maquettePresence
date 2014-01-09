@@ -70,7 +70,7 @@
 
             </div>
         </div> 
-        <div class="popupCreerCours">
+        <div class="popupCreer">
             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
             <h3 aria-level="3" role="heading" class="indexTitle">Crée un nouveau cours</h3>
             <hr/>
@@ -103,7 +103,7 @@
                 <input type="submit" value="Créer" class="btn">
             </form>
         </div>  
-        <div class="popupModifierCours">
+        <div class="popupModifier">
             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
             <h3 aria-level="3" role="heading" class="indexTitle">Modifier un cours</h3>
             <hr/>
@@ -140,7 +140,7 @@
                 <input type="submit" value="Modifier" class="btn">
             </form>
         </div>
-        <div class="popupSupprimerCours">
+        <div class="popupSupprimer">
             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
             <h3 aria-level="3" role="heading" class="indexTitle">Supprimer un cours</h3>
             <hr/>
@@ -153,7 +153,7 @@
                 <input type="submit" value="Supprimer" class="btn">
             </form>
         </div>
-        <div class="popupVoirCours">
+        <div class="popupVoir">
             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
             <h3 aria-level="3" role="heading" class="indexTitle">Voir un cours</h3>
             <hr/>

@@ -129,7 +129,7 @@ p {
     visibility: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 0.75;
+  line-height: 1;
   font-weight: bold;
   padding-bottom: 0.2em;
   margin-bottom: 0;
@@ -571,7 +571,7 @@ body {
   height: 1px;
   width: 100%; }
 
-.actions, .actionsPresence {
+.actions, .actionsPresence, .actionsEleves {
   background-color: #5097bd;
   color: white;
   font-weight: bold;
@@ -584,7 +584,7 @@ body {
   position: absolute;
   display: none;
   z-index: 20; }
-  .actions span, .actionsPresence span {
+  .actions span, .actionsPresence span, .actionsEleves span {
     display: block;
     height: 100%;
     text-align: center;
@@ -598,13 +598,13 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .actions span:after, .actionsPresence span:after {
+    .actions span:after, .actionsPresence span:after, .actionsEleves span:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .actions span + span, .actionsPresence span + span {
+    .actions span + span, .actionsPresence span + span, .actionsEleves span + span {
       width: 32.33333%;
       margin-left: 0.5%;
       margin-right: 0.5%;
@@ -613,13 +613,13 @@ body {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
-      .actions span + span:after, .actionsPresence span + span:after {
+      .actions span + span:after, .actionsPresence span + span:after, .actionsEleves span + span:after {
         content: "";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden; }
-  .actions a, .actionsPresence a {
+  .actions a, .actionsPresence a, .actionsEleves a {
     border-top: 0;
     border-bottom: 0;
     display: inline-block;
@@ -633,10 +633,10 @@ body {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-    .actions a:hover, .actionsPresence a:hover, .actions a:after, .actionsPresence a:after {
+    .actions a:hover, .actionsPresence a:hover, .actionsEleves a:hover, .actions a:after, .actionsPresence a:after, .actionsEleves a:after {
       border-top: 0;
       border-bottom: 0; }
-    .actions a:hover, .actionsPresence a:hover, .actions a:focus, .actionsPresence a:focus {
+    .actions a:hover, .actionsPresence a:hover, .actionsEleves a:hover, .actions a:focus, .actionsPresence a:focus, .actionsEleves a:focus {
       -webkit-box-shadow: #666666 0 0 6px 0px inset;
       -moz-box-shadow: #666666 0 0 6px 0px inset;
       box-shadow: #666666 0 0 6px 0px inset;
@@ -673,6 +673,44 @@ body {
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
       .actionsPresence span + span:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+
+.actionsEleves {
+  width: 150px; }
+  .actionsEleves span {
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    width: 49%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1%; }
+    .actionsEleves span:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .actionsEleves span + span {
+      width: 49%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .actionsEleves span + span:after {
         content: "";
         display: block;
         height: 0;
@@ -721,7 +759,7 @@ body {
   margin-bottom: 1em;
   text-align: left;
   font-size: 24px;
-  line-height: 1.1; }
+  line-height: 1.2; }
 
 hr {
   border: 0;
@@ -1567,7 +1605,7 @@ a {
 
 /* END FOOTER */
 /* POP UP */
-.popupCreerCours, .popupModifierCours, .popupModifierSceanceLigne, .popupSupprimerCours, .popupSupprimerSceanceLigne, .popupVoirCours {
+.popupCreer, .popupModifier, .popupModifierThis, .popupSupprimer, .popupSupprimerThis, .popupVoir, .popupAjouter {
   display: none;
   position: absolute;
   left: 0;
@@ -1590,7 +1628,7 @@ a {
   -moz-box-shadow: #bfbfbf 0 0 4px 0;
   box-shadow: #bfbfbf 0 0 4px 0;
   border: 1px solid #bfbfbf; }
-  .popupCreerCours .close, .popupModifierCours .close, .popupModifierSceanceLigne .close, .popupSupprimerCours .close, .popupSupprimerSceanceLigne .close, .popupVoirCours .close {
+  .popupCreer .close, .popupModifier .close, .popupModifierThis .close, .popupSupprimer .close, .popupSupprimerThis .close, .popupVoir .close, .popupAjouter .close {
     width: 16px;
     height: 16px;
     background-image: url('../img/framework/icon/close.png?1388845961');
@@ -1598,17 +1636,17 @@ a {
     left: 0;
     top: 0;
     margin: auto; }
-    .popupCreerCours .close a, .popupModifierCours .close a, .popupModifierSceanceLigne .close a, .popupSupprimerCours .close a, .popupSupprimerSceanceLigne .close a, .popupVoirCours .close a {
+    .popupCreer .close a, .popupModifier .close a, .popupModifierThis .close a, .popupSupprimer .close a, .popupSupprimerThis .close a, .popupVoir .close a, .popupAjouter .close a {
       text-indent: -99999px;
       display: block;
       border-top: 0;
       border-bottom: 0; }
-      .popupCreerCours .close a:hover, .popupModifierCours .close a:hover, .popupModifierSceanceLigne .close a:hover, .popupSupprimerCours .close a:hover, .popupSupprimerSceanceLigne .close a:hover, .popupVoirCours .close a:hover, .popupCreerCours .close a:after, .popupModifierCours .close a:after, .popupModifierSceanceLigne .close a:after, .popupSupprimerCours .close a:after, .popupSupprimerSceanceLigne .close a:after, .popupVoirCours .close a:after {
+      .popupCreer .close a:hover, .popupModifier .close a:hover, .popupModifierThis .close a:hover, .popupSupprimer .close a:hover, .popupSupprimerThis .close a:hover, .popupVoir .close a:hover, .popupAjouter .close a:hover, .popupCreer .close a:after, .popupModifier .close a:after, .popupModifierThis .close a:after, .popupSupprimer .close a:after, .popupSupprimerThis .close a:after, .popupVoir .close a:after, .popupAjouter .close a:after {
         border-top: 0;
         border-bottom: 0; }
-  .popupCreerCours hr, .popupModifierCours hr, .popupModifierSceanceLigne hr, .popupSupprimerCours hr, .popupSupprimerSceanceLigne hr, .popupVoirCours hr {
+  .popupCreer hr, .popupModifier hr, .popupModifierThis hr, .popupSupprimer hr, .popupSupprimerThis hr, .popupVoir hr, .popupAjouter hr {
     margin-bottom: 0.5em; }
-  .popupCreerCours .leftForm, .popupModifierCours .leftForm, .popupModifierSceanceLigne .leftForm, .popupSupprimerCours .leftForm, .popupSupprimerSceanceLigne .leftForm, .popupVoirCours .leftForm {
+  .popupCreer .leftForm, .popupModifier .leftForm, .popupModifierThis .leftForm, .popupSupprimer .leftForm, .popupSupprimerThis .leftForm, .popupVoir .leftForm, .popupAjouter .leftForm {
     width: 44.83333%;
     float: left;
     margin-left: 0.5%;
@@ -1619,13 +1657,13 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%;
     margin-bottom: 1em; }
-    .popupCreerCours .leftForm:after, .popupModifierCours .leftForm:after, .popupModifierSceanceLigne .leftForm:after, .popupSupprimerCours .leftForm:after, .popupSupprimerSceanceLigne .leftForm:after, .popupVoirCours .leftForm:after {
+    .popupCreer .leftForm:after, .popupModifier .leftForm:after, .popupModifierThis .leftForm:after, .popupSupprimer .leftForm:after, .popupSupprimerThis .leftForm:after, .popupVoir .leftForm:after, .popupAjouter .leftForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreerCours .rightForm, .popupModifierCours .rightForm, .popupModifierSceanceLigne .rightForm, .popupSupprimerCours .rightForm, .popupSupprimerSceanceLigne .rightForm, .popupVoirCours .rightForm {
+  .popupCreer .rightForm, .popupModifier .rightForm, .popupModifierThis .rightForm, .popupSupprimer .rightForm, .popupSupprimerThis .rightForm, .popupVoir .rightForm, .popupAjouter .rightForm {
     width: 44.83333%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1636,13 +1674,13 @@ a {
     box-sizing: border-box;
     margin-left: 7.33333%;
     margin-bottom: 1em; }
-    .popupCreerCours .rightForm:after, .popupModifierCours .rightForm:after, .popupModifierSceanceLigne .rightForm:after, .popupSupprimerCours .rightForm:after, .popupSupprimerSceanceLigne .rightForm:after, .popupVoirCours .rightForm:after {
+    .popupCreer .rightForm:after, .popupModifier .rightForm:after, .popupModifierThis .rightForm:after, .popupSupprimer .rightForm:after, .popupSupprimerThis .rightForm:after, .popupVoir .rightForm:after, .popupAjouter .rightForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreerCours label, .popupModifierCours label, .popupModifierSceanceLigne label, .popupSupprimerCours label, .popupSupprimerSceanceLigne label, .popupVoirCours label {
+  .popupCreer label, .popupModifier label, .popupModifierThis label, .popupSupprimer label, .popupSupprimerThis label, .popupVoir label, .popupAjouter label {
     width: 100%;
     margin: auto;
     display: block;
@@ -1651,13 +1689,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-bottom: 0; }
-    .popupCreerCours label:after, .popupModifierCours label:after, .popupModifierSceanceLigne label:after, .popupSupprimerCours label:after, .popupSupprimerSceanceLigne label:after, .popupVoirCours label:after {
+    .popupCreer label:after, .popupModifier label:after, .popupModifierThis label:after, .popupSupprimer label:after, .popupSupprimerThis label:after, .popupVoir label:after, .popupAjouter label:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreerCours input, .popupModifierCours input, .popupModifierSceanceLigne input, .popupSupprimerCours input, .popupSupprimerSceanceLigne input, .popupVoirCours input {
+  .popupCreer input, .popupModifier input, .popupModifierThis input, .popupSupprimer input, .popupSupprimerThis input, .popupVoir input, .popupAjouter input {
     width: 100%;
     margin: auto;
     display: block;
@@ -1666,13 +1704,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top: 0; }
-    .popupCreerCours input:after, .popupModifierCours input:after, .popupModifierSceanceLigne input:after, .popupSupprimerCours input:after, .popupSupprimerSceanceLigne input:after, .popupVoirCours input:after {
+    .popupCreer input:after, .popupModifier input:after, .popupModifierThis input:after, .popupSupprimer input:after, .popupSupprimerThis input:after, .popupVoir input:after, .popupAjouter input:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreerCours select, .popupModifierCours select, .popupModifierSceanceLigne select, .popupSupprimerCours select, .popupSupprimerSceanceLigne select, .popupVoirCours select {
+  .popupCreer select, .popupModifier select, .popupModifierThis select, .popupSupprimer select, .popupSupprimerThis select, .popupVoir select, .popupAjouter select {
     width: 100%;
     margin: auto;
     display: block;
@@ -1680,24 +1718,29 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .popupCreerCours select:after, .popupModifierCours select:after, .popupModifierSceanceLigne select:after, .popupSupprimerCours select:after, .popupSupprimerSceanceLigne select:after, .popupVoirCours select:after {
+    .popupCreer select:after, .popupModifier select:after, .popupModifierThis select:after, .popupSupprimer select:after, .popupSupprimerThis select:after, .popupVoir select:after, .popupAjouter select:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
 
-.popupModifierCours, .popupModifierSceanceLigne {
+.popupModifier, .popupModifierThis {
   display: none; }
 
-.popupSupprimerCours, .popupSupprimerSceanceLigne {
+.popupSupprimer, .popupSupprimerThis {
   display: none; }
-  .popupSupprimerCours select, .popupSupprimerSceanceLigne select {
+  .popupSupprimer select, .popupSupprimerThis select {
     margin-bottom: 1em; }
 
-.popupVoirCours {
+.popupVoir {
   display: none; }
-  .popupVoirCours select {
+  .popupVoir select {
+    margin-bottom: 1em; }
+
+.popupAjouter {
+  display: none; }
+  .popupAjouter select {
     margin-bottom: 1em; }
 
 /* END POP UP */
@@ -1996,7 +2039,7 @@ a {
       margin-left: 10px;
       float: left; }
 
-.elevesDuCours {
+.elevesDuCours, .elevesGroupe, .groupeDetails {
   margin-bottom: 1em;
   padding: 1em;
   width: 100%;
@@ -2006,15 +2049,15 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .elevesDuCours:after {
+  .elevesDuCours:after, .elevesGroupe:after, .groupeDetails:after {
     content: "";
     display: block;
     height: 0;
     clear: both;
     visibility: hidden; }
-  .elevesDuCours h2 {
+  .elevesDuCours h2, .elevesGroupe h2, .groupeDetails h2 {
     text-align: left; }
-  .elevesDuCours .eleve {
+  .elevesDuCours .eleve, .elevesGroupe .eleve, .groupeDetails .eleve {
     width: 50%;
     float: left;
     display: block;
@@ -2023,13 +2066,13 @@ a {
     box-sizing: border-box;
     max-width: 150px;
     padding: 0.5em; }
-    .elevesDuCours .eleve:after {
+    .elevesDuCours .eleve:after, .elevesGroupe .eleve:after, .groupeDetails .eleve:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .elevesDuCours .eleve a {
+    .elevesDuCours .eleve a, .elevesGroupe .eleve a, .groupeDetails .eleve a {
       color: #111111;
       border-top: 0;
       border-bottom: 0;
@@ -2038,16 +2081,16 @@ a {
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease; }
-      .elevesDuCours .eleve a:hover, .elevesDuCours .eleve a:after {
+      .elevesDuCours .eleve a:hover, .elevesGroupe .eleve a:hover, .groupeDetails .eleve a:hover, .elevesDuCours .eleve a:after, .elevesGroupe .eleve a:after, .groupeDetails .eleve a:after {
         border-top: 0;
         border-bottom: 0; }
-      .elevesDuCours .eleve a:hover {
+      .elevesDuCours .eleve a:hover, .elevesGroupe .eleve a:hover, .groupeDetails .eleve a:hover {
         background-color: #f2f2f2;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
-    .elevesDuCours .eleve .percent {
+    .elevesDuCours .eleve .percent, .elevesGroupe .eleve .percent, .groupeDetails .eleve .percent {
       font-size: 34px;
       width: 80px;
       text-align: center;
@@ -2067,12 +2110,12 @@ a {
       -o-border-radius: 50%;
       border-radius: 50%;
       font-weight: bold; }
-      .elevesDuCours .eleve .percent span {
+      .elevesDuCours .eleve .percent span, .elevesGroupe .eleve .percent span, .groupeDetails .eleve .percent span {
         vertical-align: middle;
         text-align: center;
         display: inline-block;
         height: auto; }
-    .elevesDuCours .eleve img {
+    .elevesDuCours .eleve img, .elevesGroupe .eleve img, .groupeDetails .eleve img {
       max-width: 80px;
       margin: auto;
       display: block;
@@ -2082,13 +2125,13 @@ a {
       -o-border-radius: 50%;
       border-radius: 50%;
       margin-bottom: 5px; }
-    .elevesDuCours .eleve span {
+    .elevesDuCours .eleve span, .elevesGroupe .eleve span, .groupeDetails .eleve span {
       display: inline-block;
       width: 100%;
       text-align: center; }
-    .elevesDuCours .eleve .nom {
+    .elevesDuCours .eleve .nom, .elevesGroupe .eleve .nom, .groupeDetails .eleve .nom {
       font-weight: bold; }
-  .elevesDuCours .presenceGroupe {
+  .elevesDuCours .presenceGroupe, .elevesGroupe .presenceGroupe, .groupeDetails .presenceGroupe {
     width: 100%;
     margin: auto;
     display: block;
@@ -2101,16 +2144,16 @@ a {
     text-align: center;
     color: white;
     display: none; }
-    .elevesDuCours .presenceGroupe:after {
+    .elevesDuCours .presenceGroupe:after, .elevesGroupe .presenceGroupe:after, .groupeDetails .presenceGroupe:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .elevesDuCours .presenceGroupe h3 {
+    .elevesDuCours .presenceGroupe h3, .elevesGroupe .presenceGroupe h3, .groupeDetails .presenceGroupe h3 {
       line-height: 1.1;
       color: #111111; }
-    .elevesDuCours .presenceGroupe .percent {
+    .elevesDuCours .presenceGroupe .percent, .elevesGroupe .presenceGroupe .percent, .groupeDetails .presenceGroupe .percent {
       font-size: 38px;
       background-color: #111111;
       font-weight: bold;
@@ -2834,6 +2877,50 @@ a {
       font-size: 0.8em;
       display: inline-block; }
 
+.elevesGroupe {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em; }
+  .elevesGroupe:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .elevesGroupe h3 {
+    text-align: left; }
+
+.groupeDetails {
+  width: 100%;
+  margin: auto;
+  display: block;
+  float: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em; }
+  .groupeDetails:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .groupeDetails h3 {
+    text-align: left; }
+  .groupeDetails b {
+    font-weight: bold; }
+  .groupeDetails ul {
+    font-size: 18px; }
+  .groupeDetails .option ul, .groupeDetails .groupe ul {
+    display: list-item;
+    list-style-type: circle;
+    margin-left: 1em; }
+
 /* END GROUPES */
 /* MEDIA QUERIES */
 /* CONFIG */
@@ -2850,14 +2937,14 @@ a {
   .ligneSceances .ligne .anneeEcole {
     display: block; }
 
-  .elevesDuCours .eleve {
+  .elevesDuCours .eleve, .elevesGroupe .eleve, .groupeDetails .eleve {
     width: 33.33333%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .elevesDuCours .eleve:after {
+    .elevesDuCours .eleve:after, .elevesGroupe .eleve:after, .groupeDetails .eleve:after {
       content: "";
       display: block;
       height: 0;
@@ -3209,14 +3296,14 @@ a {
     .presenceParCours .pourcentagePresenceParCours .nom {
       margin-bottom: 1em; }
 
-  .elevesDuCours .eleve {
+  .elevesDuCours .eleve, .elevesGroupe .eleve, .groupeDetails .eleve {
     width: 25%;
     float: left;
     display: block;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .elevesDuCours .eleve:after {
+    .elevesDuCours .eleve:after, .elevesGroupe .eleve:after, .groupeDetails .eleve:after {
       content: "";
       display: block;
       height: 0;
@@ -3510,7 +3597,7 @@ a {
         .helper .active a:hover, .helper .active a:focus {
           border: 0; }
 
-  .elevesDuCours {
+  .elevesDuCours, .elevesGroupe, .groupeDetails {
     width: 74%;
     float: left;
     margin-left: 0.5%;
@@ -3520,7 +3607,7 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 1%; }
-    .elevesDuCours:after {
+    .elevesDuCours:after, .elevesGroupe:after, .groupeDetails:after {
       content: "";
       display: block;
       height: 0;

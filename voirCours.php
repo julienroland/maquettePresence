@@ -28,14 +28,10 @@
                     <span class="debut">8H00</span>
                     <span class="fin">3e</span>
                 </div>
-                <div class="overImage">
-                    <a href="" class="btn" title="Modifier ce cours">Modifier</a>
-                    <a href="" title="Supprimer ce cours" class="btn">Supprimer</a>
-
-                </div>
+               
             </div>  
 
-            <div class="popupModifierCours" >
+            <div class="popupModifier" >
                 <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
                 <h3 aria-level="3" role="heading" class="indexTitle">Modifier un cours</h3>
                 <hr/>
@@ -68,7 +64,7 @@
                     <input type="submit" value="Modifier" class="btn">
                 </form>
             </div>
-            <div class="popupSupprimerCours">
+            <div class="popupSupprimer">
                 <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
                 <h3 aria-level="3" role="heading" class="indexTitle">Supprimer un cours</h3>
                 <hr/>

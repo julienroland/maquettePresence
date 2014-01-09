@@ -106,6 +106,20 @@ body {
     }
   }
 }
+.actionsEleves{
+  @extend .actions;
+  width:150px;
+  span{
+    display:block;
+    height:100%;
+    text-align: center;
+    line-height: 50px;
+    @include cfl(6);
+    & + span{
+      @include cl(6);
+    }
+  }
+}
 .clear{
   @include clear();
 }
@@ -141,7 +155,7 @@ b{
   margin-bottom: 1em;
   text-align: left;
   font-size: 24px;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 hr{
   border:0;
@@ -870,7 +884,7 @@ a, ul {
 
 /* END FOOTER */
 /* POP UP */
-.popupCreerCours{
+.popupCreer{
   display:none;
   @include abs();
   top:auto;
@@ -923,29 +937,36 @@ a, ul {
 
   }
 }
-.popupModifierCours{
-  @extend .popupCreerCours;
+.popupModifier{
+  @extend .popupCreer;
   display:none;
 }
-.popupSupprimerCours{
-  @extend .popupCreerCours;
-  display:none;
-  select{
-    margin-bottom: 1em;
-  }
-}
-.popupVoirCours{
-  @extend .popupCreerCours;
+.popupSupprimer{
+  @extend .popupCreer;
   display:none;
   select{
     margin-bottom: 1em;
   }
 }
-.popupModifierSceanceLigne{
-  @extend .popupModifierCours;
+.popupVoir{
+  @extend .popupCreer;
+  display:none;
+  select{
+    margin-bottom: 1em;
+  }
 }
-.popupSupprimerSceanceLigne{
-  @extend .popupSupprimerCours;
+.popupAjouter{
+  @extend .popupCreer;
+  display:none;
+  select{
+    margin-bottom: 1em;
+  }
+}
+.popupModifierThis{
+  @extend .popupModifier;
+}
+.popupSupprimerThis{
+  @extend .popupSupprimer;
 }
 /* END POP UP */
 /*  presenceTotalCours */
@@ -1658,6 +1679,36 @@ a, ul {
       display:inline-block;
     }
 
+  }
+}
+.elevesGroupe{
+  @extend .elevesDuCours;
+  @include c(12);
+  padding:1em;
+  h3{
+    text-align: left;
+  }
+}
+.groupeDetails{
+  @extend .elevesDuCours;
+  @include c(12);
+
+  padding:1em;
+  h3{
+    text-align: left;
+  }
+  b{
+    font-weight: bold;
+  }
+  ul{
+    font-size: 18px;
+  }
+  .option,.groupe{
+    ul{
+      display:list-item;
+      list-style-type: circle;
+      margin-left: 1em;
+    }
   }
 }
 /* END GROUPES */
