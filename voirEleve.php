@@ -27,10 +27,10 @@
                 </ul>
             </div>
             <div class="popupModifier">
-               <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
-               <h3 aria-level="3" role="heading" class="indexTitle">Modifier cet élève: Jean Marc</h3>
-               <hr/>
-               <form action="">
+             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
+             <h3 aria-level="3" role="heading" class="indexTitle">Modifier cet élève: Jean Marc</h3>
+             <hr/>
+             <form action="">
                 <div class="leftForm">
                     <label for="prenom">Prénom </label>
                     <input type="text" required name="prenom" id="prenom" placeholder="Jean">
@@ -70,24 +70,25 @@
             </form>
         </div>
         <div class="popupSupprimer">
-         <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
-         <h3 aria-level="3" role="heading" class="indexTitle">Supprimer cet élève: Jean Marc</h3>
-         <hr/>
-         <form action="">
+           <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
+           <h3 aria-level="3" role="heading" class="indexTitle">Supprimer cet élève: Jean Marc</h3>
+           <hr/>
+           <form action="">
 
             <input type="submit" value="Supprimer" class="btn">
         </form>
     </div>
 </section>
 <aside class="helper">
-    <ul>
-        <li><a data-link="modifier" href="" title="Modifier l'élève">Modifier l'élève</a></li>
-        <li><a data-link="supprimer" href="" title="Supprimer l'élève">Supprimer l'élève</a></li>
-    </ul>
+   <h1 aria-level="1" class="section">Intéraction avec l'élève</h1>
+   <ul>
+    <li><a data-link="modifier" href="" title="Modifier l'élève">Modifier l'élève</a></li>
+    <li><a data-link="supprimer" href="" title="Supprimer l'élève">Supprimer l'élève</a></li>
+</ul>
 </aside>
 </div>
 <div class="wrapper">
- <section class="presenceTotalCours">
+   <section class="presenceTotalCours">
     <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à vos cours</h2>
     <hr/>
     <div class="pourcentagePresenceTotalCours">
@@ -105,15 +106,15 @@
 
 
 </section>
-<aside class="helper">
+<div class="helper">
 
-</aside>
+</div>
 </div>
 <div class="wrapper">
- <section class="presenceTotalCours">
- <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à tous les cours</h2>
-    <hr/>
-    <div class="pourcentagePresenceTotalCours">
+   <section class="presenceTotalCours">
+       <h2 role="heading" aria-level="2" class="titleIndex">Taux de présence à tous les cours</h2>
+       <hr/>
+       <div class="pourcentagePresenceTotalCours">
         <span>60%</span>
     </div>
     <div class="graphPresenceTotalCoursProf">
@@ -128,9 +129,9 @@
 
 
 </section>
-<aside class="helper">
+<div class="helper">
 
-</aside>
+</div>
 </div>
 </section>
 <div class="overlay">

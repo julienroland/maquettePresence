@@ -63,7 +63,7 @@
                     <li class="etudiant" data-slug="julien-roland">
                         <span data-slug="julien-roland" class="nom"><a href="voirEleve.php" title="Voir la fiche de l'élève">Julien Roland</a></span>
                         <span data-anneeLevel="3" class="anneeLevel">3e</span>
-                        <span data-groupe="2283" class="groupe">2283</span>
+                        <span data-groupe="2284" class="groupe">2283</span>
                         <span data-option="" class="option"></span>
                     </li> 
                     <li class="etudiant" data-slug="jean-marc">
@@ -76,9 +76,7 @@
             </div>
 
         </div>
-
-    </section>
-    <div class="popupCreer">
+<div class="popupCreer">
         <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
         <h3 aria-level="3" role="heading" class="indexTitle">Ajouter un nouveau élève</h3>
         <hr/>
@@ -194,7 +192,10 @@
         <input type="submit" value="Voir" class="btn">
     </form>
 </div>
+    </section>
+    
 <aside class="helper">
+ <h1 aria-level="1" class="section">Intéraction avec les élèves</h1>
     <ul>
         <li><a data-link="creer" href="" title="Créer un nouvelle élève">Créer un élève</a></li>
         <li><a data-link="modifier" href="" title="Modifier un élève">Modifier un élève</a></li>

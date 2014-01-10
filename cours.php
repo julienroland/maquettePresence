@@ -168,6 +168,7 @@
         </div>
     </section>
     <aside class="helper">
+    <h1 aria-level="1" class="section">Intéraction avec les cours</h1>
         <ul>
             <li><a data-link="creer" href="" title="Créer un nouveau cours">Créer un cours</a></li>
             <li><a data-link="modifier" href="" title="Modifier un cours">Modifier un cours</a></li>
@@ -193,9 +194,9 @@
             </div>
 
         </section>
-        <aside class="helper">
+        <div class="helper">
 
-        </aside>
+        </div>
     </div> 
     <div class="wrapper">
         <section class="presenceParCours">
@@ -216,9 +217,9 @@
 
 
      </section>
-     <aside class="helper">
+     <div class="helper">
 
-     </aside>
+     </div>
  </div>
  <div class="overlay">
 

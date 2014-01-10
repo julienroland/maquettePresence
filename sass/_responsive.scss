@@ -54,7 +54,7 @@
       text-align: left;
       a {
         display: inline-block;
-        width: 100%;
+        width:auto;
       }
       span {
         display: none;
@@ -357,7 +357,7 @@
       }
     }
   }
-   .config{
+  .config{
     @include cfl(4);
     & +.config{
       @include cl(4);

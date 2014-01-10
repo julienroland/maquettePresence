@@ -9,9 +9,9 @@
     </div>
     <div class="wrapper">
         <section class="groupeDetails">
-           <h2 aria-level="2" role="heading" class="indexTitle">Groupe 2284</h2>
-           <hr/>
-        <ul>
+         <h2 aria-level="2" role="heading" class="indexTitle">Groupe 2284</h2>
+         <hr/>
+         <ul>
             <li>Nom du groupe: <b>2284</b></li>
             <li class="option"><b>Option(s)</b> du groupe:
                 <ul>
@@ -27,15 +27,54 @@
             </li>
         </ul>
 
-       </section>
-        <aside class="helper">
-    <ul>
-        <li><a data-link="modifier" href="" title="Modifier l'élève">Modifier l'élève</a></li>
-        <li><a data-link="supprimer" href="" title="Supprimer l'élève">Supprimer l'élève</a></li>
-    </ul>
-</aside>
-   </div>
-   <div class="wrapper">
+    </section>
+    <aside class="helper">
+        <h1 aria-level="1" class="section">Intéraction avec le groupe</h1>
+        <ul>
+            <li><a data-link="modifier" href="" title="Modifier le groupe">Modifier le groupe</a></li>
+            <li><a data-link="supprimer" href="" title="Supprimer le groupe">Supprimer le groupe</a></li>
+        </ul>
+    </aside>
+    <div class="popupModifier">
+        <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
+        <h3 aria-level="3" role="heading" class="indexTitle">Modifier ce groupe: 2284</h3>
+        <hr/>
+        <form action="">
+            <div class="leftForm">  
+
+                <label for="nom">Nom du groupe</label>
+                <input type="text" required name="nom" id="nom" placeholder="Jean">
+
+                <label for="anneeLevel">Année des membres</label>
+                <select multiple="1" required name="anneeLevel[]" id="anneeLevel">
+                    <option value="1">1e</option>
+                </select>
+
+            </div>
+            <div class="rightForm">
+                <label for="option">Option des membres</label>
+                <select multiple="1" required name="option[]" id="option">
+                    <option value="1">web</option>
+                </select>           
+
+            </div>
+            <label for="cours">Ajouter à un cours</label>
+            <select multiple="1" required name="cours[]" id="cours">
+                <option value="1">web</option>
+            </select>
+            <input type="submit" value="Modifier" class="btn">
+        </form>
+    </div>
+    <div class="popupSupprimer">
+        <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
+        <h3 aria-level="3" role="heading" class="indexTitle">Supprimer le groupe: 2283</h3>
+        <hr/>
+        <form action="">
+            <input type="submit" value="Supprimer" class="btn">
+        </form>
+    </div>
+</div>
+<div class="wrapper">
     <section class="elevesGroupe">
         <h2 aria-level="2" role="heading" class="indexTitle">Liste des élèves du groupe 2284</h2>
         <hr/>
@@ -55,8 +94,7 @@
                 <span class="groupe" data-groupe="2384">2384</span>
             </a>
         </div> 
-        
-        <div class="popupSupprimer">
+        <div class="popupSupprimerEleves">
             <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
             <h3 aria-level="3" role="heading" class="indexTitle">Supprimer un/des élève(s) du groupe</h3>
             <hr/>
@@ -83,12 +121,13 @@
             </form>
         </div>
     </section>
-    <aside class="helper">
-        <ul>
-            <li><a data-link="ajouter" href="" title="Ajouter un élève">Ajouter un élève au groupe</a></li>
-            <li><a data-link="supprimer" href="" title="Supprimer un élève">Supprimer un élève au groupe</a></li>
-        </ul>
-    </aside>
+    <aside class="helper ">
+       <h1 aria-level="1" class="section">Intéraction avec l'élève du groupe</h1>
+       <ul>
+        <li><a data-link="ajouter" href="" title="Ajouter un élève">Ajouter un élève au groupe</a></li>
+        <li><a data-link="supprimerEleves" href="" title="Supprimer un élève">Supprimer un élève au groupe</a></li>
+    </ul>
+</aside>
 </div>
 <div class="popupSupprimerThis">
     <div class="close"><a href="" title="Fermer la fenêtre"><span>Fermer</span></a></div>
@@ -109,8 +148,4 @@
 <div class="overlay">
 
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script src="js/graphTotalCours.js"></script>
-<script src="js/graphTotalCoursProf.js"></script>
 <?php include('footer.php'); ?>

@@ -80,6 +80,7 @@
         </section>
 
         <aside class="helper ">
+         <h1 aria-level="1" class="section">Intéraction avec le cours</h1>
             <ul>
                 <li><a data-link="modifier" href="" title="Modifier le cours">Modifier le cours</a></li>
                 <li><a data-link="supprimer" href="" title="Supprimer le cours">Supprimer le cours</a></li>
@@ -161,6 +162,7 @@
             </div>
         </section>
         <aside class="helper voirCours">
+         <h1 aria-level="1" class="section">Intéraction avec les élèves et groupes</h1>
             <ul class="groupe">
                 <li class="active"><a data-link="tri" data-groupe="all" href="" title="Voir tous les élèves">Voir tous les élèves</a></li>
                 <li><a data-link="tri" data-groupe="2384" href="" title="Voir les du groupe 2384">Voir élèves du groupe 2384</a></li>
@@ -190,9 +192,9 @@
 
 
         </section>
-        <aside class="helper">
+        <div class="helper">
             
-        </aside>
+        </div>
     </div>
     <div class="wrapper">
         <section class="presenceCours">
@@ -208,9 +210,9 @@
                 <canvas id="graphPresenceCours" width="800px" height="500">
                 </div>
             </section>
-            <aside class="helper">
+            <div class="helper">
             
-        </aside>
+            </div>
         </div>
         <div class="wrapper">
             <section class="sceancesNext">
@@ -250,9 +252,9 @@
                     <li><a href="">Voir la liste complète</a></li>
                 </ol>
             </section>
-            <aside class="helper">
+            <div class="helper">
             
-        </aside>
+        </div>
         </div>
 
     </section>

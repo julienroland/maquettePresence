@@ -880,11 +880,15 @@ a {
   .connexion .problemeCompte {
     margin: auto;
     text-align: center;
-    display: inline-block;
+    display: block;
+    float: left;
+    width: 100%;
     height: 20px; }
     .connexion .problemeCompte a {
       border-top: 0;
       border-bottom: 0;
+      display: inline;
+      width: auto;
       border-bottom: 1px dotted #5097bd; }
       .connexion .problemeCompte a:hover, .connexion .problemeCompte a:after {
         border-top: 0;
@@ -1059,7 +1063,7 @@ a {
   padding: 0 1em;
   margin-bottom: 2em; }
   .sceanceEnCours h2, .gererMaSceance h2, .ficheEleve h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1em; }
   .sceanceEnCours .sceance, .gererMaSceance .sceance, .ficheEleve .sceance {
     width: 100%;
@@ -1144,7 +1148,7 @@ a {
   padding: 0 1em;
   margin-bottom: 2em; }
   .mesCours h2, .gererMesCours h2, .gererMonCours h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1em; }
   .mesCours .cours, .gererMesCours .cours, .gererMonCours .cours {
     width: 100%;
@@ -1605,7 +1609,7 @@ a {
 
 /* END FOOTER */
 /* POP UP */
-.popupCreer, .popupModifier, .popupModifierThis, .popupSupprimer, .popupSupprimerThis, .popupVoir, .popupAjouter {
+.popupCreer, .popupModifier, .popupModifierThis, .popupSupprimer, .popupSupprimerThis, .popupSupprimerEleves, .popupVoir, .popupAjouter {
   display: none;
   position: absolute;
   left: 0;
@@ -1614,7 +1618,7 @@ a {
   bottom: 0;
   margin: auto;
   top: auto;
-  bottom: auto;
+  bottom: 0;
   z-index: 200;
   padding: 1em;
   -webkit-box-sizing: border-box;
@@ -1628,7 +1632,7 @@ a {
   -moz-box-shadow: #bfbfbf 0 0 4px 0;
   box-shadow: #bfbfbf 0 0 4px 0;
   border: 1px solid #bfbfbf; }
-  .popupCreer .close, .popupModifier .close, .popupModifierThis .close, .popupSupprimer .close, .popupSupprimerThis .close, .popupVoir .close, .popupAjouter .close {
+  .popupCreer .close, .popupModifier .close, .popupModifierThis .close, .popupSupprimer .close, .popupSupprimerThis .close, .popupSupprimerEleves .close, .popupVoir .close, .popupAjouter .close {
     width: 16px;
     height: 16px;
     background-image: url('../img/framework/icon/close.png?1388845961');
@@ -1636,17 +1640,17 @@ a {
     left: 0;
     top: 0;
     margin: auto; }
-    .popupCreer .close a, .popupModifier .close a, .popupModifierThis .close a, .popupSupprimer .close a, .popupSupprimerThis .close a, .popupVoir .close a, .popupAjouter .close a {
+    .popupCreer .close a, .popupModifier .close a, .popupModifierThis .close a, .popupSupprimer .close a, .popupSupprimerThis .close a, .popupSupprimerEleves .close a, .popupVoir .close a, .popupAjouter .close a {
       text-indent: -99999px;
       display: block;
       border-top: 0;
       border-bottom: 0; }
-      .popupCreer .close a:hover, .popupModifier .close a:hover, .popupModifierThis .close a:hover, .popupSupprimer .close a:hover, .popupSupprimerThis .close a:hover, .popupVoir .close a:hover, .popupAjouter .close a:hover, .popupCreer .close a:after, .popupModifier .close a:after, .popupModifierThis .close a:after, .popupSupprimer .close a:after, .popupSupprimerThis .close a:after, .popupVoir .close a:after, .popupAjouter .close a:after {
+      .popupCreer .close a:hover, .popupModifier .close a:hover, .popupModifierThis .close a:hover, .popupSupprimer .close a:hover, .popupSupprimerThis .close a:hover, .popupSupprimerEleves .close a:hover, .popupVoir .close a:hover, .popupAjouter .close a:hover, .popupCreer .close a:after, .popupModifier .close a:after, .popupModifierThis .close a:after, .popupSupprimer .close a:after, .popupSupprimerThis .close a:after, .popupSupprimerEleves .close a:after, .popupVoir .close a:after, .popupAjouter .close a:after {
         border-top: 0;
         border-bottom: 0; }
-  .popupCreer hr, .popupModifier hr, .popupModifierThis hr, .popupSupprimer hr, .popupSupprimerThis hr, .popupVoir hr, .popupAjouter hr {
+  .popupCreer hr, .popupModifier hr, .popupModifierThis hr, .popupSupprimer hr, .popupSupprimerThis hr, .popupSupprimerEleves hr, .popupVoir hr, .popupAjouter hr {
     margin-bottom: 0.5em; }
-  .popupCreer .leftForm, .popupModifier .leftForm, .popupModifierThis .leftForm, .popupSupprimer .leftForm, .popupSupprimerThis .leftForm, .popupVoir .leftForm, .popupAjouter .leftForm {
+  .popupCreer .leftForm, .popupModifier .leftForm, .popupModifierThis .leftForm, .popupSupprimer .leftForm, .popupSupprimerThis .leftForm, .popupSupprimerEleves .leftForm, .popupVoir .leftForm, .popupAjouter .leftForm {
     width: 44.83333%;
     float: left;
     margin-left: 0.5%;
@@ -1657,13 +1661,13 @@ a {
     box-sizing: border-box;
     margin-bottom: 1%;
     margin-bottom: 1em; }
-    .popupCreer .leftForm:after, .popupModifier .leftForm:after, .popupModifierThis .leftForm:after, .popupSupprimer .leftForm:after, .popupSupprimerThis .leftForm:after, .popupVoir .leftForm:after, .popupAjouter .leftForm:after {
+    .popupCreer .leftForm:after, .popupModifier .leftForm:after, .popupModifierThis .leftForm:after, .popupSupprimer .leftForm:after, .popupSupprimerThis .leftForm:after, .popupSupprimerEleves .leftForm:after, .popupVoir .leftForm:after, .popupAjouter .leftForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreer .rightForm, .popupModifier .rightForm, .popupModifierThis .rightForm, .popupSupprimer .rightForm, .popupSupprimerThis .rightForm, .popupVoir .rightForm, .popupAjouter .rightForm {
+  .popupCreer .rightForm, .popupModifier .rightForm, .popupModifierThis .rightForm, .popupSupprimer .rightForm, .popupSupprimerThis .rightForm, .popupSupprimerEleves .rightForm, .popupVoir .rightForm, .popupAjouter .rightForm {
     width: 44.83333%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1674,13 +1678,13 @@ a {
     box-sizing: border-box;
     margin-left: 7.33333%;
     margin-bottom: 1em; }
-    .popupCreer .rightForm:after, .popupModifier .rightForm:after, .popupModifierThis .rightForm:after, .popupSupprimer .rightForm:after, .popupSupprimerThis .rightForm:after, .popupVoir .rightForm:after, .popupAjouter .rightForm:after {
+    .popupCreer .rightForm:after, .popupModifier .rightForm:after, .popupModifierThis .rightForm:after, .popupSupprimer .rightForm:after, .popupSupprimerThis .rightForm:after, .popupSupprimerEleves .rightForm:after, .popupVoir .rightForm:after, .popupAjouter .rightForm:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreer label, .popupModifier label, .popupModifierThis label, .popupSupprimer label, .popupSupprimerThis label, .popupVoir label, .popupAjouter label {
+  .popupCreer label, .popupModifier label, .popupModifierThis label, .popupSupprimer label, .popupSupprimerThis label, .popupSupprimerEleves label, .popupVoir label, .popupAjouter label {
     width: 100%;
     margin: auto;
     display: block;
@@ -1689,13 +1693,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-bottom: 0; }
-    .popupCreer label:after, .popupModifier label:after, .popupModifierThis label:after, .popupSupprimer label:after, .popupSupprimerThis label:after, .popupVoir label:after, .popupAjouter label:after {
+    .popupCreer label:after, .popupModifier label:after, .popupModifierThis label:after, .popupSupprimer label:after, .popupSupprimerThis label:after, .popupSupprimerEleves label:after, .popupVoir label:after, .popupAjouter label:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreer input, .popupModifier input, .popupModifierThis input, .popupSupprimer input, .popupSupprimerThis input, .popupVoir input, .popupAjouter input {
+  .popupCreer input, .popupModifier input, .popupModifierThis input, .popupSupprimer input, .popupSupprimerThis input, .popupSupprimerEleves input, .popupVoir input, .popupAjouter input {
     width: 100%;
     margin: auto;
     display: block;
@@ -1704,13 +1708,13 @@ a {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top: 0; }
-    .popupCreer input:after, .popupModifier input:after, .popupModifierThis input:after, .popupSupprimer input:after, .popupSupprimerThis input:after, .popupVoir input:after, .popupAjouter input:after {
+    .popupCreer input:after, .popupModifier input:after, .popupModifierThis input:after, .popupSupprimer input:after, .popupSupprimerThis input:after, .popupSupprimerEleves input:after, .popupVoir input:after, .popupAjouter input:after {
       content: "";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-  .popupCreer select, .popupModifier select, .popupModifierThis select, .popupSupprimer select, .popupSupprimerThis select, .popupVoir select, .popupAjouter select {
+  .popupCreer select, .popupModifier select, .popupModifierThis select, .popupSupprimer select, .popupSupprimerThis select, .popupSupprimerEleves select, .popupVoir select, .popupAjouter select {
     width: 100%;
     margin: auto;
     display: block;
@@ -1718,7 +1722,7 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    .popupCreer select:after, .popupModifier select:after, .popupModifierThis select:after, .popupSupprimer select:after, .popupSupprimerThis select:after, .popupVoir select:after, .popupAjouter select:after {
+    .popupCreer select:after, .popupModifier select:after, .popupModifierThis select:after, .popupSupprimer select:after, .popupSupprimerThis select:after, .popupSupprimerEleves select:after, .popupVoir select:after, .popupAjouter select:after {
       content: "";
       display: block;
       height: 0;
@@ -1728,9 +1732,9 @@ a {
 .popupModifier, .popupModifierThis {
   display: none; }
 
-.popupSupprimer, .popupSupprimerThis {
+.popupSupprimer, .popupSupprimerThis, .popupSupprimerEleves {
   display: none; }
-  .popupSupprimer select, .popupSupprimerThis select {
+  .popupSupprimer select, .popupSupprimerThis select, .popupSupprimerEleves select {
     margin-bottom: 1em; }
 
 .popupVoir {
@@ -3098,7 +3102,7 @@ input[type="color"] {
         visibility: hidden; }
       .connexion .problemeCompte a {
         display: inline-block;
-        width: 100%; }
+        width: auto; }
       .connexion .problemeCompte span {
         display: none; }
 

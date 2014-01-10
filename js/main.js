@@ -16,6 +16,7 @@
 	$ligne = $('.ligneSceances'),
 	$popupModifierThis = $('.popupModifierThis'),
 	$popupSupprimerThis = $('.popupSupprimerThis'),
+	$popupSupprimerEleves = $('.popupSupprimerEleves'),
 	$sceanceId,
 	$slugEleve,
 	$groupeEleve,
@@ -169,6 +170,8 @@
 		});
 
 		$actionsEleves.on('click','a.supprimer',showSupprimerThisPopup);
+
+		$('.helper a[data-link="supprimerEleves"').on('click',showSupprimerElevesPopup);
 		/* END GROUPE */
 		/* CONFIG */
 
@@ -211,9 +214,9 @@ var displayConfigPresence = function(){
 var savePref = function(){
 	$.each($('.config ul li'),function(){
 
-			var key = $(this).find('label').html().toLowerCase();
-			var data = $(this).find('input').val();
-			savePrefAjax("color","presence",key,data);
+		var key = $(this).find('label').html().toLowerCase();
+		var data = $(this).find('input').val();
+		savePrefAjax("color","presence",key,data);
 	});
 	
 };
@@ -471,36 +474,37 @@ var getPref= function(  ){
 		async: false,
 		url: "config.json",
 		success: function( data ) {
-			//var oMyColors = [];
-			/*$.each(data.color,function(key){
-				console.log(key);
+			/*var oMyColors ={};
+			$.each(data.color,function(key){
 				console.log($(this));
-				oMyColors[key] = []; 
+
+				
 				for(var i = 0;i <= $(this).length-1;i++){
 
-					 oMyColors[key][$(this)[i].cours] = $(this)[i].color;	
-			}
-			console.log(oMyColors);
+					oMyColors.key[$(this)[i].cours] = $(this)[i].color;
+				}
+				console.log(oMyColors);
 
 			});*/
-			oColorCours = data.color.cours;
-			oColorPresence = data.color.presence;
-			oColorGroupe = data.color.groupe;
 
-			for(var i = 0;i <= oColorCours.length-1;i++){
+	oColorCours = data.color.cours;
+	oColorPresence = data.color.presence;
+	oColorGroupe = data.color.groupe;
 
-				oMyCoursColors[oColorCours[i].cours] = oColorCours[i].color;	
-			}
-			for(var i = 0;i <= oColorPresence.length-1;i++){
+	for(var i = 0;i <= oColorCours.length-1;i++){
 
-				oMyPresenceColors[oColorPresence[i].presence] = oColorPresence[i].color;	
-			}
-			for(var i = 0;i <= oColorGroupe.length-1;i++){
+		oMyCoursColors[oColorCours[i].cours] = oColorCours[i].color;	
+	}
+	for(var i = 0;i <= oColorPresence.length-1;i++){
 
-				oMyGroupeColors[oColorGroupe[i].groupe] = oColorGroupe[i].color;	
-			}
-		}
-	})
+		oMyPresenceColors[oColorPresence[i].presence] = oColorPresence[i].color;	
+	}
+	for(var i = 0;i <= oColorGroupe.length-1;i++){
+
+		oMyGroupeColors[oColorGroupe[i].groupe] = oColorGroupe[i].color;	
+	}
+}
+})
 
 	
 	
@@ -531,7 +535,7 @@ var showModifierThisPopup = function( e ){
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$popupModifierThis.css({'top':mouseY+125,'left':0}).fadeIn();
+	$popupModifierThis.css({'left':0}).fadeIn();
 	overlay( $popupModifierThis );
 
 
@@ -542,7 +546,7 @@ var showSupprimerElevePopup = function( e ){
 	mouseX = e.pageX; 
 	mouseY = e.pageY;
 
-	$('.popupSupprimerEleves').css({'top':mouseY+125,'left':+130}).fadeIn();
+	$('.popupSupprimerEleves').css({'left':+130}).fadeIn();
 	overlay( $popupSupprimerThis );
 
 
@@ -654,6 +658,7 @@ var hideAll = function( e ){
 	$popupModifierThis.fadeOut();
 	$popupSupprimerThis.fadeOut();
 	$PopupCreer.fadeOut();
+	$popupSupprimerEleves.fadeOut();
 	$PopupModifier.fadeOut();
 	$PopupSupprimer.fadeOut();
 	$PopupVoir.fadeOut();
@@ -678,6 +683,7 @@ var showCreerPopup = function( e ){
 
 	$PopupModifier.hide();
 	$PopupSupprimer.hide();
+	$popupSupprimerEleves.hide();
 	$PopupVoir.hide();
 	$PopupAjouter.hide();
 
@@ -689,6 +695,7 @@ var showModifierPopup = function( e ){
 	overlay( $PopupModifier );
 
 	$PopupCreer.hide();
+	$popupSupprimerEleves.hide();
 	$PopupSupprimer.hide();
 	$PopupVoir.hide();
 	$PopupAjouter.hide();
@@ -699,6 +706,7 @@ var showSupprimerPopup = function( e ){
 	overlay( $PopupSupprimer );
 
 	$PopupModifier.hide();
+	$popupSupprimerEleves.hide();
 	$PopupCreer.hide();
 	$PopupVoir.hide();
 	$PopupAjouter.hide();
@@ -709,6 +717,7 @@ var showVoirPopup = function( e ){
 	overlay( $PopupVoir );
 
 	$PopupModifier.hide();
+	$popupSupprimerEleves.hide();
 	$PopupSupprimer.hide();
 	$PopupCreer.hide();
 	$PopupAjouter.hide();
@@ -719,9 +728,21 @@ var showAjouterPopup = function( e ){
 	overlay( $PopupAjouter );
 
 	$PopupModifier.hide();
+	$popupSupprimerEleves.hide();
 	$PopupSupprimer.hide();
 	$PopupCreer.hide();
 	$PopupVoir.hide();
+};
+var showSupprimerElevesPopup = function( e ){
+	e.preventDefault();
+	$popupSupprimerEleves.fadeIn();
+	overlay( $PopupAjouter );
+
+	$PopupModifier.hide();
+	$PopupSupprimer.hide();
+	$PopupCreer.hide();
+	$PopupVoir.hide();
+	$PopupSupprimer.hide();
 };
 var openMenu = function( e ){
 	e.preventDefault();

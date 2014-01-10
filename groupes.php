@@ -118,6 +118,7 @@
     </form>
 </div>
 <aside class="helper">
+ <h1 aria-level="1" class="section">Intéraction avec les groupes</h1>
     <ul>
         <li><a data-link="creer" href="" title="Créer un nouveau groupe">Créer un groupe</a></li>
         <li><a data-link="modifier" href="" title="Modifier un groupe">Modifier un groupe</a></li>

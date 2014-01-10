@@ -40,18 +40,22 @@
        </div>
        <div class="connexion">
          <form action="indexCo.php">
-           <label for="">Votre e-mail</label>
-           <input type="email" required name="" id="" placeholder="prenom.nom@hepl.be">
 
-           <label for="">Votre mot de passe</label>
-           <input type="password" required name="" id="">
+             <label for="">Votre e-mail</label>
+             <input type="email" required name="" id="" placeholder="prenom.nom@hepl.be">
 
-           <input type="submit" value="Connexion">
-           <div class="problemeCompte">
-            <a href="">Mot de passe oublié ?</a>
-            <span>/</span>
-            <a href="">Pas encore inscrit ?</a>
+             <label for="">Votre mot de passe</label>
+             <input type="password" required name="" id="">
+
+             <input type="submit" value="Connexion">
+
+             <div class="problemeCompte">
+              <a href="">Mot de passe oublié ?</a>
+              <span>/</span>
+              <a href="">Pas encore inscrit ?</a>
+
           </div>
+          
         </form>
       </div>
     </section>
